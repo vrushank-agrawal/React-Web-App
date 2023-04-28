@@ -13,7 +13,12 @@ function Navigation() {
     return (
     <>
     <main style={{ position: 'relative', padding: 10 }}>
-        <div class="routes">
+        <div class="routes"
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+            }}
+        >
             <Routes>
                 <Route exact path="/" element={<Dashboard />} />
                 <Route exact path="/collaborator" element={<Collaborator />} />
