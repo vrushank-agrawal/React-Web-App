@@ -1,22 +1,4 @@
 
-const notifications = {
-    number: 5,
-    names: [
-        "Date",
-        "Type",
-        "XX",
-        "Marque",
-        "Collaborateur",
-    ],
-    width: {
-        Date: 200,
-        Type: 200,
-        XX: 100,
-        Marque: 200,
-        Collaborateur: 200,
-    }
-}
-
 const collaborator = {
     number: 5,
     names: [
@@ -63,4 +45,4 @@ const cartes = {
     ],
 }
 
-export { notifications, collaborator, vehicles, sinistres, cartes };
+export { collaborator, vehicles, sinistres, cartes };
