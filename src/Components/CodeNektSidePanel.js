@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Side Panel Imports
@@ -22,12 +23,13 @@ import { AiOutlineQuestion } from 'react-icons/ai';
 
 import { IoSettings } from 'react-icons/io5';
 import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
+import { ORANGEDARK } from '../utils/colors';
 
 function CodeNektSidePanel(props) {
     const { collapseSidebar, _, collapsed } = useProSidebar();
 
     return (
-        <div id='sidePanel'>
+        <div id='sidePanel' style={{backgroundColor: ORANGEDARK}}>
             <Sidebar backgroundColor='ORANGEDARK'
                 style={{height: '100vh'}}
             >

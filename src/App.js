@@ -16,7 +16,7 @@ function App() {
             <div className="Panel" style={{ display: 'flex' }}>
                 <CodeNektSidePanel />
                 <div style={{ margin: 'auto' }}>
-                <Navigation />
+                    <Navigation />
                 </div>
             </div>
             </BrowserRouter>
