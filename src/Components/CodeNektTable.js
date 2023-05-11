@@ -3,13 +3,11 @@ import PropTypes from "prop-types";
 import MaterialTable from "@material-table/core";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { RiDeleteBinLine } from "react-icons/ri";
-import { TiArrowUnsorted } from "react-icons/ti";
-
 // CodeNekt imports
 import { FONTSEMIBIG, LITTLE } from "../utils/fontSize";
 import { FONTBOLD, FONTREGULAR } from "../utils/fonts";
 import { BLACKCN, ORANGELIGHT, ORANGEDARK, ORANGE } from "../utils/colors";
+import { Toolbar, Typography } from "@mui/material";
 
 function CodeNektTable (props) {
 
@@ -21,6 +19,7 @@ function CodeNektTable (props) {
                     root: {
                         border: 'none',
                         boxShadow: 'none',
+                        paddingTop: '1rem',
                     },
                 },
             },
@@ -131,7 +130,7 @@ function CodeNektTable (props) {
             fontWeight: 'bold',
         },
         maxHeight: 100,
-        pageSize: 10,
+        pageSize: props.rowsPerPage,
         pageSizeOptions: [10],
         paginationType: 'stepped',
         paging: true,
@@ -139,7 +138,7 @@ function CodeNektTable (props) {
             fontFamily: FONTREGULAR,
             fontSize: LITTLE,
         },
-        search: true,
+        search: props.search,
         searchFieldAlignment: 'left',
         searchFieldVariant: "filled",
         selection: true,
@@ -154,7 +153,7 @@ function CodeNektTable (props) {
             minWidth: "100%",
             maxWidth: "100%",
         },
-        toolbar: true,
+        toolbar: props.toolbar,
         toolbarButtonAlignment: 'left',
     }
 
@@ -164,13 +163,19 @@ function CodeNektTable (props) {
         },
     }
 
+    // define a table header component in the toolbar for certain tables
+    const TableHeader = ({header}) => {
+        return (
+            <Toolbar style={{ borderBottom: "1px solid ORANGELIGHT" }}>
+                <Typography fontSize={FONTSEMIBIG} fontWeight={FONTBOLD} > {header} </Typography>
+            </Toolbar>
+        )
+    }
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
-                {props.header}
-            </h1>
-            <ThemeProvider theme={theme}>
-            <div style={{ backgroundColor: "white", borderRadius: "1%" }}>
+        <ThemeProvider theme={theme}>
+        <div style={{ backgroundColor: "white", borderRadius: "1%" }}>
+            {props.header && <TableHeader header={props.header} />}
             <MaterialTable
                 actions={props.actions}
                 columns={props.column.names}
@@ -178,23 +183,28 @@ function CodeNektTable (props) {
                 localization={Localization}
                 options={TableOptions}
                 style={{ margin: "0 3%" }}
-                />
-            </div>
-            </ThemeProvider>
+            />
         </div>
+        </ThemeProvider>
     )
 }
 
 CodeNektTable.propTypes = {
     column: PropTypes.object.isRequired,
     data: PropTypes.array.isRequired,
-    header: PropTypes.string.isRequired,
+    header: PropTypes.string,
+    search: PropTypes.bool,
+    rowsPerPage: PropTypes.number,
+    toolbar: PropTypes.bool,
 }
 
 CodeNektTable.defaultProps = {
     column: {},
     data: [],
-    header: "CodeNekt Table",
+    header: "",
+    search: true,
+    rowsPerPage: 10,
+    toolbar: true,
 }
 
 export default CodeNektTable;
