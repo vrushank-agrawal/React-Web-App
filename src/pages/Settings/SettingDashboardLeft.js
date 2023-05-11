@@ -47,7 +47,7 @@ const SettingsDashboardLeft = () => {
         <Paper sx={{ p: 4, borderRadius: 2 }}
                elevation={3}
         >
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 0}}>
                 <SettingGridItem
                     label="ID"
                     value={values.ID}
@@ -90,7 +90,7 @@ const SettingsDashboardLeft = () => {
                 </Typography>
             </Box>
 
-            <Box sx={{ p:2, display: "flex", flexDirection: "column", gap: 1, justifyContent: "flex-start"}}>
+            <Box sx={{ p:2, display: "column", gap: 0, justifyContent: "center" }}>
                 <SettingCommunicationSwitchItem
                     label="Type d'evenement/Notification"
                     onChange={handleSwitchChange("type1")}

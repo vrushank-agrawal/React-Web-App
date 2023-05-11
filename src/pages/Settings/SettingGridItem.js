@@ -20,7 +20,7 @@ const SettingGridItem = (props) => {
             alignItems="center"
         >
             <Grid item xs={4}>
-                <Typography>
+                <Typography sx={{ fontSize: 14}}>
                     {props.label}:
                 </Typography>
             </Grid>
@@ -33,6 +33,7 @@ const SettingGridItem = (props) => {
                     disabled={!props.isEditable}
                     variant="standard"
                     margin="normal"
+                    sx={{ fontSize: 14, height: "40%"}}
                 />
             </Grid>
         </Grid>
