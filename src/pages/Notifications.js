@@ -4,6 +4,8 @@ import CodenektButton from "../Components/CodeNektButton";
 
 // Local imports
 import { notifications as data } from "./utils/test-data";
+import { FONTSEMIBIG } from "../utils/fontSize";
+import { FONTBOLD } from "../utils/fonts";
 
 // Material UI imports
 import { ImEye } from "react-icons/im";
@@ -13,7 +15,6 @@ import { CiBellOn } from "react-icons/ci";
 import { IconButton } from "@mui/material";
 
 const column = {
-    number: 5,
     names: [
         { title: "Date", field: "Date", width: 100 },
         { title: "Type d'Intervention", field: "Type", width: 220 },
@@ -38,13 +39,15 @@ const column = {
 function Notifications () {
 
     return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+        <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
+            NOTIFICATIONS
+        </h1>
         <CodeNektTable
             column={column}
             data={data}
-            header="Notifications"
         />
-    </>
+    </div>
     )
 }
 
