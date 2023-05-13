@@ -9,7 +9,7 @@ import CodenektButton from "../Components/CodeNektButton";
 import { ORANGEDARK, ORANGELIGHT } from "../utils/colors";
 
 // Material UI imports
-import { CiBellOn } from "react-icons/ci";
+import { FaRegEye } from "react-icons/fa";
 
 const column = {
     names: [
@@ -21,9 +21,12 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <CodenektButton icon={<CiBellOn/>} orange title={"VOIR LE SINISTRE"}
-                      onPress={() => console.log("Button pressed")} width={160}
-                      gradient dir={"to right"} left={ORANGEDARK} right={ORANGELIGHT}
+                    <CodenektButton
+                        orange
+                        gradient dir={"to right"} left={ORANGEDARK} right={ORANGELIGHT}
+                        onPress={() => console.log("Button pressed")}
+                        startIcon={<FaRegEye size={12} />}
+                        title={"VOIR LE SINISTRE"}
                     />
                 </>
                 )}

@@ -1,5 +1,6 @@
 import React from "react";
 import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material";
+import { FaRegEye } from "react-icons/fa";
 
 import { ORANGEDARK, ORANGELIGHT } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
@@ -22,9 +23,10 @@ const SinistreButton = () => {
             bold={true}
             height={"fit-content"}
             margin={"auto"}
-            padding={"0.5rem"}
+            padding={"0.2rem 1rem"}
             title={"VOIR TOUS LES SINISTRES"}
-            width={"10rem"}
+            width={"9rem"}
+            startIcon={<FaRegEye size={15} />}
         />
     )
 }

@@ -27,8 +27,14 @@ const column = {
                 <>
                     <IconButton> <ImEye size={15} /> </IconButton>
                     <IconButton> <BsCheckCircle size={15} /> </IconButton>
-                    <CodenektButton icon={<CiBellOn/>} blue title={"Relancer le collaborateur"}
-                        onPress={() => console.log("Button pressed")} width={200} />
+                    <CodenektButton
+                        blue
+                        size={10}
+                        onPress={() => console.log("Button pressed")} width={200}
+                        padding={"0 0.1rem"}
+                        startIcon={<CiBellOn size={12}/>}
+                        title={"Relancer le collaborateur"}
+                    />
                     <IconButton> <RiDeleteBin6Line size={15} /> </IconButton>
                 </>
                 )}

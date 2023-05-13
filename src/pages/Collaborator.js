@@ -8,7 +8,9 @@ import { FONTSEMIBIG } from "../utils/fontSize";
 import { FONTBOLD } from "../utils/fonts";
 
 // Material UI imports
-import { CiBellOn } from "react-icons/ci";
+import { FaRegEye } from "react-icons/fa";
+import { BLACKCN } from "../utils/colors";
+import { Stack } from "@mui/material";
 
 const column = {
     names: [
@@ -22,13 +24,23 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <CodenektButton icon={<CiBellOn/>} white title={"Voir le vehicule"}
-                        onPress={() => console.log("Button pressed")} width={120}
-                        margin={"0 15px 0 0"}
-                    />
-                    <CodenektButton icon={<CiBellOn/>} blue title={"Voir le collaborateur"}
-                        onPress={() => console.log("Button pressed")} width={160}
-                    />
+                    <Stack direction="row" spacing={2}>
+                        <CodenektButton
+                            white
+                            bold
+                            borderColor={BLACKCN}
+                            onPress={() => console.log("Button pressed")}
+                            startIcon={<FaRegEye size={12} />}
+                            title={"Voir le vehicule"}
+                        />
+                        <CodenektButton
+                            blue
+                            bold
+                            onPress={() => console.log("Button pressed")}
+                            startIcon={<FaRegEye size={12} />}
+                            title={"Voir le collaborateur"}
+                        />
+                    </Stack>
                 </>
                 )}
         },

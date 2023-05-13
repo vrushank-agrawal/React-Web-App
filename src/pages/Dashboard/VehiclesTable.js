@@ -5,6 +5,7 @@ import { Paper, Typography, Grid, Divider, Chip } from '@mui/material';
 import { FONTSEMIBIG } from '../../utils/fontSize';
 import { BLACKCN, BLUECN, ORANGEDARK, ORANGELIGHT, WHITECN, GREENCN } from '../../utils/colors';
 import CodenektButton from '../../Components/CodeNektButton';
+import { FaRegEye } from 'react-icons/fa';
 
 const VehicleTableValueSize = "1.2rem";
 const VehicleTableFontsize = "14px";
@@ -47,9 +48,10 @@ const VehiclesButton = () => {
             width={"fit-content"}
             bold={true}
             blue={true}
-            padding={"0.5rem"}
+            padding={"0.1rem 1rem"}
             margin={"auto"}
             height={"fit-content"}
+            startIcon={<FaRegEye size={12}/>}
         />
     )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, Typography, Grid, Divider, Chip } from "@mui/material";
+import { FaRegEye } from "react-icons/fa";
 
 import { ORANGELIGHT } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
@@ -29,9 +30,10 @@ const TCOButton = () => {
             width={"fit-content"}
             bold={true}
             blue={true}
-            padding={"0.5rem"}
+            padding={"0.1rem 1rem"}
             margin={"1rem auto auto auto"}
             height={"fit-content"}
+            startIcon={<FaRegEye size={12}/>}
         />
     )
 }
