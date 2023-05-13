@@ -1,17 +1,19 @@
 import React, {useState} from "react";
-import {Grid, Box, Button, Paper, TextField, Typography, Switch} from "@mui/material";
+import { Grid, Box, Paper, Typography } from "@mui/material";
 
 // CodeNekt imports
-import {FONTSEMIBOLD, FONTBOLD} from "../../utils/fonts";
-import { FONTSEMIBIG } from "../../utils/fontSize";
+import { FONTBOLD} from "../../utils/fonts";
+import { FONTSEMIBIG, MICRO } from "../../utils/fontSize";
 import { BLUECN } from "../../utils/colors";
+import CodenektButton from "../../Components/CodeNektButton";
 
 // settings imports
 import SettingGridItem from "./SettingGridItem";
 import SettingCommunicationSwitchItem from "./SettingCommunicationSwitchItem";
 
 const SettingsDashboardLeft = () => {
-    const [isEditable, setIsEditable] = useState(false);
+    const [isEditableEmail, setIsEditableEmail] = useState(false);
+    const [isEditablePass, setIsEditablePass] = useState(false);
     const [values, setValues] = useState({
         ID: "ID",
         Nom: "Nom",
@@ -27,13 +29,21 @@ const SettingsDashboardLeft = () => {
         type4: false,
     });
 
-    const handleModifyClick = () => {
-        setIsEditable(true);
+    const handleModifyClickEmail = () => {
+        setIsEditableEmail(true);
     };
 
-    const handleSaveClick = () => {
-        setIsEditable(false);
+    const handleSaveClickEmail = () => {
+        setIsEditableEmail(false);
         // TODO: Save changes to fields
+    };
+
+    const handleModifyClickPass = () => {
+        setIsEditablePass(true);
+    };
+
+    const handleSaveClickPass = () => {
+        setIsEditablePass(false);
     };
 
     const handleSwitchChange = (name) => (value) => {
@@ -44,47 +54,43 @@ const SettingsDashboardLeft = () => {
     };
 
     return (
-        <Paper sx={{ p: 4, borderRadius: 2 }}
+        <Paper sx={{ p: 2, borderRadius: 2 }}
                elevation={3}
         >
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 0}}>
+            <Box sx={{ p:2, display: "flex", flexDirection: "column", gap: 1}}>
                 <SettingGridItem
                     label="ID"
                     value={values.ID}
-                    isEditable={isEditable}
                 />
                 <SettingGridItem
                     label="Nom"
                     value={values.Nom}
-                    isEditable={isEditable}
                 />
                 <SettingGridItem
                     label="Prénom"
                     value={values.Prénom}
-                    isEditable={isEditable}
                 />
                 <SettingGridItem
+                    button
                     label="Email"
                     value={values.Email}
-                    isEditable={isEditable}
+                    isEditable={isEditableEmail}
+                    handleModifyClick={handleModifyClickEmail}
+                    handleSaveClick={handleSaveClickEmail}
                 />
                 <SettingGridItem
+                    button
                     label="Mot de passe"
                     value={values.motdepasse}
-                    isEditable={isEditable}
+                    isEditable={isEditablePass}
+                    handleModifyClick={handleModifyClickPass}
+                    handleSaveClick={handleSaveClickPass}
                 />
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-            {!isEditable ? (
-                <Button variant="contained" onClick={handleModifyClick}> Modify </Button>
-            ) : (
-                <Button variant="contained" onClick={handleSaveClick}> Save </Button>
-            )}
             </Box>
 
             {/* ------------------- COMMUNICATION --------------------- */}
 
-            <Box sx={{ display: "flex", justifyContent: "flex-start", mt: 2 }}>
+            <Box sx={{ p:2, display: "flex", justifyContent: "flex-start", mt: 2 }}>
                 <Typography fontSize={FONTSEMIBIG} fontWeight={FONTBOLD} color={BLUECN} >
                     COMMUNICATION
                 </Typography>
@@ -112,12 +118,25 @@ const SettingsDashboardLeft = () => {
                     checked={communicationValues.type4}
                 />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Button variant="contained" onClick={handleSwitchChange}>
-                    Enregistrer
-                </Button>
+            <Box sx={{ p:2, display: "flex", justifyContent: "center", mt: 2 }}>
+                <Grid container xs={12} direction="row" justifyContent="space-around" alignItems="center">
+                    <Grid item xs={8}>
+                        <></>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <CodenektButton
+                            orange
+                            bold
+                            margin={"0 0 0 auto"}
+                            onClick={handleSwitchChange}
+                            padding={"0.4rem 0.8rem"}
+                            size={MICRO}
+                            title="Enregistrer"
+                            variant={"contained"}
+                        />
+                    </Grid>
+                </Grid>
             </Box>
-
         </Paper>
   );
 };

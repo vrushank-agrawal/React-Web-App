@@ -16,10 +16,10 @@ const Settings = () => {
                 PARAMÈTRES
             </h1>
             <Grid container spacing={3} >
-                <Grid item xs={6} style={{width: "70vh"}}>
+                <Grid item xs={6} style={{width: "60vh"}}>
                     <SettingsDashboardLeft />
                 </Grid>
-                <Grid item xs={6} style={{width: "70vh"}}>
+                <Grid item xs={6} style={{width: "60vh"}}>
                     <SettingsDashboardRight />
                 </Grid>
             </Grid>
