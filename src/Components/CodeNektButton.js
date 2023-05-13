@@ -16,18 +16,19 @@ function CodenektButton(props) {
         style={{
             backgroundColor: bgcolor,
             background: props.gradient ? `linear-gradient(${props.dir}, ${props.left}, ${props.right})` : bgcolor,
+            border: 'none',
             borderRadius: '50px',
+            boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
             color:  props.light ? ORANGELIGHT :
                     props.white ? BLACKCN :
                                   WHITECN,
-            height: props.height,
-            width: props.width,
-            fontSize: props.size,
-            margin: props.margin,
-            fontWeight: props.bold ? 'bold' : 'normal',
-            boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
             fontFamily: FONTREGULAR,
-            border: 'none',
+            fontSize: props.size,
+            fontWeight: props.bold ? 'bold' : 'normal',
+            height: props.height,
+            margin: props.margin,
+            padding: props.padding,
+            width: props.width,
         }}
         >
         {props.title}
@@ -47,6 +48,7 @@ CodenektButton.propTypes = {
     light: PropTypes.bool,
     margin: PropTypes.string,
     orange: PropTypes.bool,
+    padding: PropTypes.string,
     right: PropTypes.string,
     size: PropTypes.number,
     title: PropTypes.string.isRequired,
@@ -66,6 +68,7 @@ CodenektButton.defaultProps = {
     light: false,
     margin: "5px",
     orange: false,
+    padding: "auto",
     right: "",
     size: 12,
     onPress: () => {},
