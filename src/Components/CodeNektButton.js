@@ -23,8 +23,8 @@ function CodenektButton(props) {
             borderRadius: '50px',
             boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
             color:  props.light ? ORANGELIGHT :
-                    props.white ? BLACKCN :
-                                  WHITECN,
+                    props.white ? WHITECN :
+                                  BLACKCN,
             fontFamily: FONTREGULAR,
             fontSize: props.size,
             fontWeight: props.bold ? 'bold' : 'normal',
