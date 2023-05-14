@@ -50,8 +50,8 @@ function CodeNektSidePanel(props) {
                     <MenuItem icon={<BsBellFill />} component={<Link to='/notifications' />}> NOTIFICATIONS </MenuItem>
                     <MenuItem icon={<FaSignInAlt />} component={<Link to='/claims' />}> SINISTRES </MenuItem>
 
-                    <MenuItem icon={<TiDocumentText />} component={<Link to='/cartes' />}> CARTES & BADGES </MenuItem>
-                    <MenuItem icon={<AiOutlineEuroCircle />} disabled> TCO </MenuItem>
+                    <MenuItem icon={<TiDocumentText />} component={<Link to='/cartes' />} > CARTES & BADGES </MenuItem>
+                    <MenuItem icon={<AiOutlineEuroCircle />} component={<Link to='/tco' />} > TCO </MenuItem>
                     <MenuItem icon={<BiLeaf />} disabled> CONDUITE </MenuItem>
                     <MenuItem icon={<GrMap />} disabled> GEOLOCALISATION </MenuItem>
                     <MenuItem icon={<FaSignInAlt />} component={<Link to='/services' />}> SERVICES </MenuItem>

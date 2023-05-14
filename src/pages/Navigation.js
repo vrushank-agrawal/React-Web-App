@@ -7,6 +7,7 @@ import Vehicles from "../pages/Vehicles";
 import Notifications from "../pages/Notifications";
 import Claims from "../pages/Claims";
 import Cartes from "../pages/Cartes";
+import TCO from "../pages/TCO";
 import Services from "../pages/Services";
 import Settings from "../pages/Settings";
 import Signout from "../pages/Signout";
@@ -28,6 +29,7 @@ function Navigation() {
                 <Route exact path="/notifications" element={<Notifications />} />
                 <Route exact path="/claims" element={<Claims />} />
                 <Route exact path="/cartes" element={<Cartes />} />
+                <Route exact path="/tco" element={<TCO />} />
                 <Route exact path="/services" element={<Services />} />
                 <Route exact path="/settings" element={<Settings />} />
                 <Route exact path="/signout" element={<Signout />} />
