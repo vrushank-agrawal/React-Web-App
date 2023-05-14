@@ -8,7 +8,6 @@ import { FONTBOLD } from "../../../utils/fonts";
 import { BLACKCN, GREYBACK, GREYTEXT2, ORANGELIGHT, WHITECN } from "../../../utils/colors";
 
 // Local ajouter imports
-import { CirclesText } from "./HeaderCircleText";
 import DisplayHeader from "../utils/DisplayHeader";
 import CodenektButton from "../../../Components/CodeNektButton";
 
@@ -61,6 +60,7 @@ const LocalContent = (props) => {
             >
                 <CodenektButton
                     orange
+                    onClick={props.onComplete}
                     title="ENVOYER"
                 />
             </Grid>
@@ -69,37 +69,35 @@ const LocalContent = (props) => {
 };
 
 const Colab1 = (props) => {
+    console.log(props.text)
+    const onComplete = () => {
+        props.onComplete(2);
+    };
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "90%" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0"}}>
-                AJOUTER UN COLLABORATEUR
-            </h1>
-            <Paper elevation={3}
-                style={{
-                    padding: "1rem",
-                    marginTop: "1rem",
-                    width: "60rem"
-                }}
-            >
-                <Grid container spacing={1.5} direction={"column"}>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <DisplayHeader CirclesText={CirclesText} page={1} />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <Typography
-                            color={GREYTEXT2}
-                            fontSize={MINIBIG}
-                            style={{ textAlign: "center" }}
-                        >
-                            {CirclesText.find((circle) => circle.number == 1).text.toLocaleUpperCase()}
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <LocalContent />
-                    </Grid>
-                </Grid>
-            </Paper>
-        </div>
+        <Grid container spacing={1.5} direction={"column"}>
+            <Grid item xs={12} sm={12} md={12}>
+                <DisplayHeader
+                    text={props.text}
+                    circles={props.circles}
+                    page={1}
+                />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12}>
+                <Typography
+                    color={GREYTEXT2}
+                    fontSize={MINIBIG}
+                    style={{ textAlign: "center" }}
+                >
+                    {props.text.toLocaleUpperCase()}
+                </Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12}>
+                <LocalContent
+                    onComplete={onComplete}
+                />
+            </Grid>
+        </Grid>
     );
 };
 

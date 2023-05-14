@@ -7,7 +7,6 @@ import { ORANGELIGHT } from "../../../utils/colors";
 import { LITTLE } from "../../../utils/fontSize";
 import Circle from "./HeaderCircle";
 
-
 const HeaderContainer = styled(Paper)(({ theme }) => ({
     alignItems: 'center',
     background: 'transparent',
@@ -27,20 +26,19 @@ const CircleDivider = styled(Divider)({
 });
 
 const DisplayHeader = (props) => {
-    const CirclesText = props.CirclesText;
-    const NbCircles = CirclesText.length;
+    const NbCircles = props.circles;
     const GridLength = 12 / NbCircles;
     return (
         <HeaderContainer>
             <Grid container spacing={1.5} direction={"column"}>
                 <Grid item xs={12} sm={12} md={12}>
                     <Grid container spacing={1.5} direction={"row"}>
-                    {CirclesText.map((circle, index) => (
-                        <React.Fragment key={circle.number}>
+                    {[...Array(NbCircles)].map((_, index) => (
+                        <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}>
                                 <Circle
-                                    number={circle.number == NbCircles ? "✔" : circle.number}
-                                    text={circle.text}
+                                    number={index+1 === NbCircles ? "✔" : index+1}
+                                    text={props.text}
                                     page={props.page}
                                 />
                                 {/* {index !== NbCircles - 1 && <CircleDivider />} */}
@@ -51,8 +49,8 @@ const DisplayHeader = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
                     <Grid container spacing={1.5} direction={"row"} >
-                    {CirclesText.map((circle, index) => (
-                        <React.Fragment key={circle.number}>
+                    {[...Array(NbCircles)].map((_, index) => (
+                        <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}
                                 sx={{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}
                             >
@@ -63,7 +61,7 @@ const DisplayHeader = (props) => {
                                     textAlign={"center"}
                                     variant="body2"
                                 >
-                                    {circle.number == props.page ? circle.text : ""}
+                                    {index+1 === props.page ? props.text : ""}
                                 </Typography>
                             </Grid>
                         </React.Fragment>
