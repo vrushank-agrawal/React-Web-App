@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import {ORANGEDARK, ORANGELIGHT, WHITECN, BLACKCN, BLUECN} from '../utils/colors.js';
 import {FONTREGULAR} from '../utils/fonts.js';
@@ -13,7 +14,8 @@ function CodenektButton(props) {
                                    ORANGEDARK
     return (
     <>
-        <Button
+    <Button
+        component={Link}
         onClick={props.onClick}
         style={{
             backgroundColor: bgcolor,
@@ -34,10 +36,11 @@ function CodenektButton(props) {
             width: props.width,
         }}
         startIcon={props.startIcon}
+        to={props.to}
         variant={props.variant}
-        >
+    >
         {props.title}
-        </Button>
+    </Button>
     </>
   )
 }
@@ -60,6 +63,7 @@ CodenektButton.propTypes = {
     size: PropTypes.number,
     startIcon: PropTypes.object,
     title: PropTypes.string.isRequired,
+    to: PropTypes.string,
     variant: PropTypes.string,
     width: PropTypes.number,
 };
@@ -81,6 +85,7 @@ CodenektButton.defaultProps = {
     right: "",
     size: 10,
     startIcon: <></>,
+    to: "",
     variant: "outlined",
     width: "fit-content",
 };

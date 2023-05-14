@@ -26,14 +26,16 @@ const TCOChip = (props) => {
 const TCOButton = () => {
     return (
         <CodenektButton
-            title={"VOIR LE COÛT PAR VÉHICULE"}
-            width={"fit-content"}
+            white
             bold={true}
             blue={true}
-            padding={"0.1rem 1rem"}
-            margin={"1rem auto auto auto"}
             height={"fit-content"}
+            margin={"1rem auto auto auto"}
+            padding={"0.1rem 1rem"}
             startIcon={<FaRegEye size={12}/>}
+            title={"VOIR LE COÛT PAR VÉHICULE"}
+            // to="/TCO"
+            width={"fit-content"}
         />
     )
 }

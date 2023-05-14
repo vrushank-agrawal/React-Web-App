@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 
@@ -19,14 +20,16 @@ const SinistreListItem = (props) => {
 const SinistreButton = () => {
     return (
         <CodenektButton
+            white
             blue={true}
             bold={true}
             height={"fit-content"}
             margin={"auto"}
             padding={"0.2rem 1rem"}
             title={"VOIR TOUS LES SINISTRES"}
-            width={"9rem"}
+            width={"8.3rem"}
             startIcon={<FaRegEye size={15} />}
+            to="/claims"
         />
     )
 }
