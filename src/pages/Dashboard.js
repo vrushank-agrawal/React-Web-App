@@ -10,16 +10,18 @@ import NotificationTable from './Dashboard/NotificationTable';
 import VehiclesTable from './Dashboard/VehiclesTable';
 import SinistreTable from './Dashboard/SinistresTable';
 import TCOTable from './Dashboard/TCOTable';
+import HeaderButtons from './Dashboard/HeaderButtons';
 
 function Dashboard (props) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "90%" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
+            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0"}}>
                 TABLEAU DE BORD&emsp;
                 <span style={{fontSize: "1.4rem", color: WHITECN}}>
                     Bienvenue
                 </span>
             </h1>
+            <HeaderButtons />
             <Grid container spacing={1.5}>
                 <Grid item xs={12} sm={5} md={4}>
                     <Grid container item xs={12} sm={12} md={12} spacing={1.5} direction="column">
