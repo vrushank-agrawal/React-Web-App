@@ -12,6 +12,9 @@ import Services from "../pages/Services";
 import Settings from "../pages/Settings";
 import Signout from "../pages/Signout";
 
+// ----------------- Ajouter -----------------
+import Colab1 from "./Ajouter/Collaborateur/Colab1";
+
 function Navigation() {
     return (
     <>
@@ -24,7 +27,10 @@ function Navigation() {
         >
             <Routes>
                 <Route exact path="/" element={<Dashboard />} />
+
                 <Route exact path="/collaborator" element={<Collaborator />} />
+                <Route exact path="/collaborateur/colab1" element={<Colab1 />} />
+
                 <Route exact path="/vehicles" element={<Vehicles />} />
                 <Route exact path="/notifications" element={<Notifications />} />
                 <Route exact path="/claims" element={<Claims />} />

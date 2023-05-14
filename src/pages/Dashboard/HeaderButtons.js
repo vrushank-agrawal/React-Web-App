@@ -101,7 +101,7 @@ const HeaderButtons = (props) => {
                     <DashboardHeaderButton
                         startIcon={<AddIcon fontSize="small" color="white" />}
                         title={"AJOUTER UN COLLABORATEUR"}
-                        to={""}
+                        to={"./collaborateur/colab1"}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={2.5}>
