@@ -44,10 +44,10 @@ const VehicleTypography = (props) => {
 const VehiclesButton = () => {
     return (
         <CodenektButton
-            white
-            bold={true}
-            blue={true}
-            height={"fit-content"}
+        blue={true}
+        bold={true}
+        color={WHITECN}
+        height={"fit-content"}
             margin={"auto"}
             padding={"0.1rem 1rem"}
             startIcon={<FaRegEye size={12}/>}

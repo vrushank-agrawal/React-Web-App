@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 
-import { ORANGEDARK, ORANGELIGHT } from "../../utils/colors";
+import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
 
 const SinistreListItem = (props) => {
@@ -20,9 +20,9 @@ const SinistreListItem = (props) => {
 const SinistreButton = () => {
     return (
         <CodenektButton
-            white
             blue={true}
             bold={true}
+            color={WHITECN}
             height={"fit-content"}
             margin={"auto"}
             padding={"0.2rem 1rem"}

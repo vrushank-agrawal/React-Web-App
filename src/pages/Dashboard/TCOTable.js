@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Typography, Grid, Divider, Chip } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 
-import { ORANGELIGHT } from "../../utils/colors";
+import { ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
 
 const TCOTableValueSize = "1.2rem";
@@ -26,10 +26,10 @@ const TCOChip = (props) => {
 const TCOButton = () => {
     return (
         <CodenektButton
-            white
-            bold={true}
-            blue={true}
-            height={"fit-content"}
+        blue={true}
+        bold={true}
+        color={WHITECN}
+        height={"fit-content"}
             margin={"1rem auto auto auto"}
             padding={"0.1rem 1rem"}
             startIcon={<FaRegEye size={12}/>}

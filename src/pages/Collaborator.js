@@ -9,7 +9,7 @@ import { FONTBOLD } from "../utils/fonts";
 
 // Material UI imports
 import { FaRegEye } from "react-icons/fa";
-import { BLACKCN } from "../utils/colors";
+import { BLACKCN, WHITECN } from "../utils/colors";
 import { Stack } from "@mui/material";
 
 const column = {
@@ -36,6 +36,7 @@ const column = {
                         <CodenektButton
                             blue
                             bold
+                            color={WHITECN}
                             onPress={() => console.log("Button pressed")}
                             startIcon={<FaRegEye size={12} />}
                             title={"Voir le collaborateur"}

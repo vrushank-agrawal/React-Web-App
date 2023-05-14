@@ -24,9 +24,7 @@ function CodenektButton(props) {
             borderColor: props.borderColor,
             borderRadius: '50px',
             boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
-            color:  props.light ? ORANGELIGHT :
-                    props.white ? WHITECN :
-                                  BLACKCN,
+            color:  props.color,
             fontFamily: FONTREGULAR,
             fontSize: props.size,
             fontWeight: props.bold ? 'bold' : 'normal',
@@ -50,6 +48,7 @@ CodenektButton.propTypes = {
     bold: PropTypes.bool,
     blue: PropTypes.bool,
     borderColor: PropTypes.string,
+    color: PropTypes.string,
     dark: PropTypes.bool,
     dir: PropTypes.string,
     gradient: PropTypes.bool,
@@ -73,6 +72,7 @@ CodenektButton.defaultProps = {
     bold: false,
     blue: false,
     borderColor: "",
+    color: BLACKCN,
     dark: false,
     dir: "",
     gradient: false,

@@ -3,7 +3,7 @@ import { Paper, Divider, Grid, Typography, Autocomplete, TextField } from "@mui/
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
 
-import { BLACKCN, GREYBACK, ORANGELIGHT } from "../../utils/colors";
+import { BLACKCN, GREYBACK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import { LITTLE, LITTLE2, MICROPLUS } from "../../utils/fontSize";
 import CodenektButton from "../../Components/CodeNektButton";
 
@@ -93,14 +93,13 @@ const VehicleTile = (props) => {
                     sx={{display: "flex", justifyContent: "center", flexDirection: "column", marginTop: "1rem"}}
                 >
                     <CodenektButton
-                        blue={true}
-                        bold={true}
+                        blue
+                        bold
+                        color={WHITECN}
                         margin={"1rem auto"}
                         padding={"0.5rem 1rem"}
                         size={LITTLE2}
                         title={"RÉSULTATS"}
-                        white={true}
-                        width={"fit-content"}
                     />
                 </Grid>
             </Grid>

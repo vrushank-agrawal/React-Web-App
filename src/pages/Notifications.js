@@ -13,6 +13,7 @@ import { BsCheckCircle } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiBellOn } from "react-icons/ci";
 import { IconButton } from "@mui/material";
+import { WHITECN } from "../utils/colors";
 
 const column = {
     names: [
@@ -29,9 +30,10 @@ const column = {
                     <IconButton> <BsCheckCircle size={15} /> </IconButton>
                     <CodenektButton
                         blue
-                        size={10}
+                        color={WHITECN}
                         onPress={() => console.log("Button pressed")} width={200}
                         padding={"0 0.1rem"}
+                        size={10}
                         startIcon={<CiBellOn size={12}/>}
                         title={"Relancer le collaborateur"}
                     />
