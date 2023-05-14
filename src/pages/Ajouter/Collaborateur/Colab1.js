@@ -32,10 +32,10 @@ const IDInput = styled(TextField)(({ theme }) => ({
 
 const LocalContent = (props) => {
     return (
-        <Grid container spacing={1.5} direction={"column"}
-            sx={{margin: "1rem 0 10rem 0"}}
-        >
-            <Grid item xs={12} sm={12} md={12}>
+        <Grid container spacing={1.5} direction={"column"} >
+            <Grid item xs={12} sm={12} md={12}
+                sx={{margin: "1rem 0 0.2rem 0"}}
+            >
                 <Typography
                     color={BLACKCN}
                     fontSize={LITTLE}
@@ -56,7 +56,7 @@ const LocalContent = (props) => {
                 />
             </Grid>
             <Grid item xs={12} sm={12} md={12}
-                sx={{display: "flex", justifyContent: "center"}}
+                sx={{display: "flex", justifyContent: "center", marginTop: "1rem"}}
             >
                 <CodenektButton
                     orange

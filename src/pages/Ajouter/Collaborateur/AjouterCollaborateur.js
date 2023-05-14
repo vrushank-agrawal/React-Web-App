@@ -24,8 +24,6 @@ const CirclesText = [
 const ColabPages = 6;
 
 const AjouterCollaborateur = () => {
-    console.log(CirclesText.length)
-    console.log(CirclesText[0])
     const [step, setStep] = React.useState(1);
 
     const handleStepChange = (step) => {
@@ -39,8 +37,9 @@ const AjouterCollaborateur = () => {
             </h1>
             <Paper elevation={3}
                 style={{
-                    padding: "1rem",
+                    height: "35rem",
                     marginTop: "1rem",
+                    padding: "1rem",
                     width: "60rem"
                 }}
             >
