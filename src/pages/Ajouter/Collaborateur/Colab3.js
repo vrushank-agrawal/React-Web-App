@@ -7,7 +7,7 @@ import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYBACK, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
 import { BIG, LITTLE, MICRO, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
-import { categories } from "../../utils/Categorie";
+import { categories } from "../../utils/CategorieDefinition";
 
 const Colab3FontSize = MICRO;
 
