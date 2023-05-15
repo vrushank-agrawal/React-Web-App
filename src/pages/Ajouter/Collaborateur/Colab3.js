@@ -4,10 +4,11 @@ import { Divider, MenuItem, Select } from "@mui/material";
 import { ImEye } from "react-icons/im";
 
 import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYBACK, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
-import { BIG, LITTLE, MICRO, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
+import { BLACKCN, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
+import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import { categories } from "../../utils/CategorieDefinition";
+import CodenektButton from "../../../Components/CodeNektButton";
+import CodeNektSelect from "../../../Components/CodeNektSelect";
 
 const Colab3FontSize = MICRO;
 
@@ -19,28 +20,20 @@ const CategoryInput = (props) => {
     };
 
     return (
-        <Select style={{
-                backgroundColor: GREYBACK,
-                fontSize: Colab3FontSize,
-                height: "1rem",
-                onChange: {handleChange},
-                value: category,
-                width: "100%"
-            }}
-        >
-            { categories.map(({id, name}) => {
-                return (
-                    <MenuItem key={id} value={name} style={{padding: "0 1rem", fontSize: Colab3FontSize}}>{name}</MenuItem>
-                );
-            })}
-        </Select>
+        <CodeNektSelect
+            fontSize={Colab3FontSize}
+            margin="0"
+            onChange={handleChange}
+            options={categories}
+            value={category}
+        />
     );
 };
 
 const CollaborateurTileField = (props) => {
     return (
         <Grid container spacing={1.5} direction={"row"} style={{margin: "0.5rem 0"}}>
-            <Grid item xs={12} sm={2} md={2}>
+            <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Colab3FontSize }}>
                     {props.text.toLocaleUpperCase()}
                 </Typography>

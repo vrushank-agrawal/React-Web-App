@@ -1,18 +1,18 @@
 export const categories = [
     {
-        id: 1,
-        name: "Catégorie 1",
+        label: "Catégorie 1",
+        value: 1,
     },
     {
-        id: 2,
-        name: "Catégorie 2",
+        label: "Catégorie 2",
+        value: 2,
     },
     {
-        id: 3,
-        name: "Catégorie 3",
+        label: "Catégorie 3",
+        value: 3,
     },
     {
-        id: 4,
-        name: "Catégorie 4",
+        label: "Catégorie 4",
+        value: 4,
     },
 ];

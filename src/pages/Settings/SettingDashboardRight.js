@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import {Box, Paper, Typography, Select, MenuItem} from "@mui/material";
+import { Box, Paper, Typography, Select, MenuItem } from "@mui/material";
 
 // CodeNekt imports
 import { FONTBOLD, FONTREGULAR} from "../../utils/fonts";
 import { FONTSEMIBIG, MICRO } from "../../utils/fontSize";
 import { BLACKCN, BLUECN, GREYBACK, ORANGELIGHT } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
+import CodeNektSelect from "../../Components/CodeNektSelect";
 
 const SettingsDashboardRight = () => {
     const [TVAvalue, setValues] = useState(0);
@@ -46,24 +47,15 @@ const SettingsDashboardRight = () => {
                 <Typography fontSize={FONTREGULAR} color={BLACKCN} sx={{margin: "0 0 2% 2%",}}>
                     Sélectioner le taux de TVA
                 </Typography>
-                <Select
+                <CodeNektSelect
                     label="TVA"
                     onChange={handleTVAChange}
-                    size="small"
-                    sx={{
-                        backgroundColor: GREYBACK,
-                        fontSize: MICRO,
-                        margin: "0 0 2% 2%",
-                        '& svg': {
-                            color: ORANGELIGHT,
-                        },
-                    }}
+                    options={[
+                        {label: "10%", value: "10"},
+                        {label: "20%", value: "20"},
+                    ]}
                     value={TVAvalue}
-                    variant="outlined"
-                >
-                    <MenuItem value={10}>10%</MenuItem>
-                    <MenuItem value={20}>20%</MenuItem>
-                </Select>
+                />
                 <CodenektButton
                     orange
                     bold
@@ -87,25 +79,17 @@ const SettingsDashboardRight = () => {
                 <Typography fontSize={FONTREGULAR} color={BLACKCN} sx={{margin: "0 0 2% 2%",}}>
                     Ajouter un service:
                 </Typography>
-                <Select
-                    multiple
-                    onChange={handleServicesChange}
+                <CodeNektSelect multiple
+                    label="SERVICE"
                     renderValue={renderServices}
-                    size="small"
-                    sx={{
-                        backgroundColor: GREYBACK,
-                        fontSize: MICRO,
-                        margin: "0 0 2% 2%",
-                        '& svg': {
-                            color: ORANGELIGHT,
-                        },
-                    }}
+                    onChange={handleServicesChange}
+                    options={[
+                        {label: "COMMERCIAL", value: "COMMERCIAL"},
+                        {label: "MARKETING", value: "MARKETING"},
+                        {label: "SAV", value: "SAV"},
+                    ]}
                     value={ServicesValue}
-                >
-                    <MenuItem value={"COMMERCIAL"}>COMMERCIAL</MenuItem>
-                    <MenuItem value={"MARKETING"}>MARKETING</MenuItem>
-                    <MenuItem value={"SAV"}>SAV</MenuItem>
-                </Select>
+                />
                 <CodenektButton
                     orange
                     bold
