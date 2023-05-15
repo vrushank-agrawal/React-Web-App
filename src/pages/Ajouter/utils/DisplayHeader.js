@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from '@mui/material/styles';
 import { Grid, Paper, Divider, Typography } from "@mui/material";
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 // CodeNekt imports
 import { ORANGELIGHT } from "../../../utils/colors";
@@ -37,7 +38,7 @@ const DisplayHeader = (props) => {
                         <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}>
                                 <Circle
-                                    number={index+1 === NbCircles ? "✔" : index+1}
+                                    number={index+1 === NbCircles ? <CheckBoxIcon /> : index+1}
                                     text={props.text}
                                     page={props.page}
                                 />

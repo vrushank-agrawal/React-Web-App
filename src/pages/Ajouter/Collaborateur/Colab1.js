@@ -69,7 +69,7 @@ const LocalContent = (props) => {
 };
 
 const Colab1 = (props) => {
-    console.log(props.text)
+
     const onComplete = () => {
         props.onComplete(2);
     };

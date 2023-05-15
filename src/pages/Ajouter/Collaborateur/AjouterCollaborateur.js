@@ -24,15 +24,16 @@ const CirclesText = [
 const ColabPages = 6;
 
 const AjouterCollaborateur = () => {
-    const [step, setStep] = React.useState(1);
+
+    const [step, setStep] = React.useState(3);
 
     const handleStepChange = (step) => {
         setStep(step);
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "90%" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0"}}>
+        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "100%", alignItems: "center" }}>
+            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0", marginRight: "auto" }}>
                 AJOUTER UN COLLABORATEUR
             </h1>
             <Paper elevation={3}
@@ -40,7 +41,7 @@ const AjouterCollaborateur = () => {
                     height: "35rem",
                     marginTop: "1rem",
                     padding: "1rem",
-                    width: "60rem"
+                    width: "70rem"
                 }}
             >
                 {step == 1 && <Colab1 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
