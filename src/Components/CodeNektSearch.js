@@ -7,24 +7,7 @@ import { FormControl } from "@mui/base";
 // CodeNekt imports
 import { LITTLE, MICROPLUS } from "../utils/fontSize";
 import { GREYBACK } from "../utils/colors";
-
-const SearchInput = styled(TextField)(({ theme }) => ({
-    '& .MuiInputBase-input': {
-        alignItems: 'center',
-        backgroundColor: GREYBACK,
-        borderRadius: 50,
-        border: 'none',
-        fontSize: LITTLE,
-        padding: '0',
-        position: 'relative',
-        transition: theme.transitions.create([
-            'border-color',
-            'background-color',
-            'box-shadow',
-        ]),
-        width: 'auto',
-    },
-}));
+import { Input as SearchInput } from "./CodeNektInput";
 
 const CodeNektSearch = (props) => {
 
