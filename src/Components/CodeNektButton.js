@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import {ORANGEDARK, ORANGELIGHT, WHITECN, BLACKCN, BLUECN} from '../utils/colors.js';
+import {ORANGEDARK, ORANGELIGHT, WHITECN, BLACKCN, BLUECN, GREYBACK} from '../utils/colors.js';
 import {FONTREGULAR} from '../utils/fonts.js';
 
 function CodenektButton(props) {
     const bgcolor = props.blue   ? BLUECN :
-                    props.dark   ? BLACKCN :
+                    props.black   ? BLACKCN :
                     props.white  ? WHITECN :
+                    props.grey   ? GREYBACK :
                     props.orange ? ORANGELIGHT :
                                    ORANGEDARK
     return (
@@ -20,7 +21,7 @@ function CodenektButton(props) {
         style={{
             backgroundColor: bgcolor,
             background: props.gradient ? `linear-gradient(${props.dir}, ${props.left}, ${props.right})` : bgcolor,
-            border: "",
+            border: "none",
             borderColor: props.borderColor,
             borderRadius: '50px',
             boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
@@ -46,12 +47,13 @@ function CodenektButton(props) {
 CodenektButton.propTypes = {
     height: PropTypes.string,
     bold: PropTypes.bool,
+    black: PropTypes.bool,
     blue: PropTypes.bool,
     borderColor: PropTypes.string,
     color: PropTypes.string,
-    dark: PropTypes.bool,
     dir: PropTypes.string,
     gradient: PropTypes.bool,
+    grey: PropTypes.bool,
     left: PropTypes.string,
     light: PropTypes.bool,
     margin: PropTypes.string,
@@ -70,12 +72,13 @@ CodenektButton.propTypes = {
 CodenektButton.defaultProps = {
     height: "1.3rem",
     bold: false,
+    black: false,
     blue: false,
     borderColor: "",
     color: BLACKCN,
-    dark: false,
     dir: "",
     gradient: false,
+    grey: false,
     left: "",
     light: false,
     margin: "5px",
