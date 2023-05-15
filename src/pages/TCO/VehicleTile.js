@@ -7,34 +7,7 @@ import { BLACKCN, GREYBACK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import { LITTLE, LITTLE2, MICROPLUS } from "../../utils/fontSize";
 import CodenektButton from "../../Components/CodeNektButton";
 
-const SearchVehicle = (props) => {
-    return (
-        <Autocomplete
-            disablePortal
-            options={props.allVehicles}
-            renderInput={(params) => (
-                <TextField
-                    {...params}
-                    InputProps={{
-                        ...params.InputProps,
-                        endAdornment: ( <InputAdornment position="end"> <SearchIcon /> </InputAdornment> ),
-                        type: 'search',
-                    }}
-                    label="Véhicule"
-                    size="small"
-                    sx={{ fontSize: MICROPLUS, }}
-                />
-            )}
-            sx={{
-                backgroundColor: GREYBACK,
-                borderRadius: 50,
-                fontSize: MICROPLUS,
-                margin: "auto",
-                width: "60%",
-            }}
-        />
-    );
-};
+import SearchVehicle from "../../Components/SearchVehicle";
 
 const VehicleTile = (props) => {
     return (
@@ -85,7 +58,7 @@ const VehicleTile = (props) => {
                     <Grid item xs={12} sm={12} md={12}
                         sx={{display: "flex", justifyContent: "center", flexDirection: "column"}}
                     >
-                        <SearchVehicle allVehicles={props.allVehicles} />
+                        <SearchVehicle allVehicles={props.allVehicles} width={"60%"} />
                     </Grid>
                 </Grid>
 
