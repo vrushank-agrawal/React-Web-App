@@ -1,64 +1,21 @@
 import React from "react";
 import { styled } from '@mui/material/styles';
 import { Grid, Autocomplete, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import InputAdornment from "@mui/material/InputAdornment";
 import AddIcon from '@mui/icons-material/Add';
 
 // CodeNekt imports
+import CodeNektSearch from "../../Components/CodeNektSearch";
 import CodenektButton from "../../Components/CodeNektButton";
 import { GREYBACK, WHITECN } from "../../utils/colors";
-import { LITTLE, MICROPLUS } from "../../utils/fontSize";
-import { FormControl } from "@mui/base";
-
-const SearchInput = styled(TextField)(({ theme }) => ({
-    '& .MuiInputBase-input': {
-        alignItems: 'center',
-        backgroundColor: GREYBACK,
-        borderRadius: 50,
-        border: 'none',
-        fontSize: LITTLE,
-        height: '0',
-        padding: '0',
-        position: 'relative',
-        transition: theme.transitions.create([
-            'border-color',
-            'background-color',
-            'box-shadow',
-        ]),
-        width: 'auto',
-    },
-}));
+import { LITTLE } from "../../utils/fontSize";
 
 const DashboardSearchButton = (props) => {
     return (
-    <>
-        <Autocomplete
-            disablePortal
-            options={props.data ?? []}
-            renderInput={(params) => (
-                <FormControl variant="standard">
-                    <SearchInput
-                        {...params}
-                        InputProps={{
-                            ...params.InputProps,
-                            endAdornment: ( <InputAdornment position="end"> <SearchIcon /> </InputAdornment> ),
-                            type: 'search',
-                        }}
-                        placeholder="Rechercher nom collaborateur par exemple"
-                    />
-                </FormControl>
-            )}
-            sx={{
-                backgroundColor: GREYBACK,
-                border: "none",
-                borderRadius: 50,
-                fontSize: MICROPLUS,
-                margin: "auto",
-                width: "100%",
-            }}
+        <CodeNektSearch
+            label={"Rechercher nom collaborateur par exemple"}
+            searchData={props.data}
+            width={"100%"}
         />
-    </>
     );
 };
 

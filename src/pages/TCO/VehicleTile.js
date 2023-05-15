@@ -7,7 +7,7 @@ import { BLACKCN, GREYBACK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import { LITTLE, LITTLE2, MICROPLUS } from "../../utils/fontSize";
 import CodenektButton from "../../Components/CodeNektButton";
 
-import SearchVehicle from "../../Components/SearchVehicle";
+import CodeNektSearch from "../../Components/CodeNektSearch";
 
 const VehicleTile = (props) => {
     return (
@@ -58,7 +58,11 @@ const VehicleTile = (props) => {
                     <Grid item xs={12} sm={12} md={12}
                         sx={{display: "flex", justifyContent: "center", flexDirection: "column"}}
                     >
-                        <SearchVehicle allVehicles={props.allVehicles} width={"60%"} />
+                        <CodeNektSearch
+                            label={"Véhicule"}
+                            searchData={props.allVehicles}
+                            width={"60%"}
+                        />
                     </Grid>
                 </Grid>
 
