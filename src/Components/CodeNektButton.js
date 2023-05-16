@@ -21,7 +21,7 @@ function CodenektButton(props) {
         style={{
             backgroundColor: bgcolor,
             background: props.gradient ? `linear-gradient(${props.dir}, ${props.left}, ${props.right})` : bgcolor,
-            border: "none",
+            border: props.border,
             borderColor: props.borderColor,
             borderRadius: '50px',
             boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
@@ -46,9 +46,10 @@ function CodenektButton(props) {
 
 CodenektButton.propTypes = {
     height: PropTypes.string,
-    bold: PropTypes.bool,
     black: PropTypes.bool,
     blue: PropTypes.bool,
+    bold: PropTypes.bool,
+    border: PropTypes.string,
     borderColor: PropTypes.string,
     color: PropTypes.string,
     dir: PropTypes.string,
@@ -71,9 +72,10 @@ CodenektButton.propTypes = {
 
 CodenektButton.defaultProps = {
     height: "1.3rem",
-    bold: false,
     black: false,
     blue: false,
+    bold: false,
+    border: "none",
     borderColor: "",
     color: BLACKCN,
     dir: "",
