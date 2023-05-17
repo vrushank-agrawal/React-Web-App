@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 
-import { BsThreeDots } from 'react-icons/bs';
-import { ImEye } from 'react-icons/im';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
-
 import { BLACKCN, BLUECN } from '../../utils/colors.js';
 import { IconButton, Menu, MenuItem, MenuList } from '@mui/material';
 import CodeNektTable from '../../Components/CodeNektTable.js';
 import { notifications as data } from '../utils/test-data.js';
+import { CodeNektEye, CodeNektThreeDots } from '../../Components/CodeNektIcons.js';
 
 const NotificationTableFontsize = "12px";
 const NotificationTableHeadersize = "10px";
@@ -20,7 +17,7 @@ const NotificationDropdownActions = () => {
 
     return (
         <>
-            <IconButton onClick={handleClick}> <BsThreeDots size={15} /> </IconButton>
+            <IconButton onClick={handleClick}> <CodeNektThreeDots size={15} /> </IconButton>
             <Menu
                 anchorEl={anchorEl}
                 keepMounted
@@ -67,7 +64,7 @@ const NotificationColumns = {
             render: (rowData) => {
                 return(
                 <>
-                    <IconButton> <ImEye size={15} /> </IconButton>
+                    <IconButton> <CodeNektEye size={15} /> </IconButton>
                     <NotificationDropdownActions />
                 </>
                 )

@@ -8,9 +8,9 @@ import { FONTSEMIBIG } from "../utils/fontSize";
 import { FONTBOLD } from "../utils/fonts";
 
 // Material UI imports
-import { FaRegEye } from "react-icons/fa";
 import { BLACKCN, WHITECN } from "../utils/colors";
 import { Stack } from "@mui/material";
+import { CodeNektEye } from "../Components/CodeNektIcons";
 
 const column = {
     names: [
@@ -30,7 +30,7 @@ const column = {
                             bold
                             borderColor={BLACKCN}
                             onPress={() => console.log("Button pressed")}
-                            startIcon={<FaRegEye size={12} />}
+                            startIcon={<CodeNektEye size={12} />}
                             title={"Voir le vehicule"}
                         />
                         <CodenektButton
@@ -38,7 +38,7 @@ const column = {
                             bold
                             color={WHITECN}
                             onPress={() => console.log("Button pressed")}
-                            startIcon={<FaRegEye size={12} />}
+                            startIcon={<CodeNektEye size={12} />}
                             title={"Voir le collaborateur"}
                         />
                     </Stack>

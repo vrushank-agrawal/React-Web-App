@@ -9,7 +9,7 @@ import CodenektButton from "../Components/CodeNektButton";
 import { ORANGEDARK, ORANGELIGHT } from "../utils/colors";
 
 // Material UI imports
-import { FaRegEye } from "react-icons/fa";
+import { CodeNektEye } from "../Components/CodeNektIcons";
 
 const column = {
     names: [
@@ -25,7 +25,7 @@ const column = {
                         orange
                         gradient dir={"to right"} left={ORANGEDARK} right={ORANGELIGHT}
                         onPress={() => console.log("Button pressed")}
-                        startIcon={<FaRegEye size={12} />}
+                        startIcon={<CodeNektEye size={12} />}
                         title={"VOIR LE SINISTRE"}
                     />
                 </>

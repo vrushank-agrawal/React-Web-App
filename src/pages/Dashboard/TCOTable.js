@@ -1,9 +1,9 @@
 import React from "react";
 import { Paper, Typography, Grid, Divider, Chip } from "@mui/material";
-import { FaRegEye } from "react-icons/fa";
 
 import { ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
+import { CodeNektEye } from "../../Components/CodeNektIcons";
 
 const TCOTableValueSize = "1.2rem";
 const TCOTableFontsize = "14px";
@@ -32,7 +32,7 @@ const TCOButton = () => {
         height={"fit-content"}
             margin={"1rem auto auto auto"}
             padding={"0.1rem 1rem"}
-            startIcon={<FaRegEye size={12}/>}
+            startIcon={<CodeNektEye size={12}/>}
             title={"VOIR LE COÛT PAR VÉHICULE"}
             // to="/TCO"
             width={"fit-content"}

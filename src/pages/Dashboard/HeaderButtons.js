@@ -1,13 +1,13 @@
 import React from "react";
 import { styled } from '@mui/material/styles';
 import { Grid, Autocomplete, TextField } from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
 
 // CodeNekt imports
 import CodeNektSearch from "../../Components/CodeNektSearch";
 import CodenektButton from "../../Components/CodeNektButton";
 import { GREYBACK, WHITECN } from "../../utils/colors";
 import { LITTLE } from "../../utils/fontSize";
+import { CodeNektAdd } from "../../Components/CodeNektIcons";
 
 const DashboardSearchButton = (props) => {
     return (
@@ -56,21 +56,21 @@ const HeaderButtons = (props) => {
             <Grid container spacing={3} direction="row">
                 <Grid item xs={12} sm={3} md={3}>
                     <DashboardHeaderButton
-                        startIcon={<AddIcon fontSize="small" color="white" />}
+                        startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"AJOUTER UN COLLABORATEUR"}
                         to={"./ajoutColab"}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={2.5}>
                     <DashboardHeaderButton
-                        startIcon={<AddIcon fontSize="small" color="white" />}
+                        startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"AJOUTER UN VÉHICULE"}
                         to={""}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={2.5}>
                     <DashboardHeaderButton
-                        startIcon={<AddIcon fontSize="small" color="white" />}
+                        startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"DECLARER UN SINISTRE"}
                         to={""}
                     />

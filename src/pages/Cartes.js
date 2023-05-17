@@ -8,8 +8,7 @@ import { FONTBOLD } from "../utils/fonts";
 import CodeNektTable from '../Components/CodeNektTable';
 
 // Material UI imports
-import { ImEye } from "react-icons/im";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { CodeNektDelete, CodeNektEye } from "../Components/CodeNektIcons";
 
 const column = {
     names: [
@@ -22,8 +21,8 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <IconButton> <ImEye size={15} /> </IconButton>
-                    <IconButton> <RiDeleteBin6Line size={15} /> </IconButton>
+                    <IconButton> <CodeNektEye size={15} /> </IconButton>
+                    <IconButton> <CodeNektDelete size={15} /> </IconButton>
                 </>
                 )}
         },

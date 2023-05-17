@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material";
-import { FaRegEye } from "react-icons/fa";
 
 import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
+import { CodeNektEye } from "../../Components/CodeNektIcons";
 
 const SinistreListItem = (props) => {
     return (
@@ -28,7 +28,7 @@ const SinistreButton = () => {
             padding={"0.2rem 1rem"}
             title={"VOIR TOUS LES SINISTRES"}
             width={"8.3rem"}
-            startIcon={<FaRegEye size={15} />}
+            startIcon={<CodeNektEye size={15} />}
             to="/claims"
         />
     )

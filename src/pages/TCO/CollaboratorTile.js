@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Divider, Chip, Grid, Typography, List, ListItem, Stack } from "@mui/material";
 import { BLACKCN, ORANGELIGHT } from "../../utils/colors";
-import { CgProfile } from "react-icons/cg";
+import { CodeNektProfile } from "../../Components/CodeNektIcons";
 import { MICRO } from "../../utils/fontSize";
 
 const TCOTableValueSize = "1.2rem";
@@ -95,7 +95,7 @@ const CollaboratorTile = (props) => {
                             <Grid item xs={12} sm={12} md={4}
                                 sx={{display: "flex", justifyContent: "center", flexDirection: "column"}}
                             >
-                                <CgProfile size={100} style={{margin: "0 auto"}}/>
+                                <CodeNektProfile size={100} style={{margin: "0 auto"}}/>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}
                                 sx={{display: "flex", justifyContent: "center", flexDirection: "column"}}

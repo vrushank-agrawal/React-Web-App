@@ -6,24 +6,14 @@ import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import "../css/CodeNektSidePanel.css"
 
 // Import Icons
-import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons/md';
 import LogoWhite from "../assets/svg/logo/logo_full.svg";
 
 // Import Menu Icons
-import { AiOutlineDashboard } from 'react-icons/ai';
-import { BsFillPersonFill } from 'react-icons/bs';
-import { IoCarSportSharp } from 'react-icons/io5';
-import { BsBellFill } from 'react-icons/bs';
-
-import { TiDocumentText } from 'react-icons/ti';
-import { AiOutlineEuroCircle } from 'react-icons/ai';
-import { BiLeaf } from 'react-icons/bi';
-import { GrMap } from 'react-icons/gr';
-import { AiOutlineQuestion } from 'react-icons/ai';
-
-import { IoSettings } from 'react-icons/io5';
-import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
 import { ORANGEDARK } from '../utils/colors';
+import { CodeNektBellFill, CodeNektCar, CodeNektDashboard,
+    CodeNektDocument, CodeNektEuro, CodeNektMap, CodeNektLeaf,
+    CodeNektPersonFill, CodeNektQuestion, CodeNektSettings,
+    CodeNektSignIn, CodeNektSignOut, CodeNektDoubleArrowRight, CodeNektDoubleArrowLeft } from './CodeNektIcons';
 
 function CodeNektSidePanel(props) {
     const { collapseSidebar, _, collapsed } = useProSidebar();
@@ -38,27 +28,27 @@ function CodeNektSidePanel(props) {
                         style={{float: "right"}}
                         onClick={() => collapseSidebar()}
                     >
-                        {collapsed  ? <MdKeyboardDoubleArrowRight /> : <MdKeyboardDoubleArrowLeft />}
+                        {collapsed  ? <CodeNektDoubleArrowRight /> : <CodeNektDoubleArrowLeft />}
                     </div>
                     <div className='CodeNektSidePanel__logo'>
                         <img src={LogoWhite} alt=''/>
                     </div>
 
-                    <MenuItem icon={<AiOutlineDashboard />} component={<Link to='/' />}> TABLEAU DE BORD </MenuItem>
-                    <MenuItem icon={<BsFillPersonFill />} component={<Link to='/collaborator' />}> COLLABORATEURS </MenuItem>
-                    <MenuItem icon={<IoCarSportSharp />} component={<Link to='/vehicles' />}> VEHICULES </MenuItem>
-                    <MenuItem icon={<BsBellFill />} component={<Link to='/notifications' />}> NOTIFICATIONS </MenuItem>
-                    <MenuItem icon={<FaSignInAlt />} component={<Link to='/claims' />}> SINISTRES </MenuItem>
+                    <MenuItem icon={<CodeNektDashboard />} component={<Link to='/' />}> TABLEAU DE BORD </MenuItem>
+                    <MenuItem icon={<CodeNektPersonFill />} component={<Link to='/collaborator' />}> COLLABORATEURS </MenuItem>
+                    <MenuItem icon={<CodeNektCar />} component={<Link to='/vehicles' />}> VEHICULES </MenuItem>
+                    <MenuItem icon={<CodeNektBellFill />} component={<Link to='/notifications' />}> NOTIFICATIONS </MenuItem>
+                    <MenuItem icon={<CodeNektSignIn />} component={<Link to='/claims' />}> SINISTRES </MenuItem>
 
-                    <MenuItem icon={<TiDocumentText />} component={<Link to='/cartes' />} > CARTES & BADGES </MenuItem>
-                    <MenuItem icon={<AiOutlineEuroCircle />} component={<Link to='/tco' />} > TCO </MenuItem>
-                    <MenuItem icon={<BiLeaf />} disabled> CONDUITE </MenuItem>
-                    <MenuItem icon={<GrMap />} disabled> GEOLOCALISATION </MenuItem>
-                    <MenuItem icon={<FaSignInAlt />} component={<Link to='/services' />}> SERVICES </MenuItem>
+                    <MenuItem icon={<CodeNektDocument />} component={<Link to='/cartes' />} > CARTES & BADGES </MenuItem>
+                    <MenuItem icon={<CodeNektEuro />} component={<Link to='/tco' />} > TCO </MenuItem>
+                    <MenuItem icon={<CodeNektLeaf />} disabled> CONDUITE </MenuItem>
+                    <MenuItem icon={<CodeNektMap />} disabled> GEOLOCALISATION </MenuItem>
+                    <MenuItem icon={<CodeNektSignIn />} component={<Link to='/services' />}> SERVICES </MenuItem>
 
-                    <MenuItem icon={<AiOutlineQuestion />}disabled> AIDE </MenuItem>
-                    <MenuItem icon={<IoSettings />} component={<Link to='/settings' />}> PARAMETRES </MenuItem>
-                    <MenuItem icon={<FaSignOutAlt />} component={<Link to='/signout' />}> DECONNEXION </MenuItem>
+                    <MenuItem icon={<CodeNektQuestion />}disabled> AIDE </MenuItem>
+                    <MenuItem icon={<CodeNektSettings />} component={<Link to='/settings' />}> PARAMETRES </MenuItem>
+                    <MenuItem icon={<CodeNektSignOut />} component={<Link to='/signout' />}> DECONNEXION </MenuItem>
                 </Menu>
             </Sidebar>
         </div>

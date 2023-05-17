@@ -1,18 +1,13 @@
 import React from "react";
-import CodeNektTable from "../Components/CodeNektTable";
-import CodenektButton from "../Components/CodeNektButton";
+import { IconButton } from "@mui/material";
 
 // Local imports
+import CodenektButton from "../Components/CodeNektButton";
+import CodeNektTable from "../Components/CodeNektTable";
 import { notifications as data } from "./utils/test-data";
 import { FONTSEMIBIG } from "../utils/fontSize";
 import { FONTBOLD } from "../utils/fonts";
-
-// Material UI imports
-import { ImEye } from "react-icons/im";
-import { BsCheckCircle } from "react-icons/bs";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { CiBellOn } from "react-icons/ci";
-import { IconButton } from "@mui/material";
+import { CodeNektEye, CodeNektBell, CodeNektCheckCircle, CodeNektDelete } from "../Components/CodeNektIcons";
 import { WHITECN } from "../utils/colors";
 
 const column = {
@@ -26,18 +21,18 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <IconButton> <ImEye size={15} /> </IconButton>
-                    <IconButton> <BsCheckCircle size={15} /> </IconButton>
+                    <IconButton> <CodeNektEye size={15} /> </IconButton>
+                    <IconButton> <CodeNektCheckCircle size={15} /> </IconButton>
                     <CodenektButton
                         blue
                         color={WHITECN}
                         onPress={() => console.log("Button pressed")} width={200}
                         padding={"0 0.1rem"}
                         size={10}
-                        startIcon={<CiBellOn size={12}/>}
+                        startIcon={<CodeNektBell size={12}/>}
                         title={"Relancer le collaborateur"}
                     />
-                    <IconButton> <RiDeleteBin6Line size={15} /> </IconButton>
+                    <IconButton> <CodeNektDelete size={15} /> </IconButton>
                 </>
                 )}
         },

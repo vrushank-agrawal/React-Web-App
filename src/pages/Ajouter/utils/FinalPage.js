@@ -2,9 +2,8 @@ import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
 import CodeNektButton from "../../../Components/CodeNektButton";
 import { ORANGE, WHITECN } from "../../../utils/colors";
-import { ImEye } from 'react-icons/im';
-import { BsChevronLeft } from 'react-icons/bs';
 import { MINIBIG } from "../../../utils/fontSize";
+import { CodeNektEye, CodeNektLeft } from "../../../Components/CodeNektIcons";
 
 const FinalPage = (props) => {
     return (
@@ -30,7 +29,7 @@ const FinalPage = (props) => {
                             color={WHITECN}
                             onClick={props.onClick}
                             padding={"1rem"}
-                            startIcon={<ImEye size={15} />}
+                            startIcon={<CodeNektEye size={15} />}
                             title={"Voir le "+ props.buttonTitle}
                             to={props.to}
                             width={"20%"}
@@ -41,7 +40,7 @@ const FinalPage = (props) => {
                             border={"1px solid" + ORANGE}
                             color={ORANGE}
                             padding={"1rem"}
-                            startIcon={<BsChevronLeft size={15} />}
+                            startIcon={<CodeNektLeft size={15} />}
                             title={"Retour au Tableau de bord"}
                             to={"/"}
                             width={"20%"}

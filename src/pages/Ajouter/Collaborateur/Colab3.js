@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
 import { Divider, MenuItem, Select } from "@mui/material";
-import { ImEye } from "react-icons/im";
 
 import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
@@ -9,6 +8,7 @@ import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import { categories } from "../../utils/CategorieDefinition";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
+import { CodeNektEye } from "../../../Components/CodeNektIcons";
 
 const Colab3FontSize = MICRO;
 
@@ -74,7 +74,7 @@ const CollaborateurTile = (props) => {
 
 const ViewDocument = (props) => {
     return (
-        <ImEye size={18} />
+        <CodeNektEye size={18} />
     );
 };
 
