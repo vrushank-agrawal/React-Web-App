@@ -25,7 +25,7 @@ const Circle = (props) => {
                 color={constants.color}
                 marginBottom={1}
             >
-                {props.number}
+                {props.image ? props.image: props.number}
             </Box>
         </Box>
     );

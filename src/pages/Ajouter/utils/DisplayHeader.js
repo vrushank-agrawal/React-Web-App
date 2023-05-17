@@ -38,9 +38,10 @@ const DisplayHeader = (props) => {
                         <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}>
                                 <Circle
-                                    number={index+1 === NbCircles ? <CheckBoxIcon /> : index+1}
-                                    text={props.text}
+                                    image={index+1 === NbCircles && <CheckBoxIcon />}
+                                    number={index+1}
                                     page={props.page}
+                                    text={props.text}
                                 />
                                 {/* {index !== NbCircles - 1 && <CircleDivider />} */}
                             </Grid>
@@ -53,7 +54,7 @@ const DisplayHeader = (props) => {
                     {[...Array(NbCircles)].map((_, index) => (
                         <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}
-                                sx={{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center"}}
+                                sx={{display: "flex", justifyContent: "center"}}
                             >
                                 <Typography
                                     color="textSecondary"
