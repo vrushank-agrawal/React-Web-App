@@ -11,6 +11,7 @@ import Colab3 from "./Colab3";
 import Colab4 from "./Colab4";
 import Colab5 from "./Colab5";
 import Colab6 from "./Colab6";
+import FinalPage from "../utils/FinalPage";
 
 const CirclesText = [
     "Recherche du collaborateur",
@@ -38,7 +39,7 @@ const AjouterCollaborateur = () => {
             </h1>
             <Paper elevation={3}
                 style={{
-                    height: "35rem",
+                    height: "37rem",
                     marginTop: "1rem",
                     padding: "1rem",
                     width: "70rem"
@@ -50,6 +51,7 @@ const AjouterCollaborateur = () => {
                 {step == 4 && <Colab4 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
                 {step == 5 && <Colab5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
                 {step == 6 && <Colab6 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
+                {step == 7 && <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={"../voir/collaborateur"} />}
             </Paper>
         </div>
     );

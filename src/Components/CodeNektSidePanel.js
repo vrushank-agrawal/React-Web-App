@@ -35,7 +35,7 @@ function CodeNektSidePanel(props) {
                     </div>
 
                     <MenuItem icon={<CodeNektDashboard />} component={<Link to='/' />}> TABLEAU DE BORD </MenuItem>
-                    <MenuItem icon={<CodeNektPersonFill />} component={<Link to='/collaborator' />}> COLLABORATEURS </MenuItem>
+                    <MenuItem icon={<CodeNektPersonFill />} component={<Link to='/collaborateur' />}> COLLABORATEURS </MenuItem>
                     <MenuItem icon={<CodeNektCar />} component={<Link to='/vehicles' />}> VEHICULES </MenuItem>
                     <MenuItem icon={<CodeNektBellFill />} component={<Link to='/notifications' />}> NOTIFICATIONS </MenuItem>
                     <MenuItem icon={<CodeNektSignIn />} component={<Link to='/claims' />}> SINISTRES </MenuItem>

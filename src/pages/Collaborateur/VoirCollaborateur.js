@@ -154,7 +154,7 @@ const CollaborateurHeader = (props) => {
                     padding={"0.8rem"}
                     startIcon={<BsChevronLeft size={15} />}
                     title={"Retour a la liste des collaborateurs"}
-                    to={"/collaborateurs"}
+                    to={"/collaborateur"}
                     width={"fit-content"}
                 />
             </Grid>

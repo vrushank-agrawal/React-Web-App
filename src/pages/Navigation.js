@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "../pages/Dashboard";
-import Collaborator from "../pages/Collaborator";
+import Collaborator from "./Collaborateur";
 import Vehicles from "../pages/Vehicles";
 import Notifications from "../pages/Notifications";
 import Claims from "../pages/Claims";
@@ -11,6 +11,9 @@ import TCO from "../pages/TCO";
 import Services from "../pages/Services";
 import Settings from "../pages/Settings";
 import Signout from "../pages/Signout";
+
+// ----------------- Voir Pages -----------------
+import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 
 // ----------------- Ajouter -----------------
 import AjouterCollaborateur from "./Ajouter/Collaborateur/AjouterCollaborateur";
@@ -28,9 +31,9 @@ function Navigation() {
             <Routes>
                 <Route exact path="/" element={<Dashboard />} />
 
-                <Route exact path="/collaborator" element={<Collaborator />} />
+                <Route exact path="/collaborateur" element={<Collaborator />} />
                 <Route exact path="/ajoutColab" element={<AjouterCollaborateur />} />
-
+                <Route exact path="/voir/collaborateur" element={<VoirCollaborateur />} />
                 <Route exact path="/vehicles" element={<Vehicles />} />
                 <Route exact path="/notifications" element={<Notifications />} />
                 <Route exact path="/claims" element={<Claims />} />

@@ -40,6 +40,7 @@ const column = {
                             onPress={() => console.log("Button pressed")}
                             startIcon={<CodeNektEye size={12} />}
                             title={"Voir le collaborateur"}
+                            to={"/voir/collaborateur"}
                         />
                     </Stack>
                 </>
