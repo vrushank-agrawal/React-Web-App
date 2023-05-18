@@ -19,12 +19,13 @@ function CodenektButton(props) {
         component={Link}
         onClick={props.onClick}
         style={{
+            alignSelf: props.alignSelf,
             backgroundColor: bgcolor,
             background: props.gradient ? `linear-gradient(${props.dir}, ${props.left}, ${props.right})` : bgcolor,
             border: props.border,
             borderColor: props.borderColor,
             borderRadius: '50px',
-            boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
+            boxShadow: props.boxShadow,
             color:  props.color,
             fontFamily: FONTREGULAR,
             fontSize: props.size,
@@ -45,16 +46,18 @@ function CodenektButton(props) {
 }
 
 CodenektButton.propTypes = {
-    height: PropTypes.string,
+    alignSelf: PropTypes.string,
     black: PropTypes.bool,
     blue: PropTypes.bool,
     bold: PropTypes.bool,
     border: PropTypes.string,
     borderColor: PropTypes.string,
+    boxShadow: PropTypes.string,
     color: PropTypes.string,
     dir: PropTypes.string,
     gradient: PropTypes.bool,
     grey: PropTypes.bool,
+    height: PropTypes.string,
     left: PropTypes.string,
     light: PropTypes.bool,
     margin: PropTypes.string,
@@ -71,12 +74,14 @@ CodenektButton.propTypes = {
 };
 
 CodenektButton.defaultProps = {
+    alignSelf: "center",
     height: "1.3rem",
     black: false,
     blue: false,
     bold: false,
     border: "none",
     borderColor: "",
+    boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
     color: BLACKCN,
     dir: "",
     gradient: false,

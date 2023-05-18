@@ -3,17 +3,19 @@ import AddIcon from '@mui/icons-material/Add';
 
 const DEFAULT_MUI_SIZE = "medium";
 
-export const CodeNektAdd = (props) => {
-    return (
-        <AddIcon
-            fontSize={props.size ?? DEFAULT_MUI_SIZE}
-            color={props.color}
-        />
-    )
-}
+// export const CodeNektAdd = (props) => {
+//     return (
+//         <AddIcon
+//             fontSize={props.size ?? DEFAULT_MUI_SIZE}
+//             color={props.color}
+//         />
+//     )
+// }
 
 // -------------------- React Icons --------------------
 
+import { MdAdd } from "react-icons/md";
+import { GrFormEdit } from "react-icons/gr";
 import { ImEye } from "react-icons/im";
 import { BsCheckCircle } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -35,6 +37,18 @@ import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
 import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons/md';
 
 const DEFAULT_SIZE = 15;
+
+export const CodeNektAdd = (props) => {
+    return (
+        <MdAdd size={props.size ?? DEFAULT_SIZE} />
+    )
+}
+
+export const CodeNektEdit = (props) => {
+    return (
+        <GrFormEdit size={props.size ?? DEFAULT_SIZE} />
+    )
+}
 
 export const CodeNektDoubleArrowRight = (props) => {
     return (
