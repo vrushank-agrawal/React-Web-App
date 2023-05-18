@@ -125,7 +125,7 @@ const DocumentsTile = (props) => {
                     <Divider style={{ backgroundColor: ORANGE, }} />
                     <DocumentsTileField text={"Permis"} isDocumentUploaded={props.isDocumentUploaded} />
                 </Grid>
-                {props.isDocumentUploaded &&
+                {!props.isDocumentUploaded &&
                 <Grid item xs={12} sm={12} md={12} >
                     <RappelButton onClick={props.onClick} />
                 </Grid>}
