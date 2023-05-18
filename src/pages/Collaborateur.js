@@ -11,6 +11,7 @@ import { FONTBOLD } from "../utils/fonts";
 import { BLACKCN, WHITECN } from "../utils/colors";
 import { Stack } from "@mui/material";
 import { CodeNektEye } from "../Components/CodeNektIcons";
+import { LinkVoirCollab } from "../Components/CodeNektPageLinks";
 
 const column = {
     names: [
@@ -40,7 +41,7 @@ const column = {
                             onPress={() => console.log("Button pressed")}
                             startIcon={<CodeNektEye size={12} />}
                             title={"Voir le collaborateur"}
-                            to={"/voir/collaborateur"}
+                            to={LinkVoirCollab}
                         />
                     </Stack>
                 </>

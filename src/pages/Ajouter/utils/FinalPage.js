@@ -4,6 +4,7 @@ import CodeNektButton from "../../../Components/CodeNektButton";
 import { ORANGE, WHITECN } from "../../../utils/colors";
 import { MINIBIG } from "../../../utils/fontSize";
 import { CodeNektEye, CodeNektLeft } from "../../../Components/CodeNektIcons";
+import { LinkDashboard } from "../../../Components/CodeNektPageLinks";
 
 const FinalPage = (props) => {
     return (
@@ -42,7 +43,7 @@ const FinalPage = (props) => {
                             padding={"1rem"}
                             startIcon={<CodeNektLeft size={15} />}
                             title={"Retour au Tableau de bord"}
-                            to={"/"}
+                            to={LinkDashboard}
                             width={"20%"}
                         />
                     </Grid>

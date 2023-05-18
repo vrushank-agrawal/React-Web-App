@@ -4,6 +4,7 @@ import { Paper, Typography, Grid, Divider, Chip } from "@mui/material";
 import { ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
 import { CodeNektEye } from "../../Components/CodeNektIcons";
+import { LinkTCO } from "../../Components/CodeNektPageLinks";
 
 const TCOTableValueSize = "1.2rem";
 const TCOTableFontsize = "14px";
@@ -34,7 +35,7 @@ const TCOButton = () => {
             padding={"0.1rem 1rem"}
             startIcon={<CodeNektEye size={12}/>}
             title={"VOIR LE COÛT PAR VÉHICULE"}
-            // to="/TCO"
+            to={LinkTCO}
             width={"fit-content"}
         />
     )

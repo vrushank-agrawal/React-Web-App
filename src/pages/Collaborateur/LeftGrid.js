@@ -5,6 +5,7 @@ import { BLACKCN, ORANGELIGHT, ORANGE, WHITECN, BLUECN } from "../../utils/color
 import { LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
 import { CodeNektProfile, CodeNektEye, CodeNektAdd, CodeNektEdit } from "../../Components/CodeNektIcons";
 import CodeNektButton from "../../Components/CodeNektButton";
+import { LinkSinistre } from "../../Components/CodeNektPageLinks";
 
 const FontSize = LITTLE2;
 const IconRadius = "1rem";
@@ -194,7 +195,7 @@ const SinistreTile = (props) => {
                 bgcolor={WHITECN}
                 boxShadow={"none"}
                 title="Voir toutes les sinistres"
-                to={"/Claims"}
+                to={LinkSinistre}
             />
         </Grid>
     </Paper>

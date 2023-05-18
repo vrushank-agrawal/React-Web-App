@@ -10,10 +10,32 @@ import LogoWhite from "../assets/svg/logo/logo_full.svg";
 
 // Import Menu Icons
 import { ORANGEDARK } from '../utils/colors';
-import { CodeNektBellFill, CodeNektCar, CodeNektDashboard,
-    CodeNektDocument, CodeNektEuro, CodeNektMap, CodeNektLeaf,
-    CodeNektPersonFill, CodeNektQuestion, CodeNektSettings,
-    CodeNektSignIn, CodeNektSignOut, CodeNektDoubleArrowRight, CodeNektDoubleArrowLeft } from './CodeNektIcons';
+import {
+    CodeNektBellFill,
+    CodeNektCar,
+    CodeNektDashboard,
+    CodeNektDocument,
+    CodeNektEuro,
+    CodeNektMap,
+    CodeNektLeaf,
+    CodeNektPersonFill,
+    CodeNektQuestion,
+    CodeNektSettings,
+    CodeNektSignIn,
+    CodeNektSignOut,
+    CodeNektDoubleArrowRight,
+    CodeNektDoubleArrowLeft } from './CodeNektIcons';
+
+import { LinkServices,
+    LinkCartes,
+    LinkDashboard,
+    LinkCollaborateur,
+    LinkVehicule,
+    LinkNotifications,
+    LinkSinistre,
+    LinkTCO,
+    LinkSettings,
+    LinkSignout } from './CodeNektPageLinks';
 
 function CodeNektSidePanel(props) {
     const { collapseSidebar, _, collapsed } = useProSidebar();
@@ -34,21 +56,21 @@ function CodeNektSidePanel(props) {
                         <img src={LogoWhite} alt=''/>
                     </div>
 
-                    <MenuItem icon={<CodeNektDashboard />} component={<Link to='/' />}> TABLEAU DE BORD </MenuItem>
-                    <MenuItem icon={<CodeNektPersonFill />} component={<Link to='/collaborateur' />}> COLLABORATEURS </MenuItem>
-                    <MenuItem icon={<CodeNektCar />} component={<Link to='/vehicles' />}> VEHICULES </MenuItem>
-                    <MenuItem icon={<CodeNektBellFill />} component={<Link to='/notifications' />}> NOTIFICATIONS </MenuItem>
-                    <MenuItem icon={<CodeNektSignIn />} component={<Link to='/claims' />}> SINISTRES </MenuItem>
+                    <MenuItem icon={<CodeNektDashboard />} component={<Link to={LinkDashboard} />}> TABLEAU DE BORD </MenuItem>
+                    <MenuItem icon={<CodeNektPersonFill />} component={<Link to={LinkCollaborateur} />}> COLLABORATEURS </MenuItem>
+                    <MenuItem icon={<CodeNektCar />} component={<Link to={LinkVehicule} />}> VEHICULES </MenuItem>
+                    <MenuItem icon={<CodeNektBellFill />} component={<Link to={LinkNotifications} />}> NOTIFICATIONS </MenuItem>
+                    <MenuItem icon={<CodeNektSignIn />} component={<Link to={LinkSinistre} />}> SINISTRES </MenuItem>
 
-                    <MenuItem icon={<CodeNektDocument />} component={<Link to='/cartes' />} > CARTES & BADGES </MenuItem>
-                    <MenuItem icon={<CodeNektEuro />} component={<Link to='/tco' />} > TCO </MenuItem>
+                    <MenuItem icon={<CodeNektDocument />} component={<Link to={LinkCartes} />} > CARTES & BADGES </MenuItem>
+                    <MenuItem icon={<CodeNektEuro />} component={<Link to={LinkTCO} />} > TCO </MenuItem>
                     <MenuItem icon={<CodeNektLeaf />} disabled> CONDUITE </MenuItem>
                     <MenuItem icon={<CodeNektMap />} disabled> GEOLOCALISATION </MenuItem>
-                    <MenuItem icon={<CodeNektSignIn />} component={<Link to='/services' />}> SERVICES </MenuItem>
+                    <MenuItem icon={<CodeNektSignIn />} component={<Link to={LinkServices} />}> SERVICES </MenuItem>
 
                     <MenuItem icon={<CodeNektQuestion />}disabled> AIDE </MenuItem>
-                    <MenuItem icon={<CodeNektSettings />} component={<Link to='/settings' />}> PARAMETRES </MenuItem>
-                    <MenuItem icon={<CodeNektSignOut />} component={<Link to='/signout' />}> DECONNEXION </MenuItem>
+                    <MenuItem icon={<CodeNektSettings />} component={<Link to={LinkSettings} />}> PARAMETRES </MenuItem>
+                    <MenuItem icon={<CodeNektSignOut />} component={<Link to={LinkSignout} />}> DECONNEXION </MenuItem>
                 </Menu>
             </Sidebar>
         </div>

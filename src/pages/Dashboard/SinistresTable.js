@@ -5,6 +5,7 @@ import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material"
 import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
 import { CodeNektEye } from "../../Components/CodeNektIcons";
+import { LinkSinistre } from "../../Components/CodeNektPageLinks";
 
 const SinistreListItem = (props) => {
     return (
@@ -29,7 +30,7 @@ const SinistreButton = () => {
             title={"VOIR TOUS LES SINISTRES"}
             width={"8.3rem"}
             startIcon={<CodeNektEye size={15} />}
-            to="/claims"
+            to={LinkSinistre}
         />
     )
 }

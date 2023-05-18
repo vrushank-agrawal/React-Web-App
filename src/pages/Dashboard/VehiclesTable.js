@@ -6,6 +6,7 @@ import { FONTSEMIBIG } from '../../utils/fontSize';
 import { BLACKCN, BLUECN, ORANGEDARK, ORANGELIGHT, WHITECN, GREENCN } from '../../utils/colors';
 import CodenektButton from '../../Components/CodeNektButton';
 import { CodeNektEye } from '../../Components/CodeNektIcons';
+import { LinkVehicule } from '../../Components/CodeNektPageLinks';
 
 const VehicleTableValueSize = "1.2rem";
 const VehicleTableFontsize = "14px";
@@ -52,7 +53,7 @@ const VehiclesButton = () => {
             padding={"0.1rem 1rem"}
             startIcon={<CodeNektEye size={12}/>}
             title={"VOIR TOUS LES VÉHICULES"}
-            to="/vehicles"
+            to={LinkVehicule}
             width={"fit-content"}
         />
     )

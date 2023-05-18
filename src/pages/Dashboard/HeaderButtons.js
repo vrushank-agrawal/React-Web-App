@@ -8,6 +8,7 @@ import CodenektButton from "../../Components/CodeNektButton";
 import { GREYBACK, WHITECN } from "../../utils/colors";
 import { LITTLE } from "../../utils/fontSize";
 import { CodeNektAdd } from "../../Components/CodeNektIcons";
+import { LinkAjoutCollab } from "../../Components/CodeNektPageLinks";
 
 const DashboardSearchButton = (props) => {
     return (
@@ -58,7 +59,7 @@ const HeaderButtons = (props) => {
                     <DashboardHeaderButton
                         startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"AJOUTER UN COLLABORATEUR"}
-                        to={"./ajoutColab"}
+                        to={LinkAjoutCollab}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={2.5}>

@@ -12,6 +12,7 @@ import { CodeNektAdd, CodeNektDelete, CodeNektEdit, CodeNektEye, CodeNektPersonF
 import { CollaboratorTile, DocumentsTile, SinistreTile } from "./LeftGrid";
 import { HistoryTile, VehiculeTile } from "./RightGrid";
 import { MEGABIG } from "../../utils/fontSize";
+import { LinkCollaborateur } from "../../Components/CodeNektPageLinks";
 
 const FontSize = LITTLE2;
 
@@ -154,7 +155,7 @@ const CollaborateurHeader = (props) => {
                     padding={"0.8rem"}
                     startIcon={<BsChevronLeft size={15} />}
                     title={"Retour a la liste des collaborateurs"}
-                    to={"/collaborateur"}
+                    to={LinkCollaborateur}
                     width={"fit-content"}
                 />
             </Grid>

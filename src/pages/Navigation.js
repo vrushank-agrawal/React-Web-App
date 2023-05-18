@@ -18,6 +18,21 @@ import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 // ----------------- Ajouter -----------------
 import AjouterCollaborateur from "./Ajouter/Collaborateur/AjouterCollaborateur";
 
+import {
+    LinkSinistre,
+    LinkVehicule,
+    LinkCollaborateur,
+    LinkDashboard,
+    LinkNotifications,
+    LinkCartes,
+    LinkTCO,
+    LinkServices,
+    LinkSettings,
+    LinkSignout,
+    LinkAjoutCollab,
+    LinkVoirCollab,
+} from "../Components/CodeNektPageLinks.js";
+
 function Navigation() {
     return (
     <>
@@ -29,19 +44,18 @@ function Navigation() {
             }}
         >
             <Routes>
-                <Route exact path="/" element={<Dashboard />} />
-
-                <Route exact path="/collaborateur" element={<Collaborator />} />
-                <Route exact path="/ajoutColab" element={<AjouterCollaborateur />} />
-                <Route exact path="/voir/collaborateur" element={<VoirCollaborateur />} />
-                <Route exact path="/vehicles" element={<Vehicles />} />
-                <Route exact path="/notifications" element={<Notifications />} />
-                <Route exact path="/claims" element={<Claims />} />
-                <Route exact path="/cartes" element={<Cartes />} />
-                <Route exact path="/tco" element={<TCO />} />
-                <Route exact path="/services" element={<Services />} />
-                <Route exact path="/settings" element={<Settings />} />
-                <Route exact path="/signout" element={<Signout />} />
+                <Route exact path={LinkDashboard} element={<Dashboard />} />
+                <Route exact path={LinkCollaborateur} element={<Collaborator />} />
+                <Route exact path={LinkAjoutCollab} element={<AjouterCollaborateur />} />
+                <Route exact path={LinkVoirCollab} element={<VoirCollaborateur />} />
+                <Route exact path={LinkVehicule} element={<Vehicles />} />
+                <Route exact path={LinkNotifications} element={<Notifications />} />
+                <Route exact path={LinkSinistre} element={<Claims />} />
+                <Route exact path={LinkCartes} element={<Cartes />} />
+                <Route exact path={LinkTCO} element={<TCO />} />
+                <Route exact path={LinkServices} element={<Services />} />
+                <Route exact path={LinkSettings} element={<Settings />} />
+                <Route exact path={LinkSignout} element={<Signout />} />
             </Routes>
         </div>
     </main>
