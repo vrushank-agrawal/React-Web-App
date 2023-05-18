@@ -30,7 +30,7 @@ const DatePickerTheme = createTheme({
 });
 
 const ChooseDate = (props) => {
-    const [selectedDate, setSelectedDate] = React.useState("");
+    const [selectedDate, setSelectedDate] = React.useState(null);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
