@@ -17,10 +17,12 @@ export const LinkSignout = "/signout"
 // Ajouter Pages
 // ---------------------------------
 
-export const LinkAjoutCollab = "/ajoutColab"
+export const LinkAjouter = "/ajouter"
+export const LinkAjoutCollab = "/collaborateur/ajouter"
 
 // ---------------------------------
 // Voir Pages
 // ---------------------------------
 
-export const LinkVoirCollab = "voir/collaborateur"
+export const LinkVoir = "/voir"
+export const LinkVoirCollab = "/collaborateur/voir"

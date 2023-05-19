@@ -12,7 +12,7 @@ import Colab4 from "./Colab4";
 import Colab5 from "./Colab5";
 import Colab6 from "./Colab6";
 import FinalPage from "../utils/FinalPage";
-import { LinkVoirCollab } from "../../../Components/CodeNektPageLinks";
+import { LinkVoir, LinkVoirCollab } from "../../../Components/CodeNektPageLinks";
 
 const CirclesText = [
     "Recherche du collaborateur",
@@ -52,7 +52,7 @@ const AjouterCollaborateur = () => {
                 {step == 4 && <Colab4 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
                 {step == 5 && <Colab5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
                 {step == 6 && <Colab6 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 7 && <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={"../" + LinkVoirCollab} />}
+                {step == 7 && <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={LinkVoirCollab} />}
             </Paper>
         </div>
     );
