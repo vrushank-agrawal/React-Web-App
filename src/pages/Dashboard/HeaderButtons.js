@@ -5,10 +5,9 @@ import { Grid, Autocomplete, TextField } from "@mui/material";
 // CodeNekt imports
 import CodeNektSearch from "../../Components/CodeNektSearch";
 import CodenektButton from "../../Components/CodeNektButton";
-import { GREYBACK, WHITECN } from "../../utils/colors";
-import { LITTLE } from "../../utils/fontSize";
+import { WHITECN } from "../../utils/colors";
 import { CodeNektAdd } from "../../Components/CodeNektIcons";
-import { LinkAjoutCollab } from "../../Components/CodeNektPageLinks";
+import { LinkAjoutCollab, LinkAjoutVehicule } from "../../Components/CodeNektPageLinks";
 
 const DashboardSearchButton = (props) => {
     return (
@@ -66,7 +65,7 @@ const HeaderButtons = (props) => {
                     <DashboardHeaderButton
                         startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"AJOUTER UN VÉHICULE"}
-                        to={""}
+                        to={LinkAjoutVehicule}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={2.5}>

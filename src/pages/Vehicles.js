@@ -1,14 +1,17 @@
 import React from 'react';
-import { IconButton } from '@mui/material';
+import { Grid, IconButton } from '@mui/material';
 
 // Local imports
 import { vehicles as data } from "./utils/test-data";
-import { FONTSEMIBIG } from "../utils/fontSize";
+import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
 import { FONTBOLD } from "../utils/fonts";
 import CodeNektTable from '../Components/CodeNektTable';
+import { BLACKCN, WHITECN } from '../utils/colors';
 
 // import MUI icons
-import { CodeNektDelete, CodeNektEye } from '../Components/CodeNektIcons';
+import { CodeNektAdd, CodeNektDelete, CodeNektEye } from '../Components/CodeNektIcons';
+import CodenektButton from '../Components/CodeNektButton';
+import { LinkAjoutVehicule } from '../Components/CodeNektPageLinks';
 
 const column = {
     names: [
@@ -35,9 +38,22 @@ const column = {
 function Vehicles() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-        <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
-            Vehicles
-        </h1>
+        <Grid container spacing={2} direction={"row"}>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+                <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
+                    {"liste des véhicules".toLocaleUpperCase()}
+                </h1>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{display: "flex", justifyContent: "right"}}>
+                <CodenektButton blue
+                    color={WHITECN}
+                    size={LITTLE2}
+                    startIcon={<CodeNektAdd size={15} />}
+                    title={"Ajouter un véhicule"}
+                    to={LinkAjoutVehicule}
+                />
+            </Grid>
+        </Grid>
         <CodeNektTable
             column={column}
             data={data}
