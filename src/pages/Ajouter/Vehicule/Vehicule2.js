@@ -273,7 +273,7 @@ const Vehicule2 = (props) => {
     }
 
     const onComplete = () => {
-        props.onComplete(2);
+        props.onComplete(3);
     }
 
     const onPrevious = () => {
