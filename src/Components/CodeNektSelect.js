@@ -18,6 +18,7 @@ const CodeNektSelect = (props) => {
             sx={{
                 backgroundColor: props.backgroundColor,
                 fontSize: props.fontSize,
+                height: props.height,
                 margin: props.margin,
                 '& svg': {
                     color: ORANGELIGHT,

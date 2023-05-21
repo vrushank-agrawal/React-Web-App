@@ -17,6 +17,7 @@ import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 
 // ----------------- Ajouter -----------------
 import AjouterCollaborateur from "./Ajouter/Collaborateur/AjouterCollaborateur";
+import AjouterVehicule from "./Ajouter/Vehicule/AjouterVehicule";
 
 import {
     LinkSinistre,
@@ -29,7 +30,10 @@ import {
     LinkServices,
     LinkSettings,
     LinkSignout,
+
     LinkAjoutCollab,
+    LinkAjoutVehicule,
+
     LinkVoirCollab,
 } from "../Components/CodeNektPageLinks.js";
 
@@ -45,10 +49,14 @@ function Navigation() {
         >
             <Routes>
                 <Route exact path={LinkDashboard} element={<Dashboard />} />
+
                 <Route exact path={LinkCollaborateur} element={<Collaborator />} />
                 <Route exact path={LinkAjoutCollab} element={<AjouterCollaborateur />} />
                 <Route exact path={LinkVoirCollab} element={<VoirCollaborateur />} />
+
                 <Route exact path={LinkVehicule} element={<Vehicles />} />
+                <Route exact path={LinkAjoutVehicule} element={<AjouterVehicule />} />
+
                 <Route exact path={LinkNotifications} element={<Notifications />} />
                 <Route exact path={LinkSinistre} element={<Claims />} />
                 <Route exact path={LinkCartes} element={<Cartes />} />
