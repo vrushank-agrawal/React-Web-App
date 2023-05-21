@@ -40,8 +40,9 @@ const ChooseDate = (props) => {
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
                 <CodeNektDatePicker
-                    value={selectedDate}
+                    theme={DatePickerTheme}
                     onChange={handleDateChange}
+                    value={selectedDate}
                 />
             </Grid>
         </Grid>
