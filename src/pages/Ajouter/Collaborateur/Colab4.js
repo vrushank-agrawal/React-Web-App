@@ -1,33 +1,15 @@
 
 import React from "react";
-import { Grid, Typography, TextField, createTheme, ThemeProvider } from "@mui/material";
-
-// Date picker imports
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { Grid, Typography } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
 import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYBACK, GREYTEXT2, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
-import { BIG, LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
+import { BLACKCN, GREYTEXT2, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
+import { LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
 import { TCOVehicles as colabData } from "../../utils/TCO-test-data";
 import CodenektButton from "../../../Components/CodeNektButton";
-
-const DatePickerTheme = createTheme({
-    components: {
-        MuiInputBase: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: GREYBACK,
-                    fontSize: LITTLE2,
-                    height: "2rem",
-                },
-            },
-        },
-    },
-});
+import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
 const ChooseDate = (props) => {
     const [selectedDate, setSelectedDate] = React.useState(null);
@@ -44,18 +26,10 @@ const ChooseDate = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <ThemeProvider theme={DatePickerTheme}>
-                        <DatePicker
-                            onChange={handleDateChange}
-                            renderInput={(params) => <TextField {...params} />}
-                            style={{
-                                height: "1rem",
-                            }}
-                            value={selectedDate}
-                        />
-                    </ThemeProvider>
-                </LocalizationProvider>
+                <CodeNektDatePicker
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                />
             </Grid>
         </Grid>
     );
