@@ -14,8 +14,7 @@ const HeaderContainer = styled(Paper)(({ theme }) => ({
     boxShadow: 'none',
     display: 'flex',
     justifyContent: 'center',
-    marginTop: theme.spacing(2),
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
 }));
 
 const CircleDivider = styled(Divider)({
