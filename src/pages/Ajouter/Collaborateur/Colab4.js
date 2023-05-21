@@ -1,15 +1,28 @@
-
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, createTheme } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
 import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
+import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
 import { LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
 import { TCOVehicles as colabData } from "../../utils/TCO-test-data";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+
+const DatePickerTheme = createTheme({
+    components: {
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: GREYBACK,
+                    fontSize: LITTLE2,
+                    height: "2rem",
+                },
+            },
+        },
+    },
+});
 
 const ChooseDate = (props) => {
     const [selectedDate, setSelectedDate] = React.useState(null);
