@@ -18,6 +18,7 @@ import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 // ----------------- Ajouter -----------------
 import AjouterCollaborateur from "./Ajouter/Collaborateur/AjouterCollaborateur";
 import AjouterVehicule from "./Ajouter/Vehicule/AjouterVehicule";
+import AjouterSinistre from "./Ajouter/Sinistre/AjouterSinistre";
 
 import {
     LinkSinistre,
@@ -33,8 +34,11 @@ import {
 
     LinkAjoutCollab,
     LinkAjoutVehicule,
+    LinkAjoutSinistre,
 
     LinkVoirCollab,
+    LinkVoirVehicule,
+    LinkVoirSinistre,
 } from "../Components/CodeNektPageLinks.js";
 
 function Navigation() {
@@ -57,8 +61,10 @@ function Navigation() {
                 <Route exact path={LinkVehicule} element={<Vehicles />} />
                 <Route exact path={LinkAjoutVehicule} element={<AjouterVehicule />} />
 
-                <Route exact path={LinkNotifications} element={<Notifications />} />
                 <Route exact path={LinkSinistre} element={<Claims />} />
+                <Route exact path={LinkAjoutSinistre} element={<AjouterSinistre />} />
+
+                <Route exact path={LinkNotifications} element={<Notifications />} />
                 <Route exact path={LinkCartes} element={<Cartes />} />
                 <Route exact path={LinkTCO} element={<TCO />} />
                 <Route exact path={LinkServices} element={<Services />} />
