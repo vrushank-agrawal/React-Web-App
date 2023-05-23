@@ -1,14 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Grid } from "@mui/material";
 import { IconButton } from '@mui/material';
 
 // Local imports
 import { cartes as data } from "./utils/test-data";
-import { FONTSEMIBIG } from "../utils/fontSize";
+import { WHITECN } from "../utils/colors";
+import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
 import { FONTBOLD } from "../utils/fonts";
+import { CodeNektDelete, CodeNektEye, CodeNektAdd } from "../Components/CodeNektIcons";
+import { LinkAjoutCarte } from "../Components/CodeNektPageLinks";
 import CodeNektTable from '../Components/CodeNektTable';
-
-// Material UI imports
-import { CodeNektDelete, CodeNektEye } from "../Components/CodeNektIcons";
+import CodenektButton from "../Components/CodeNektButton";
+import { LinkVoirCarte } from "../Components/CodeNektPageLinks";
 
 const column = {
     names: [
@@ -21,7 +25,7 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <IconButton> <CodeNektEye size={15} /> </IconButton>
+                    <Link to={LinkVoirCarte}> <IconButton> <CodeNektEye size={15} /> </IconButton> </Link>
                     <IconButton> <CodeNektDelete size={15} /> </IconButton>
                 </>
                 )}
@@ -32,9 +36,22 @@ const column = {
 function Cartes () {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-        <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
-            LISTE DES CARTES ET BADGES
-        </h1>
+        <Grid container spacing={2} direction={"row"}>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+                <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
+                    {"liste des cartes et badges".toLocaleUpperCase()}
+                </h1>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{display: "flex", justifyContent: "right"}}>
+                <CodenektButton blue
+                    color={WHITECN}
+                    size={LITTLE2}
+                    startIcon={<CodeNektAdd size={15} />}
+                    title={"Ajouter une carte ou un badge"}
+                    to={LinkAjoutCarte}
+                />
+            </Grid>
+        </Grid>
         <CodeNektTable
             column={column}
             data={data}

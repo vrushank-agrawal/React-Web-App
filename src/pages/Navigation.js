@@ -15,10 +15,14 @@ import Signout from "../pages/Signout";
 // ----------------- Voir Pages -----------------
 import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 
+
+import VoirCarte from "./Carte/VoirCarte";
+
 // ----------------- Ajouter -----------------
 import AjouterCollaborateur from "./Ajouter/Collaborateur/AjouterCollaborateur";
 import AjouterVehicule from "./Ajouter/Vehicule/AjouterVehicule";
 import AjouterSinistre from "./Ajouter/Sinistre/AjouterSinistre";
+import AjouterCarte from "./Ajouter/Carte/AjouterCarte";
 
 import {
     LinkSinistre,
@@ -35,10 +39,12 @@ import {
     LinkAjoutCollab,
     LinkAjoutVehicule,
     LinkAjoutSinistre,
+    LinkAjoutCarte,
 
     LinkVoirCollab,
     LinkVoirVehicule,
     LinkVoirSinistre,
+    LinkVoirCarte,
 } from "../Components/CodeNektPageLinks.js";
 
 function Navigation() {
@@ -65,7 +71,11 @@ function Navigation() {
                 <Route exact path={LinkAjoutSinistre} element={<AjouterSinistre />} />
 
                 <Route exact path={LinkNotifications} element={<Notifications />} />
+
                 <Route exact path={LinkCartes} element={<Cartes />} />
+                <Route exact path={LinkAjoutCarte} element={<AjouterCarte />} />
+                <Route exact path={LinkVoirCarte} element={<VoirCarte />} />
+
                 <Route exact path={LinkTCO} element={<TCO />} />
                 <Route exact path={LinkServices} element={<Services />} />
                 <Route exact path={LinkSettings} element={<Settings />} />
