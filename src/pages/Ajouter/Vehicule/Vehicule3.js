@@ -86,7 +86,7 @@ const FileUploadField = (props) => {
     };
 
     return (
-    <Grid container spacing={1.5} direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+    <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
         <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
             <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                 {props.text}
@@ -104,7 +104,7 @@ const FileUploadField = (props) => {
 
 const NumeroField = (props) => {
     return (
-        <Grid container spacing={1.5} direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+        <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
             <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                     {props.text}
@@ -119,7 +119,7 @@ const NumeroField = (props) => {
 
 const CoutSelectField = (props) => {
     return (
-        <Grid container spacing={1.5} direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+        <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
             <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                     {props.text}
@@ -138,7 +138,7 @@ const CoutSelectField = (props) => {
 
 const FileTile = (props) => {
     return (
-        <Paper elevation={3} style={{ marginTop: "0.5rem", padding: "1rem" }}>
+        <Paper elevation={3} style={{ marginTop: "0.5rem", padding: "0.5rem" }}>
             <Grid container direction={"column"}>
                 <Grid item xs={12} sm={12} md={12}>
                     <Grid container direction={"row"} style={{ display: "flex", alignItems: "center" }}>
@@ -178,7 +178,7 @@ const FileTile = (props) => {
 
 const PrecedentButton = (props) => {
     return (
-        <CodenektButton
+        <CodenektButton grey
             color={BLACKCN}
             margin={"0.5rem"}
             onClick={props.onClick}

@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 
 // CodeNekt imports
 import { GREYBACK } from '../utils/colors';
-import { LITTLE } from '../utils/fontSize';
+import { LITTLE, MICRO } from '../utils/fontSize';
 
 export const Input = styled(TextField)(({ theme }) => ({
     '& .MuiInputBase-input': {
@@ -22,7 +22,37 @@ export const Input = styled(TextField)(({ theme }) => ({
     },
 }));
 
-const CodeNektInput = (props) => {
+const CodeNektInput = styled(TextField)(({ theme }) => ({
+    '& .MuiInputBase-input': {
+        alignItems: 'center',
+        alignSelf: 'center',
+        backgroundColor: GREYBACK,
+        borderRadius: 2,
+        border: 'none',
+        display: 'inline-flex',
+        fontSize: MICRO,
+        height: '1rem',
+        padding: '0 0.5rem',
+        position: 'relative',
+        transition: theme.transitions.create([
+            'border-color',
+            'background-color',
+            'box-shadow',
+        ]),
+        width: 'auto',
+    },
+    '& .MuiFormControl-fullWidth': {
+        width: '100%',
+    },
+    '& .MuiTextField-root': {
+        width: '100%',
+    },
+    '& .MuiFormField-input': {
+        width: '100%',
+    },
+}));
+
+const CodeNekInput = (props) => {
     return (
         <TextField
             onChange={props.onChange}

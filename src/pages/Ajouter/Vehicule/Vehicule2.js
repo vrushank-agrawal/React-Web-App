@@ -205,7 +205,7 @@ const VehiculeTile = (props) => {
 
 const PrecedentButton = (props) => {
     return (
-        <CodenektButton
+        <CodenektButton grey
             color={BLACKCN}
             margin={"0.5rem"}
             onClick={props.onClick}
@@ -247,7 +247,7 @@ const EnregistrerContinuerButton = (props) => {
 const LocalContent = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
-            <Grid item xs={12} sm={12} md={12}>
+            <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>
                 <VehiculeTile vehicule={props.vehicule}/>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>

@@ -12,6 +12,16 @@ import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
 const Vehicule1FontSize = MICRO;
 
+const VehiculeData = {
+    id: "12345",
+    marque: "Renault",
+    modele: "Clio",
+    version: "AB-123-CD",
+    boite: "Manuelle",
+    carburant: "Essence",
+    statut: "En service",
+};
+
 // ---------------------------------------------
 // INPUT TYPES
 // ---------------------------------------------
@@ -90,12 +100,12 @@ const VehiculeTileField = (props) => {
                     {props.text}
                 </Typography>
             </Grid>
-            <Grid item xs={12} sm={9} md={9} style={{paddingLeft: "1.5rem"}}>
+            <Grid item xs={12} sm={9} md={9} style={{display: "flex", paddingLeft: "1.5rem", alignItems: "center"}}>
             {props.select ? <SelectInput option={props.options} />
             : props.input ? <TypeInput onChange={props.onChange} value={props.value} />
             : props.date ? <DateInput onChange={props.onChange} value={props.value}/>
             :   <Typography color={GREYTEXT2} style={{ textAlign: "left" , fontSize: Vehicule1FontSize}} >
-                    {props.id}
+                    {props.value ?? "12345"}
                 </Typography>
             }
             </Grid>
@@ -121,15 +131,15 @@ const VehiculeTile = (props) => {
 
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
-            <VehiculeTileField text={"ID Codenekt"} value={props.id} />
-            <VehiculeTileField select text={"Marque"} value={props.marque} options={categories}/>
-            <VehiculeTileField select text={"Modèle"} value={props.modele} options={categories}/>
-            <VehiculeTileField input text={"Version"} value={props.version} />
-            <VehiculeTileField select text={"Boite manuelle"} value={props.boite} options={categories}/>
-            <VehiculeTileField input text={"Puissance Fiscale"} value={props.puissance}/>
-            <VehiculeTileField select text={"Carburant"} value={props.carburant} options={categories}/>
+            <VehiculeTileField text={"ID Codenekt"} value={props.vehicule.id} />
+            <VehiculeTileField select text={"Marque"} value={props.vehicule.marque} options={categories}/>
+            <VehiculeTileField select text={"Modèle"} value={props.vehicule.modele} options={categories}/>
+            <VehiculeTileField input text={"Version"} value={props.vehicule.version}  onChange={props.vehicule.versionOnChange}/>
+            <VehiculeTileField select text={"Boite manuelle"} value={props.vehicule.boite} options={categories}/>
+            <VehiculeTileField input text={"Puissance Fiscale"} value={props.vehicule.puissance} onChange={props.vehicule.puissanceOnChange}/>
+            <VehiculeTileField select text={"Carburant"} value={props.vehicule.carburant} options={categories}/>
             <VehiculeTileField date text={"Mise en circulation"} onChange={handleDateChange} value={selectedDate}/>
-            <VehiculeTileField select text={"Statut"} value={props.statut} options={categories}/>
+            <VehiculeTileField select text={"Statut"} value={props.vehicule.statut} options={categories}/>
             <Typography style={{ textAlign: "right", fontSize: Vehicule1FontSize, color: ORANGE, padding: "0.5rem 5rem" }}>
                 * Complétez les champs requis
             </Typography>
@@ -173,8 +183,8 @@ const EnregistrerContinuerButton = (props) => {
 const LocalContent = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
-            <Grid item xs={12} sm={12} md={12}>
-                <VehiculeTile id={props.id}/>
+            <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>
+                <VehiculeTile vehicule={props.vehicule}/>
             </Grid>
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "right"}}>
                 <EnregistrerButton onClick={props.onRegister} />
@@ -214,7 +224,7 @@ const Vehicule1 = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} id={"0987"} />
+                <LocalContent onComplete={onComplete} onRegister={onRegister} vehicule={VehiculeData} />
             </Grid>
         </Grid>
     );

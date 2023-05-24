@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GREYTEXT2 } from "../utils/colors";
+import { LITTLE } from "../utils/fontSize";
 import { Button } from "@mui/material";
 
 const SizeTooLarge = "Taille du fichier doit être inférieure à 10 Mo";
@@ -45,8 +45,8 @@ const CodeNektFileUploader = (props) => {
             style={{ display: 'none' }}
             type="file"
         />
-        <label htmlFor="contained-button-file">
-            <Button variant="standard" component="span" >
+        <label htmlFor="contained-button-file" style={{display: "flex", height: "1rem"}}>
+            <Button variant="standard" component="span" sx={{fontSize: LITTLE}}>
                 Télécharger
             </Button>
         </label>
