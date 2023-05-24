@@ -6,7 +6,7 @@ import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import "../css/CodeNektSidePanel.css"
 
 // Import Icons
-import LogoWhite from "../assets/svg/logo/logo_full.svg";
+import LogoIcon from "../assets/svg/logo/logo_ICON.svg";
 
 // Import Menu Icons
 import { ORANGEDARK } from '../utils/colors';
@@ -53,7 +53,7 @@ function CodeNektSidePanel(props) {
                         {collapsed  ? <CodeNektDoubleArrowRight /> : <CodeNektDoubleArrowLeft />}
                     </div>
                     <div className='CodeNektSidePanel__logo'>
-                        <img src={LogoWhite} alt=''/>
+                        <img src={LogoIcon} alt=''/>
                     </div>
 
                     <MenuItem icon={<CodeNektDashboard />} component={<Link to={LinkDashboard} />}> TABLEAU DE BORD </MenuItem>

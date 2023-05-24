@@ -35,6 +35,7 @@ import { AiOutlineQuestion } from 'react-icons/ai';
 import { IoSettings } from 'react-icons/io5';
 import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
 import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons/md';
+import { WHITECN } from '../utils/colors';
 
 const DEFAULT_SIZE = 15;
 
@@ -52,13 +53,13 @@ export const CodeNektEdit = (props) => {
 
 export const CodeNektDoubleArrowRight = (props) => {
     return (
-        <MdKeyboardDoubleArrowRight size={props.size ?? DEFAULT_SIZE} />
+        <MdKeyboardDoubleArrowRight size={props.size ?? DEFAULT_SIZE} color={props.color ?? WHITECN} />
     )
 }
 
 export const CodeNektDoubleArrowLeft = (props) => {
     return (
-        <MdKeyboardDoubleArrowLeft size={props.size ?? DEFAULT_SIZE} />
+        <MdKeyboardDoubleArrowLeft size={props.size ?? DEFAULT_SIZE} color={props.color ?? WHITECN} />
     )
 }
 
