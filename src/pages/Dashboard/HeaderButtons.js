@@ -7,7 +7,7 @@ import CodeNektSearch from "../../Components/CodeNektSearch";
 import CodenektButton from "../../Components/CodeNektButton";
 import { WHITECN } from "../../utils/colors";
 import { CodeNektAdd } from "../../Components/CodeNektIcons";
-import { LinkAjoutCollab, LinkAjoutVehicule } from "../../Components/CodeNektPageLinks";
+import { LinkAjoutCollab, LinkAjoutSinistre, LinkAjoutVehicule } from "../../Components/CodeNektPageLinks";
 
 const DashboardSearchButton = (props) => {
     return (
@@ -72,7 +72,7 @@ const HeaderButtons = (props) => {
                     <DashboardHeaderButton
                         startIcon={<CodeNektAdd fontSize="small" color="white" />}
                         title={"DECLARER UN SINISTRE"}
-                        to={""}
+                        to={LinkAjoutSinistre}
                     />
                 </Grid>
                 <Grid item xs={12} sm={3} md={4}>

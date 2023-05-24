@@ -187,10 +187,6 @@ const LocalContent = (props) => {
                         />
                     </Grid>
                     <Grid item xs={12} sm={8} md={8} style={{display: "flex", justifyContent: "right"}}>
-                        <CodenektButton grey
-                            title={"Enregistrer"}
-                            onClick={() => {}}
-                        />
                         <CodenektButton
                             title={"Enregistrer et valider"}
                             onClick={props.onComplete}

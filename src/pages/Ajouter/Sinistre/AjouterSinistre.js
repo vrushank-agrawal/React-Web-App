@@ -51,7 +51,7 @@ const AjouterSinistre = () => {
                 {step == 3 && <Sinistre3 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
                 {step == 4 && <Sinistre4 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
                 {step == 5 && <Sinistre5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 6 && <Sinistre5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
+                {step == 6 && <Sinistre6 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
                 {step == 7 && <FinalPage title={"Sinistre créé"} buttonTitle={"SINISTRE"} to={LinkVoirSinistre} />}
             </Paper>
         </div>
