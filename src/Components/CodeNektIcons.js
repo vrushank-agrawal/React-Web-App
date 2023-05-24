@@ -14,6 +14,7 @@ const DEFAULT_MUI_SIZE = "medium";
 
 // -------------------- React Icons --------------------
 
+import { ImCross } from "react-icons/im";
 import { GiBeveledStar } from "react-icons/gi";
 import { TbHexagons } from "react-icons/tb";
 import { MdAdd } from "react-icons/md";
@@ -40,6 +41,12 @@ import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons
 import { WHITECN } from '../utils/colors';
 
 const DEFAULT_SIZE = 15;
+
+export const CodeNektCross = (props) => {
+    return (
+        <ImCross size={props.size ?? DEFAULT_SIZE} />
+    )
+}
 
 export const CodeNektHexagons = (props) => {
     return (

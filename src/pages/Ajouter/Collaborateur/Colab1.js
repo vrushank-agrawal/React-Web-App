@@ -10,6 +10,7 @@ import { BLACKCN, GREYBACK, GREYTEXT2, ORANGELIGHT, WHITECN } from "../../../uti
 // Local ajouter imports
 import DisplayHeader from "../utils/DisplayHeader";
 import CodenektButton from "../../../Components/CodeNektButton";
+import { CodeNektCross } from "../../../Components/CodeNektIcons";
 
 const IDInput = styled(TextField)(({ theme }) => ({
     '& .MuiInputBase-input': {
@@ -31,6 +32,21 @@ const IDInput = styled(TextField)(({ theme }) => ({
 }));
 
 const LocalContent = (props) => {
+
+    const [id, setId] = React.useState("");
+    const [error, setError] = React.useState(false);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("id: ", id);
+        if (id == 12345) {
+            setError(true);
+        } else {
+            setError(false);
+            props.onComplete();
+        }
+    };
+
     return (
         <Grid container spacing={1.5} direction={"column"} >
             <Grid item xs={12} sm={12} md={12}
@@ -51,16 +67,30 @@ const LocalContent = (props) => {
                     id="outlined-basic"
                     label=""
                     variant="filled"
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
                     size="small"
-                    style={{ backgroundColor: GREYBACK }}
                 />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12}
+                sx={{display: "flex", justifyContent: "center"}}
+            >
+                {error && (
+                    <Typography
+                        color={"red"}
+                        fontSize={MICRO}
+                        style={{ textAlign: "center" }}
+                    >
+                        <CodeNektCross size={MICRO/1.4}/> Attention, l'ID de votre collaborateur n'est pas correct.
+                    </Typography>
+                )}
             </Grid>
             <Grid item xs={12} sm={12} md={12}
                 sx={{display: "flex", justifyContent: "center", marginTop: "1rem"}}
             >
                 <CodenektButton
                     orange
-                    onClick={props.onComplete}
+                    onClick={handleSubmit}
                     title="ENVOYER"
                 />
             </Grid>
