@@ -87,7 +87,6 @@ function CodeNektTable (props) {
                     root: {
                         fontWeight: 'bold',
                         color: BLACKCN,
-                        fontFamily: FONTBOLD,
                     },
                     icon: {
                         opacity: 1,
