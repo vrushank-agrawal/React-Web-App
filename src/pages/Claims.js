@@ -56,6 +56,8 @@ function Claims () {
         <CodeNektTable
             column={column}
             data={data}
+            padding={"0.1rem"}
+            selection={false}
         />
     </div>
   );

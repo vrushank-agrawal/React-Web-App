@@ -139,13 +139,13 @@ function CodeNektTable (props) {
         search: props.search,
         searchFieldAlignment: 'left',
         searchFieldVariant: "filled",
-        selection: true,
+        selection: props.selection,
         showFirstLastPageButtons: false,
         showSelectAllCheckbox: false,
         showTitle: false,
         sorting: true,
         style: {
-            padding: '0 20px',
+            padding: props.padding,
         },
         tableLayout: {
             minWidth: "100%",
@@ -191,7 +191,9 @@ CodeNektTable.propTypes = {
     column: PropTypes.object.isRequired,
     data: PropTypes.array.isRequired,
     header: PropTypes.string,
+    padding: PropTypes.string,
     search: PropTypes.bool,
+    selection: PropTypes.bool,
     rowsPerPage: PropTypes.number,
     toolbar: PropTypes.bool,
 }
@@ -200,7 +202,9 @@ CodeNektTable.defaultProps = {
     column: {},
     data: [],
     header: "",
+    padding: "0 20px",
     search: true,
+    selection: true,
     rowsPerPage: 10,
     toolbar: true,
 }
