@@ -134,7 +134,6 @@ function CodeNektTable (props) {
         paginationType: 'stepped',
         paging: true,
         rowStyle: {
-            fontFamily: FONTREGULAR,
             fontSize: LITTLE,
         },
         search: props.search,
