@@ -14,6 +14,8 @@ const DEFAULT_MUI_SIZE = "medium";
 
 // -------------------- React Icons --------------------
 
+import { GiBeveledStar } from "react-icons/gi";
+import { TbHexagons } from "react-icons/tb";
 import { MdAdd } from "react-icons/md";
 import { GrFormEdit } from "react-icons/gr";
 import { ImEye } from "react-icons/im";
@@ -38,6 +40,18 @@ import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons
 import { WHITECN } from '../utils/colors';
 
 const DEFAULT_SIZE = 15;
+
+export const CodeNektHexagons = (props) => {
+    return (
+        <TbHexagons size={props.size ?? DEFAULT_SIZE} />
+    )
+}
+
+export const CodeNektStar = (props) => {
+    return (
+        <GiBeveledStar size={props.size ?? DEFAULT_SIZE} />
+    )
+}
 
 export const CodeNektAdd = (props) => {
     return (

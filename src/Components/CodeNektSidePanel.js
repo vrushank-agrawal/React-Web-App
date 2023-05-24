@@ -16,6 +16,7 @@ import {
     CodeNektDashboard,
     CodeNektDocument,
     CodeNektEuro,
+    CodeNektHexagons,
     CodeNektMap,
     CodeNektLeaf,
     CodeNektPersonFill,
@@ -23,6 +24,7 @@ import {
     CodeNektSettings,
     CodeNektSignIn,
     CodeNektSignOut,
+    CodeNektStar,
     CodeNektDoubleArrowRight,
     CodeNektDoubleArrowLeft } from './CodeNektIcons';
 
@@ -60,13 +62,13 @@ function CodeNektSidePanel(props) {
                     <MenuItem icon={<CodeNektPersonFill />} component={<Link to={LinkCollaborateur} />}> COLLABORATEURS </MenuItem>
                     <MenuItem icon={<CodeNektCar />} component={<Link to={LinkVehicule} />}> VEHICULES </MenuItem>
                     <MenuItem icon={<CodeNektBellFill />} component={<Link to={LinkNotifications} />}> NOTIFICATIONS </MenuItem>
-                    <MenuItem icon={<CodeNektSignIn />} component={<Link to={LinkSinistre} />}> SINISTRES </MenuItem>
+                    <MenuItem icon={<CodeNektStar />} component={<Link to={LinkSinistre} />}> SINISTRES </MenuItem>
 
                     <MenuItem icon={<CodeNektDocument />} component={<Link to={LinkCartes} />} > CARTES & BADGES </MenuItem>
                     <MenuItem icon={<CodeNektEuro />} component={<Link to={LinkTCO} />} > TCO </MenuItem>
                     <MenuItem icon={<CodeNektLeaf />} disabled> CONDUITE </MenuItem>
                     <MenuItem icon={<CodeNektMap />} disabled> GEOLOCALISATION </MenuItem>
-                    <MenuItem icon={<CodeNektSignIn />} component={<Link to={LinkServices} />}> SERVICES </MenuItem>
+                    <MenuItem icon={<CodeNektHexagons />} component={<Link to={LinkServices} />}> SERVICES </MenuItem>
 
                     <MenuItem icon={<CodeNektQuestion />}disabled> AIDE </MenuItem>
                     <MenuItem icon={<CodeNektSettings />} component={<Link to={LinkSettings} />}> PARAMETRES </MenuItem>
