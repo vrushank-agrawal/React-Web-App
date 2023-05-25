@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: Poppins, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* custom adds */
+  height: 100vh;
+  background: linear-gradient(to left, #FF0000, #FF6F08);
+}
+
+code {
+  font-family: Poppins;
+}
+
+.MuiTypography-root {
+  font-family: 'Poppins', Arial, sans-serif !important;
+}
