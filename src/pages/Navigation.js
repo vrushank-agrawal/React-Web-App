@@ -14,7 +14,7 @@ import Signout from "../pages/Signout";
 
 // ----------------- Voir Pages -----------------
 import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
-
+import VoirSinistre from "./Sinistre/VoirSinistre";
 
 import VoirCarte from "./Carte/VoirCarte";
 
@@ -69,6 +69,7 @@ function Navigation() {
 
                 <Route exact path={LinkSinistre} element={<Claims />} />
                 <Route exact path={LinkAjoutSinistre} element={<AjouterSinistre />} />
+                <Route exact path={LinkVoirSinistre} element={<VoirSinistre />} />
 
                 <Route exact path={LinkNotifications} element={<Notifications />} />
 

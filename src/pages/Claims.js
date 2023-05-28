@@ -9,7 +9,7 @@ import CodeNektTable from '../Components/CodeNektTable';
 import CodenektButton from "../Components/CodeNektButton";
 import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../utils/colors";
 import { CodeNektEye, CodeNektAdd } from "../Components/CodeNektIcons";
-import { LinkAjoutSinistre } from "../Components/CodeNektPageLinks";
+import { LinkAjoutSinistre, LinkVoirSinistre } from "../Components/CodeNektPageLinks";
 
 const column = {
     names: [
@@ -27,6 +27,7 @@ const column = {
                         onPress={() => console.log("Button pressed")}
                         startIcon={<CodeNektEye size={12} />}
                         title={"VOIR LE SINISTRE"}
+                        to={LinkVoirSinistre}
                     />
                 </>
                 )}
