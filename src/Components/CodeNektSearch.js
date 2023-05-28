@@ -23,7 +23,7 @@ const CodeNektSearch = (props) => {
                         {...params}
                         InputProps={{
                             ...params.InputProps,
-                            endAdornment: ( <InputAdornment position="end"> <SearchIcon /> </InputAdornment> ),
+                            endAdornment: !props.noSearchIcon && ( <InputAdornment position="end"> <SearchIcon /> </InputAdornment> ),
                             type: 'search',
                         }}
                         placeholder={props.label}
