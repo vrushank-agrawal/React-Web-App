@@ -7,7 +7,7 @@ import { FormControl } from "@mui/base";
 // CodeNekt imports
 import { LITTLE, MICROPLUS } from "../utils/fontSize";
 import { GREYBACK } from "../utils/colors";
-import { Input as SearchInput } from "./CodeNektInput";
+import { SearchInput } from "./CodeNektInput";
 
 const CodeNektSearch = (props) => {
 

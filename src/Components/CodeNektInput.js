@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 import { GREYBACK } from '../utils/colors';
 import { LITTLE, MICRO } from '../utils/fontSize';
 
-export const Input = styled(TextField)(({ theme }) => ({
+export const SearchInput = styled(TextField)(({ theme }) => ({
     '& .MuiInputBase-input': {
         backgroundColor: GREYBACK,
         borderRadius: 5,
@@ -18,7 +18,9 @@ export const Input = styled(TextField)(({ theme }) => ({
             'background-color',
             'box-shadow',
         ]),
-        // width: '100%',
+    },
+    '& .MuiOutlinedInput-root fieldset': {
+        border: 'none',
     },
 }));
 
