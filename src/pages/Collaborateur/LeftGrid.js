@@ -85,14 +85,14 @@ const CollaboratorTile = (props) => {
 
 const DocumentsTileField = (props) => {
     return (
-        <Grid item xs={12} sm={12} md={12} style={{margin: "0.3rem 0"}}>
+        <Grid item xs={12} sm={12} md={12} style={{margin: "0.3rem 0 0 0"}}>
             <Grid container spacing={1} direction={"row"} style={{ padding: "0.3rem 0" }}>
 
                 <Grid item xs={12} sm={10} md={10}>
                     <Typography color={BLACKCN} style={{ textAlign: "left", fontSize: props.fontSize }}>
                         {props.text.toLocaleUpperCase()}
                     </Typography>
-                    <Typography color={BLACKCN} style={{ textAlign: "left" , fontSize: props.fontSize/1.2}} >
+                    <Typography color={BLACKCN} style={{ textAlign: "left" , fontSize: props.fontSize/1.5}} >
                         {props.value}
                     </Typography>
                 </Grid>
@@ -106,10 +106,20 @@ const DocumentsTileField = (props) => {
     );
 };
 
+const docsData = [
+    { text: "carte identité", value: "123456"},
+    { text: "permis", value: "123456"},
+    { text: "carte", value: "123456"},
+    { text: "badge", value: "123456"},
+];
+
 const DocumentsTile = (props) => {
+
+    const docs = props.documents ?? docsData;
+
     return (
     <Paper elevation={3} padding="1rem" >
-        <Grid container spacing={1} direction={"column"} style={{ padding: "0.5rem 1rem", }}>
+        <Grid container spacing={1} direction={"column"} style={{ padding: "0.5rem 1.5rem 1rem 1.5rem", }}>
 
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1} direction={"row"} style={{display: "flex", alignContent: "center"}}>
@@ -127,13 +137,12 @@ const DocumentsTile = (props) => {
             <Divider style={{ backgroundColor: ORANGE, }} />
 
             <Grid item xs={12} sm={12} md={12}>
-                <DocumentsTileField fontSize={props.fontSize} text={"Carte d'identité"} value={"random value"}/>
-                <Divider style={{ backgroundColor: ORANGE, }} />
-                <DocumentsTileField fontSize={props.fontSize} text={"Permis"} value={"random value"}/>
-                <Divider style={{ backgroundColor: ORANGE, }} />
-                <DocumentsTileField fontSize={props.fontSize} text={"Carte Essence"} value={"random value"}/>
-                <Divider style={{ backgroundColor: ORANGE, }} />
-                <DocumentsTileField fontSize={props.fontSize} text={"Télepéage"} value={"random value"}/>
+            {docs.map((document, index) => (
+            <>
+                <DocumentsTileField fontSize={props.fontSize} text={document.text} value={document.value} key={index}/>
+                {index < (docs.length - 1) && <Divider style={{ backgroundColor: ORANGE, }} />}
+            </>
+            ))}
             </Grid>
 
         </Grid>
