@@ -73,6 +73,8 @@ const StyledMenuItem = Styled(MenuItem)`
     padding: 0.5rem 0;
 `;
 
+const ICONSIZE = 18;
+
 function CodeNektSidePanel(props) {
     const { collapseSidebar, _, collapsed } = useProSidebar();
 
@@ -92,23 +94,23 @@ function CodeNektSidePanel(props) {
                         <img src={LogoIcon} alt=''/>
                     </div>
 
-                    <MenuItem icon={<CodeNektSearchIcon />}> <SidePanelSearchButton /> </MenuItem>
+                    <MenuItem icon={<CodeNektSearchIcon size={ICONSIZE} />}> <SidePanelSearchButton /> </MenuItem>
 
-                    <StyledMenuItem icon={<CodeNektDashboard />} component={<Link to={LinkDashboard} />}> TABLEAU DE BORD </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektPersonFill />} component={<Link to={LinkCollaborateur} />}> COLLABORATEURS </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektCar />} component={<Link to={LinkVehicule} />}> VEHICULES </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektBellFill />} component={<Link to={LinkNotifications} />}> NOTIFICATIONS </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektStar />} component={<Link to={LinkSinistre} />}> SINISTRES </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektDashboard size={ICONSIZE} />} component={<Link to={LinkDashboard} />}> TABLEAU DE BORD </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektPersonFill size={ICONSIZE} />} component={<Link to={LinkCollaborateur} />}> COLLABORATEURS </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektCar size={ICONSIZE} />} component={<Link to={LinkVehicule} />}> VEHICULES </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektBellFill size={ICONSIZE} />} component={<Link to={LinkNotifications} />}> NOTIFICATIONS </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektStar size={ICONSIZE} />} component={<Link to={LinkSinistre} />}> SINISTRES </StyledMenuItem>
 
-                    <StyledMenuItem icon={<CodeNektDocument />} component={<Link to={LinkCartes} />} > CARTES & BADGES </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektEuro />} component={<Link to={LinkTCO} />} > TCO </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektLeaf />} disabled> CONDUITE </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektMap />} disabled> GEOLOCALISATION </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektHexagons />} component={<Link to={LinkServices} />}> SERVICES </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektDocument size={ICONSIZE} />} component={<Link to={LinkCartes} />} > CARTES & BADGES </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektEuro size={ICONSIZE} />} component={<Link to={LinkTCO} />} > TCO </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektLeaf size={ICONSIZE} />} disabled> CONDUITE </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektMap size={ICONSIZE} />} disabled> GEOLOCALISATION </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektHexagons size={ICONSIZE} />} component={<Link to={LinkServices} />}> SERVICES </StyledMenuItem>
 
-                    <StyledMenuItem icon={<CodeNektQuestion />}disabled> AIDE </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektSettings />} component={<Link to={LinkSettings} />}> PARAMETRES </StyledMenuItem>
-                    <StyledMenuItem icon={<CodeNektSignOut />} component={<Link to={LinkSignout} />}> DECONNEXION </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektQuestion size={ICONSIZE} />}disabled> AIDE </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektSettings size={ICONSIZE} />} component={<Link to={LinkSettings} />}> PARAMETRES </StyledMenuItem>
+                    <StyledMenuItem icon={<CodeNektSignOut size={ICONSIZE} />} component={<Link to={LinkSignout} />}> DECONNEXION </StyledMenuItem>
                 </Menu>
             </Sidebar>
         </div>

@@ -4,7 +4,7 @@ import { BLACKCN, BLUECN } from '../../utils/colors.js';
 import { IconButton, Menu, MenuItem, MenuList } from '@mui/material';
 import CodeNektTable from '../../Components/CodeNektTable.js';
 import { notifications as data } from '../utils/test-data.js';
-import { CodeNektEye, CodeNektThreeDots } from '../../Components/CodeNektIcons.js';
+import { CodeNektBell, CodeNektBellFill, CodeNektEye, CodeNektThreeDots } from '../../Components/CodeNektIcons.js';
 
 const NotificationTableFontsize = "12px";
 const NotificationTableHeadersize = "10px";
@@ -55,6 +55,7 @@ const NotificationDropdownActions = () => {
 // change column fontsize in the cellStyle
 const NotificationColumns = {
     names: [
+        { title: "", sorting: false, filtering: false, search: false, render: () => { return(<CodeNektBellFill size={12} color={"red"} />) } },
         { title: "Date", field: "Date", width: 100, cellStyle: {fontSize: NotificationTableFontsize}, headerStyle: {fontSize: NotificationTableHeadersize} },
         { title: "Type d'Intervention", field: "Type", width: 190, cellStyle: {fontSize: NotificationTableFontsize}, headerStyle: {fontSize: NotificationTableHeadersize} },
         { title: "XX-000-XX", field: "XX", width: 160, cellStyle: {fontSize: NotificationTableFontsize}, headerStyle: {fontSize: NotificationTableHeadersize} },
@@ -80,6 +81,7 @@ const NotificationTable = () => {
             data={data}
             header={"NOTIFICATIONS"}
             rowsPerPage={5}
+            selection={false}
             toolbar={false}
         />
     )

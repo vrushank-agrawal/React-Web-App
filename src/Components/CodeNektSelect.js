@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Select, MenuItem } from "@mui/material";
+import { Select, MenuItem, Checkbox } from "@mui/material";
 
 // CodeNekt imports
-import { GREYBACK, ORANGELIGHT } from "../utils/colors";
+import { GREYBACK, ORANGE, ORANGELIGHT } from "../utils/colors";
 import { MICRO } from "../utils/fontSize";
 
 const CodeNektSelect = (props) => {
@@ -31,7 +31,18 @@ const CodeNektSelect = (props) => {
         >
             {props.options.map((option, index) => {
                 return (
-                    <MenuItem key={index} value={option.value} style={{fontSize: props.fontSize}}> {option.label} </MenuItem>
+                <MenuItem key={index} value={option.value} style={{fontSize: props.fontSize}}>
+                    {props.multiple && <Checkbox checked={props.value.includes(option.value)}
+                        sx={{
+                            color: ORANGE,
+                            size: "small",
+                            '&.Mui-checked': {color: ORANGE},
+                            '&.MuiCheckbox-sizeSmall': {fontSize: '0.5rem'},
+                        }}
+                        size="small"
+                    />}
+                    {option.label}
+                </MenuItem>
                 );
             })}
         </Select>

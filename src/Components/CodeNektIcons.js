@@ -105,7 +105,7 @@ export const CodeNektCar = (props) => {
 
 export const CodeNektBellFill = (props) => {
     return (
-        <BsBellFill size={props.size ?? DEFAULT_SIZE} />
+        <BsBellFill size={props.size ?? DEFAULT_SIZE} style={{color: props.color}} />
     )
 }
 
