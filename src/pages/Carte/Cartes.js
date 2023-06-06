@@ -4,15 +4,15 @@ import { Grid } from "@mui/material";
 import { IconButton } from '@mui/material';
 
 // Local imports
-import { cartes as data } from "./utils/test-data";
-import { WHITECN } from "../utils/colors";
-import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
-import { FONTBOLD } from "../utils/fonts";
-import { CodeNektDelete, CodeNektEye, CodeNektAdd } from "../Components/CodeNektIcons";
-import { LinkAjoutCarte } from "../Components/CodeNektPageLinks";
-import CodeNektTable from '../Components/CodeNektTable';
-import CodenektButton from "../Components/CodeNektButton";
-import { LinkVoirCarte } from "../Components/CodeNektPageLinks";
+import { cartes as data } from "../utils/test-data";
+import { WHITECN } from "../../utils/colors";
+import { FONTSEMIBIG, LITTLE2 } from "../../utils/fontSize";
+import { FONTBOLD } from "../../utils/fonts";
+import { CodeNektDelete, CodeNektEye, CodeNektAdd } from "../../Components/CodeNektIcons";
+import { LinkAjoutCarte } from "../../Components/CodeNektPageLinks";
+import CodeNektTable from '../../Components/CodeNektTable';
+import CodenektButton from "../../Components/CodeNektButton";
+import { LinkVoirCarte } from "../../Components/CodeNektPageLinks";
 
 const column = {
     names: [

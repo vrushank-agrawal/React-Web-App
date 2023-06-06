@@ -2,16 +2,16 @@ import React from 'react';
 import { Grid, IconButton } from '@mui/material';
 
 // Local imports
-import { vehicles as data } from "./utils/test-data";
-import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
-import { FONTBOLD } from "../utils/fonts";
-import CodeNektTable from '../Components/CodeNektTable';
-import { BLACKCN, WHITECN } from '../utils/colors';
+import { vehicles as data } from "../utils/test-data";
+import { FONTSEMIBIG, LITTLE2 } from "../../utils/fontSize";
+import { FONTBOLD } from "../../utils/fonts";
+import CodeNektTable from '../../Components/CodeNektTable';
+import { BLACKCN, WHITECN } from '../../utils/colors';
 
 // import MUI icons
-import { CodeNektAdd, CodeNektDelete, CodeNektEye } from '../Components/CodeNektIcons';
-import CodenektButton from '../Components/CodeNektButton';
-import { LinkAjoutVehicule } from '../Components/CodeNektPageLinks';
+import { CodeNektAdd, CodeNektDelete, CodeNektEye } from '../../Components/CodeNektIcons';
+import CodenektButton from '../../Components/CodeNektButton';
+import { LinkAjoutVehicule } from '../../Components/CodeNektPageLinks';
 
 const column = {
     names: [

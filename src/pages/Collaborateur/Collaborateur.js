@@ -2,14 +2,14 @@ import React from "react";
 import { Grid, Stack } from "@mui/material";
 
 // Local imports
-import CodeNektTable from "../Components/CodeNektTable";
-import CodenektButton from "../Components/CodeNektButton";
-import { collaborator as data } from "./utils/test-data";
-import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
-import { FONTBOLD } from "../utils/fonts"
-import { BLACKCN, WHITECN } from "../utils/colors";
-import { CodeNektEye, CodeNektAdd } from "../Components/CodeNektIcons";
-import { LinkAjoutCollab, LinkVoirCollab } from "../Components/CodeNektPageLinks";
+import CodeNektTable from "../../Components/CodeNektTable";
+import CodenektButton from "../../Components/CodeNektButton";
+import { collaborator as data } from "../utils/test-data";
+import { FONTSEMIBIG, LITTLE2 } from "../../utils/fontSize";
+import { FONTBOLD } from "../../utils/fonts"
+import { BLACKCN, WHITECN } from "../../utils/colors";
+import { CodeNektEye, CodeNektAdd } from "../../Components/CodeNektIcons";
+import { LinkAjoutCollab, LinkVoirCollab } from "../../Components/CodeNektPageLinks";
 
 const column = {
     names: [
@@ -52,12 +52,12 @@ function Collaborator() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
         <Grid container spacing={2} direction={"row"}>
-            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+            <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
                 <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD}}>
                     {"liste des collaborateurs".toLocaleUpperCase()}
                 </h1>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{display: "flex", justifyContent: "right"}}>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} style={{display: "flex", justifyContent: "right"}}>
                 <CodenektButton blue
                     color={WHITECN}
                     size={LITTLE2}
@@ -70,6 +70,7 @@ function Collaborator() {
         <CodeNektTable
             column={column}
             data={data}
+            selection={false}
         />
     </div>
   );

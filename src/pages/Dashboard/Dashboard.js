@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { Grid } from '@mui/material';
 
-import { FONTSEMIBIG } from '../utils/fontSize';
-import { FONTBOLD } from '../utils/fonts';
-import { WHITECN } from '../utils/colors';
+import { FONTSEMIBIG } from '../../utils/fontSize';
+import { FONTBOLD } from '../../utils/fonts';
+import { WHITECN } from '../../utils/colors';
 
-import NotificationTable from './Dashboard/NotificationTable';
-import VehiclesTable from './Dashboard/VehiclesTable';
-import SinistreTable from './Dashboard/SinistresTable';
-import TCOTable from './Dashboard/TCOTable';
-import HeaderButtons from './Dashboard/HeaderButtons';
+import NotificationTable from './NotificationTable';
+import VehiclesTable from './VehiclesTable';
+import SinistreTable from './SinistresTable';
+import TCOTable from './TCOTable';
+import HeaderButtons from './HeaderButtons';
 
 function Dashboard (props) {
+    const user = useSelector(state => state.userReducer);
     return (
         <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "90%" }}>
             <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0"}}>
                 TABLEAU DE BORD&emsp;
                 <span style={{fontSize: "1.4rem", color: WHITECN}}>
-                    Bienvenue
+                    Bienvenue {user.firstname}
                 </span>
             </h1>
             <HeaderButtons />

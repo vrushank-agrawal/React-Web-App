@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Grid } from "@mui/material"
 
 // CodeNekt imports
-import { FONTSEMIBOLD, FONTBOLD } from "../utils/fonts";
-import { FONTREGULAR, FONTSEMIBIG } from "../utils/fontSize";
+import { FONTSEMIBOLD, FONTBOLD } from "../../utils/fonts";
+import { FONTREGULAR, FONTSEMIBIG } from "../../utils/fontSize";
 
 // Settings imports
-import SettingsDashboardLeft from "./Settings/SettingDashboardLeft";
-import SettingsDashboardRight from "./Settings/SettingDashboardRight";
+import SettingsDashboardLeft from "./SettingDashboardLeft";
+import SettingsDashboardRight from "./SettingDashboardRight";
 
 const Settings = () => {
     return (

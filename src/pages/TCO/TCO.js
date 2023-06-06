@@ -2,11 +2,11 @@ import React from "react";
 import {Grid} from "@mui/material";
 
 // CodeNekt imports
-import TCOHeader from "./TCO/TCOHeader";
-import VehicleTile from "./TCO/VehicleTile";
-import CollaboratorTile from "./TCO/CollaboratorTile";
+import TCOHeader from "./TCOHeader";
+import VehicleTile from "./VehicleTile";
+import CollaboratorTile from "./CollaboratorTile";
 
-import { TCOVehicles as colabData } from "./utils/TCO-test-data";
+import { TCOVehicles as colabData } from "../utils/TCO-test-data";
 
 
 const TCO = () => {

@@ -5,16 +5,16 @@ import { connect } from "react-redux";
 // ----------------- Pages -----------------
 import CodeNektSidePanel from "../Components/CodeNektSidePanel";
 import Login from "./Login/Login";
-import Dashboard from "../pages/Dashboard";
-import Collaborator from "./Collaborateur";
-import Vehicles from "../pages/Vehicles";
+import Dashboard from "./Dashboard/Dashboard";
+import Collaborator from "./Collaborateur/Collaborateur";
+import Vehicles from "./Vehicule/Vehicles";
 import Notifications from "../pages/Notifications";
-import Claims from "../pages/Claims";
-import Cartes from "../pages/Cartes";
-import TCO from "../pages/TCO";
+import Claims from "./Sinistre/Claims";
+import Cartes from "./Carte/Cartes";
+import TCO from "./TCO/TCO";
 import Services from "../pages/Services";
-import Settings from "../pages/Settings";
-import Signout from "../pages/Signout";
+import Settings from "./Settings/Settings";
+import Signout from "./Login/Signout";
 
 // ----------------- Voir Pages -----------------
 import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
@@ -91,7 +91,6 @@ const NavigationView = () => {
 };
 
 function Navigation(props) {
-    console.log("isconnected: ", props.userReducer.isAuthenticated);
     return (
     <>
     {!props.userReducer.isAuthenticated ? (

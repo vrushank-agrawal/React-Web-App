@@ -2,14 +2,14 @@ import React from "react";
 import { Grid } from "@mui/material";
 
 // Local imports
-import { sinistres as data } from "./utils/test-data";
-import { FONTSEMIBIG, LITTLE2 } from "../utils/fontSize";
-import { FONTBOLD } from "../utils/fonts";
-import CodeNektTable from '../Components/CodeNektTable';
-import CodenektButton from "../Components/CodeNektButton";
-import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../utils/colors";
-import { CodeNektEye, CodeNektAdd } from "../Components/CodeNektIcons";
-import { LinkAjoutSinistre, LinkVoirSinistre } from "../Components/CodeNektPageLinks";
+import { sinistres as data } from "../utils/test-data";
+import { FONTSEMIBIG, LITTLE2 } from "../../utils/fontSize";
+import { FONTBOLD } from "../../utils/fonts";
+import CodeNektTable from '../../Components/CodeNektTable';
+import CodenektButton from "../../Components/CodeNektButton";
+import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
+import { CodeNektEye, CodeNektAdd } from "../../Components/CodeNektIcons";
+import { LinkAjoutSinistre, LinkVoirSinistre } from "../../Components/CodeNektPageLinks";
 
 const column = {
     names: [
