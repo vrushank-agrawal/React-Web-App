@@ -21,6 +21,7 @@ import { TbHexagons } from "react-icons/tb";
 import { MdAdd } from "react-icons/md";
 import { GrFormEdit } from "react-icons/gr";
 import { ImEye } from "react-icons/im";
+import { ImEyeBlocked } from "react-icons/im";
 import { BsCheckCircle } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiBellOn } from "react-icons/ci";
@@ -187,6 +188,12 @@ export const CodeNektProfile = (props) => {
 export const CodeNektEye = (props) => {
     return (
         <ImEye size={props.size ?? DEFAULT_SIZE} />
+    )
+}
+
+export const CodeNektEyeBlocked = (props) => {
+    return (
+        <ImEyeBlocked size={props.size ?? DEFAULT_SIZE} />
     )
 }
 

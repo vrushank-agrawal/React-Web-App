@@ -1,6 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
+// ----------------- Pages -----------------
+import CodeNektSidePanel from "../Components/CodeNektSidePanel";
+import Login from "./Login/Login";
 import Dashboard from "../pages/Dashboard";
 import Collaborator from "./Collaborateur";
 import Vehicles from "../pages/Vehicles";
@@ -47,10 +51,9 @@ import {
     LinkVoirCarte,
 } from "../Components/CodeNektPageLinks.js";
 
-function Navigation() {
+const NavigationView = () => {
     return (
-    <>
-    <main style={{ position: 'relative', padding: 10 }}>
+        <main style={{ position: 'relative', padding: 10 }}>
         <div class="routes"
             style={{
                 display: 'flex',
@@ -84,8 +87,31 @@ function Navigation() {
             </Routes>
         </div>
     </main>
+    );
+};
+
+function Navigation(props) {
+    console.log("isconnected: ", props.userReducer.isAuthenticated);
+    return (
+    <>
+    {!props.userReducer.isAuthenticated ? (
+        <Login />
+    ) : (
+        <div className="Panel" style={{ display: 'flex' }}>
+            <CodeNektSidePanel />
+            <div style={{ margin: 'auto' }}>
+                <NavigationView />
+            </div>
+        </div>
+    )}
     </>
     );
 }
 
-export default Navigation;
+const mapStateToProps = (state) => {
+    return {
+        userReducer: state.userReducer,
+    };
+};
+
+export default connect(mapStateToProps)(Navigation);

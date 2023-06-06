@@ -5,16 +5,11 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOGIN_SUCCESS':
+    case 'LOGIN':
       return {
         isAuthenticated: true,
         error: null,
         ...action.data,
-      };
-    case 'LOGIN_FAILURE':
-      return {
-        isAuthenticated: false,
-        error: action.payload.error,
       };
     case 'UPDATE_USER':
       return {

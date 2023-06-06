@@ -13,12 +13,7 @@ function App() {
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
             <BrowserRouter>
-            <div className="Panel" style={{ display: 'flex' }}>
-                <CodeNektSidePanel />
-                <div style={{ margin: 'auto' }}>
-                    <Navigation />
-                </div>
-            </div>
+                <Navigation />
             </BrowserRouter>
         </PersistGate>
     </Provider>
