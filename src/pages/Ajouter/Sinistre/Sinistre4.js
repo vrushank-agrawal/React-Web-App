@@ -40,6 +40,7 @@ const SelectInput = (props) => {
 const TypeInput = (props) => {
     return (
         <CodeNektInput
+            disabled
             fontSize={Sinistre4FontSize}
             // height={"1rem"}
             margin="0"

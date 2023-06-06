@@ -7,7 +7,7 @@ import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
-import CodeNektFileUploader from "../../../Components/CodeNektFileUploader";
+import CodeNektFileUploader, {validateFile} from "../../../Components/CodeNektFileUploader";
 
 const Vehicule3FontSize = MICRO;
 const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
@@ -65,6 +65,7 @@ const SelectInput = (props) => {
 const TypeInput = (props) => {
     return (
         <CodeNektInput
+            disabled
             fontSize={Vehicule3FontSize}
             // height={"1rem"}
             margin="0"
@@ -79,12 +80,6 @@ const TypeInput = (props) => {
 // ---------------------------------------------
 
 const FileUploadField = (props) => {
-    const [fileName, setFileName] = React.useState('');
-
-    const handleFileUpload = (name) => {
-      setFileName(name);
-    };
-
     return (
     <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
         <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
@@ -93,10 +88,10 @@ const FileUploadField = (props) => {
             </Typography>
         </Grid>
         <Grid item xs={12} sm={7} md={7} style={{paddingLeft: "1.5rem"}}>
-            <TypeInput onChange={props.onChange} value={fileName} />
+            <TypeInput onChange={props.onChange} value={props.fileName} />
         </Grid>
         <Grid item xs={12} sm={3} md={3} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-            <CodeNektFileUploader onFileUpload={handleFileUpload} />
+            <CodeNektFileUploader handleFileChange={props.handleFileChange} />
         </Grid>
     </Grid>
     );
@@ -155,7 +150,7 @@ const FileTile = (props) => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                    <FileUploadField text={"FICHIER"} />
+                    <FileUploadField text={"FICHIER"} fileName={props.fileName} handleFileChange={props.handleFileChange} />
                 </Grid>
                 {props.numero &&
                 <Grid item xs={12} sm={12} md={12}>
@@ -218,13 +213,43 @@ const EnregistrerContinuerButton = (props) => {
 // ---------------------------------------------
 
 const LocalContent = (props) => {
-    console.log(props.file.carteGrise);
+    const [fileName, setFileName] = React.useState([null, null, null]);
+
+    const handleFileChange = (index) => (event) => {
+        const file = event.target.files[0];
+        console.log(fileName);
+        console.log(index);
+        if (file && validateFile(file)) {
+            setFileName((prevState) => {
+                let newState = [...prevState];
+                newState[index] = file.name;
+                console.log(newState);
+                return newState;
+            });
+            handleFileUpload(file.name)
+        } else {
+            setFileName((prevState) => {
+                let newState = [...prevState];
+                newState[index] = null;
+                console.log(newState);
+                return newState;
+            });
+        }
+    };
+
+    const handleFileUpload = (name) => {
+        // console.log(name);
+    };
+
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12}>
-                <FileTile title={"Contrat"} file={props.file.contrat} />
-                <FileTile title={"Carte grise"} file={props.file.carteGrise} numero />
-                <FileTile title={"Carte Assurance"} file={props.file.carteAssurance} numero cout />
+                <FileTile handleFileChange={handleFileChange(0)}
+                    fileName={fileName[0]} title={"Contrat"} file={props.file.contrat} />
+                <FileTile handleFileChange={handleFileChange(1)}
+                    fileName={fileName[1]} title={"Carte grise"} file={props.file.carteGrise} numero />
+                <FileTile handleFileChange={handleFileChange(2)}
+                    fileName={fileName[2]} title={"Carte Assurance"} file={props.file.carteAssurance} numero cout />
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container direction={"row"}>

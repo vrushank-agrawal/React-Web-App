@@ -43,7 +43,7 @@ const CodeNektInput = styled(TextField)(({ theme }) => ({
         ]),
         width: 'auto',
     },
-    '& .MuiFormControl-fullWidth': {
+    '& .MuiOutlinedInput-root fieldset': {
         width: '100%',
     },
     '& .MuiTextField-root': {
