@@ -179,6 +179,7 @@ function CodeNektTable (props) {
                 columns={props.column.names}
                 data={props.data}
                 localization={Localization}
+                // onSelectionChange={props.onSelectionChange}
                 options={TableOptions}
                 style={{ margin: "0 3%" }}
             />
@@ -191,6 +192,7 @@ CodeNektTable.propTypes = {
     column: PropTypes.object.isRequired,
     data: PropTypes.array.isRequired,
     header: PropTypes.string,
+    onSelectionChange: PropTypes.func,
     padding: PropTypes.string,
     search: PropTypes.bool,
     selection: PropTypes.bool,
@@ -202,6 +204,7 @@ CodeNektTable.defaultProps = {
     column: {},
     data: [],
     header: "",
+    onSelectionChange: "default",
     padding: "0 20px",
     search: true,
     selection: true,
