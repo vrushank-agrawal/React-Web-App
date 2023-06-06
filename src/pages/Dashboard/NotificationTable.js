@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { BLACKCN, BLUECN } from '../../utils/colors.js';
 import { IconButton, Menu, MenuItem, MenuList } from '@mui/material';
 import CodeNektTable from '../../Components/CodeNektTable.js';
 import { notifications as data } from '../utils/test-data.js';
-import { CodeNektBell, CodeNektBellFill, CodeNektEye, CodeNektThreeDots } from '../../Components/CodeNektIcons.js';
+import { CodeNektBellFill, CodeNektEye, CodeNektThreeDots } from '../../Components/CodeNektIcons.js';
 
 const NotificationTableFontsize = "12px";
 const NotificationTableHeadersize = "10px";
@@ -74,7 +75,9 @@ const NotificationColumns = {
     ],
 }
 
-const NotificationTable = () => {
+const NotificationTable = (props) => {
+    const user = useSelector(state => state.userReducer);
+    console.log(user);
     return (
         <CodeNektTable
             column={NotificationColumns}
