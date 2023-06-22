@@ -10,7 +10,7 @@ const APIPaths = {
     LOGIN: "/user/login",
 
     GETBRANDS: "/brand/list",
-    GETBRANDSTYPES: GETBRANDS+"/type",
+    GETBRANDSTYPES: "/brand/list/type",
     GETMODELS: "/brand/model",
 
     GETCARS: "/vehicle/list",

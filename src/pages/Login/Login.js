@@ -6,7 +6,7 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import Logo from "../../assets/svg/logo/logo_fondOrange.svg";
 import CodenektButton from "../../Components/CodeNektButton";
 import { CodeNektEye, CodeNektEyeBlocked } from "../../Components/CodeNektIcons";
-import { login } from "../../api/User";
+import { login } from "../../api/modules/User";
 import { checkEmail, checkPassword } from "../../utils/checkForms";
 
 const ITEMWIDTH = "80%";
