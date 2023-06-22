@@ -5,42 +5,50 @@ const APIPaths = {
     BASE_URL: "https://api.codenekt.com",
     CAROOLURL: "https://codenekt.ca-rool.com",
 
-    DELETEUSER: "/user",
     SENDCODE: "/user/send-code",
-    ADDUSER: "/user/add",
     UPDATEUSER: "/user/update",
     LOGIN: "/user/login",
 
-    LICENSETYPES: "/license/type/list",
-
-    GETINSURERS: "/insurer/list",
-
     GETBRANDS: "/brand/list",
+    GETBRANDSTYPES: GETBRANDS+"/type",
     GETMODELS: "/brand/model",
 
     GETCARS: "/vehicle/list",
     ADDCAR: "/vehicle/add",
     GETCAR: "/vehicle",
     UPDATECAR: "/vehicle/update",
-    CHECKIMMAT: "/vehicle/checkUniqueNumber",
-
-    GETTYPESEVENTS: "/event/type/list",
-    ADDEVENT: "/event/add",
-    EVENTLIST: "/event/list",
-    DELETEEVENT: "/event/delete",
-    GETEVENT: "/event",
-    UPDATEEVENT: "/event/update",
-    UPDATEEVENT: "/event/update",
 
     ADDDOCUMENT: "/strongbox/add",
     GETDOCUMENTS: "/strongbox/list",
 
     GETNOTIFS: "/notification/list",
     READNOTIF: "/notification/read",
-    GETPOINTS: "/point/total",
-    LISTPOINTS: "/point/list",
 
-    GETONFIDOTOKEN: "/onfido/token",
+    ADDCARTE: "/carte/add",
+    GETCARTES: "/carte/list",
+    GETCARTE: "/carte",
+    UPDATECARTE: "/carte/update",
+    DELETECARTE: "/carte/delete",
+
+    ADDCOLLABORATEUR: "/collaborateur/add",
+    GETCOLLABORATEURS: "/collaborateur/list",
+    GETCOLLABORATEUR: "/collaborateur",
+    GETUNREGISTEREDCOLLABORATEUR: "/collaborateur/getUnregistered",
+    UPDATECOLLABORATEUR: "/collaborateur/update",
+    DELETECOLLABORATEUR: "/collaborateur/delete",
+
+    ADDCONTRAT: "/contrat/add",
+    GETCONTRAT: "/contrat",
+    UPDATECONTRAT: "/contrat/update",
+    DELETECONTRAT: "/contrat/delete",
+
+    ADDSINISTRE: "/sinistre/add",
+    GETSINISTRES: "/sinistre/list",
+    GETSINISTRE: "/sinistre",
+    GETUNREGISTEREDSINISTRE: "/sinistre/getUnregistered",
+    UPDATESINISTRE: "/sinistre/update",
+    DELETESINISTRE: "/sinistre/delete",
+
 };
 
 export default APIPaths;
