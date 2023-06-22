@@ -6,7 +6,7 @@ export const getBrands = (token) => {
 }
 
 export const getBrandTypes = (type, token) => {
-    return API("GET", APIPaths.GETBRANDTYPES + "/" + type, null, token);
+    return API("GET", APIPaths.GETBRANDSTYPES + "/" + type, null, token);
 }
 
 export const getModels = (brand, token) => {

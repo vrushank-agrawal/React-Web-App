@@ -4,7 +4,7 @@ import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
-import { categories } from "../../utils/CategorieDefinition";
+import { FrequencyList } from "../utils/DropDownOptions";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
@@ -13,11 +13,6 @@ import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 const Vehicule2FontSize = MICRO;
 
 const VehiculeData = {
-    numeroContrat: "",
-    duree: null,
-    dateEntree: null,
-    dateSortie: null,
-    kmContrat: 0,
     pneusHIVER: [
         {
             label: "1",
@@ -35,26 +30,6 @@ const VehiculeData = {
         },
         {
             label: "2",
-            value: 2,
-        },
-    ],
-    loyerHT: [
-        {
-            label: "100",
-            value: 100,
-        },
-        {
-            label: "200",
-            value: 200,
-        },
-    ],
-    loyerFreq: [
-        {
-            label: "Mensuel",
-            value: 1,
-        },
-        {
-            label: "Annuel",
             value: 2,
         },
     ],
@@ -135,7 +110,11 @@ const DoubleSelect = (props) => {
     return (
         <Grid container spacing={1.5} direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
             <Grid item xs={12} sm={5} md={5} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+            {props.textInput ?
+                <TypeInput onChange={props.onChange} value={props.value} />
+            :
                 <SelectInput options={props.options1} />
+            }
             </Grid>
             <Grid item xs={12} sm={1} md={1} style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
                 <Typography style={{ textAlign: "center", fontSize: Vehicule2FontSize, color: ORANGE }}>
@@ -161,9 +140,11 @@ const VehiculeTileField = (props) => {
             { props.date ?
                 <DateInput onChange={props.onChange} value={props.value}/>
             : props.select ?
-                <DoubleSelect options1={props.options1} options2={props.options2} />
+                <DoubleSelect options1={props.options1} options2={props.options2} onChange1={props.onChange1} onChange2={props.onChange2} value1={props.value1} value2={props.value2}/>
+            : props.loyer ?
+                <DoubleSelect textInput options2={props.options2} onChange1={props.onChange1} onChange2={props.onChange2} value1={props.value1} value2={props.value2}/>
             :
-                <TypeInput onChange={props.onChange} value={props.value} />
+                <TypeInput textInput onChange={props.onChange} value={props.value} />
             }
             </Grid>
             <Grid item xs={12} sm={1} md={1}>
@@ -177,21 +158,35 @@ const VehiculeTileField = (props) => {
 
 const VehiculeTile = (props) => {
 
-    const [selectedDate, setSelectedDate] = React.useState(null);
+    const [numero, setNumero] = React.useState(null);
+    const [duree, setDuree] = React.useState(0);
+    const [dateEntree, setDateEntree] = React.useState(null);
+    const [dateSortie, setDateSortie] = React.useState(null);
+    const [kmContrat, setKmContrat] = React.useState(0);
+    const [pneusHIVER, setPneusHIVER] = React.useState(0);
+    const [pneusETE, setPneusETE] = React.useState(0);
+    const [Loyer, setLoyer] = React.useState(0);
+    const [Frequency, setFrequency] = React.useState(0);
 
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
+    const handleNumeroChange = (event) => { setNumero(event.target.value); };
+    const handleDureeChange = (event) => { setDuree(event.target.value); };
+    const handleDateEntreeChange = (event) => { setDateEntree(event.target.value); };
+    const handleDateSortieChange = (event) => { setDateSortie(event.target.value); };
+    const handleKmContratChange = (event) => { setKmContrat(event.target.value); };
+    const handlePneusHIVERChange = (event) => { setPneusHIVER(event.target.value); };
+    const handlePneusETEChange = (event) => { setPneusETE(event.target.value); };
+    const handleLoyerChange = (event) => { setLoyer(event.target.value); };
+    const handleFrequencyChange = (event) => { setFrequency(event.target.value); };
 
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
-            <VehiculeTileField text={"Numéro de contrat"} value={props.vehicule.numeroContrat} />
-            <VehiculeTileField text={"Durée"} value={props.vehicule.duree} />
-            <VehiculeTileField date text={"Date d'entrée"} value={props.vehicule.dateEntree} />
-            <VehiculeTileField date text={"Date de sortie"} value={props.vehicule.dateSortie} />
-            <VehiculeTileField text={"Km au contrat"} value={props.vehicule.kmContrat} />
-            <VehiculeTileField select text={"Pneus au contrat"} options1={props.vehicule.pneusHIVER} options2={props.vehicule.pneusETE} />
-            <VehiculeTileField select text={"Loyer HT"} options1={props.vehicule.loyerHT} options2={props.vehicule.loyerFreq} />
+            <VehiculeTileField text={"Numéro de contrat"} value={numero} onChange={handleNumeroChange} />
+            <VehiculeTileField text={"Durée (mois)"} value={duree} onChange={handleDureeChange} />
+            <VehiculeTileField date text={"Date d'entrée"} value={dateEntree} onChange={handleDateEntreeChange} />
+            <VehiculeTileField date text={"Date de sortie"} value={dateSortie} onChange={handleDateSortieChange} />
+            <VehiculeTileField text={"Km au contrat"} value={kmContrat} onChange={handleKmContratChange} />
+            <VehiculeTileField select text={"Pneus au contrat"} options1={props.vehicule.pneusHIVER} options2={props.vehicule.pneusETE} value1={pneusHIVER} value2={pneusETE} onChange1={handlePneusHIVERChange} onChange2={handlePneusETEChange} />
+            <VehiculeTileField loyer text={"Loyer HT"} options2={FrequencyList} value1={Loyer} value2={Frequency} onChange1={handleLoyerChange} onChange2={handleFrequencyChange} />
             <Typography style={{ textAlign: "right", fontSize: Vehicule2FontSize, color: ORANGE, padding: "0.5rem 5rem" }}>
                 * Complétez les champs requis
             </Typography>

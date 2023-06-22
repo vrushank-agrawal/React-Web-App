@@ -4,6 +4,7 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, ORANGE } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
+import { FrequencyList } from "../utils/DropDownOptions";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
@@ -25,16 +26,6 @@ const FileData = {
         name: "",
         montant: "",
         montantFreq: "",
-        options: [
-            {
-                label: "Mensuel",
-                value: 1,
-            },
-            {
-                label: "Annuel",
-                value: 2,
-            },
-        ],
     },
 };
 
@@ -159,7 +150,7 @@ const FileTile = (props) => {
                 }
                 {props.cout &&
                 <Grid item xs={12} sm={12} md={12}>
-                    <CoutSelectField text={"COUT"} onChange={props.onChangeCout} value={props.file.cout} options={props.file.options} />
+                    <CoutSelectField text={"COUT"} onChange={props.onChangeCout} value={props.file.cout} options={FrequencyList} />
                 </Grid>
                 }
             </Grid>

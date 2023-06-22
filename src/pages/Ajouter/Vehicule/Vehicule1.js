@@ -1,14 +1,18 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
 import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import { categories } from "../../utils/CategorieDefinition";
+import { Boite, Carburant, Statut } from "../utils/DropDownOptions";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+
+import { getBrands } from "../../../api/modules/Vehicle";
 
 const Vehicule1FontSize = MICRO;
 
@@ -101,7 +105,7 @@ const VehiculeTileField = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={9} md={9} style={{display: "flex", paddingLeft: "1.5rem", alignItems: "center"}}>
-            {props.select ? <SelectInput option={props.options} />
+            {props.select ? <SelectInput options={props.options} />
             : props.input ? <TypeInput onChange={props.onChange} value={props.value} />
             : props.date ? <DateInput onChange={props.onChange} value={props.value}/>
             :   <Typography color={GREYTEXT2} style={{ textAlign: "left" , fontSize: Vehicule1FontSize}} >
@@ -123,23 +127,61 @@ const VehiculeTileField = (props) => {
 
 const VehiculeTile = (props) => {
 
-    const [selectedDate, setSelectedDate] = React.useState(null);
+    const user = useSelector(state => state.userReducer);
+    const dispatch = useDispatch();
 
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
+    const processBrands = async () => {
+        try {
+            const response = await getBrands(user.token);
+            if (response.status === 200) {
+                const brands = response.data;
+                const mappedBrands = brands.map(({ id, name, type }) => {
+                    return { value: id, label: name };
+                });
+                dispatch({ type: "GET_BRANDS", data: mappedBrands });
+            } else {
+                setError(true);
+            }
+        } catch (error) {
+            console.log(error);
+            setError(true);
+        }
     };
+
+    processBrands();
+
+    const brands = useSelector((state) => state.brandsReducer.brands);
+    // console.log(brands);
+
+    const [marque, setMarque] = React.useState(null);
+    const [modele, setModele] = React.useState(null);
+    const [version, setVersion] = React.useState(null);
+    const [boite, setBoite] = React.useState(null);
+    const [puissance, setPuissance] = React.useState(null);
+    const [carburant, setCarburant] = React.useState(null);
+    const [selectedDate, setSelectedDate] = React.useState(null);
+    const [statut, setStatut] = React.useState(null);
+
+    const handleMarqueChange = (event) => {setMarque(event.target.value);};
+    const handleModeleChange = (event) => {setModele(event.target.value);};
+    const handleVersionChange = (event) => {setVersion(event.target.value);};
+    const handleBoiteChange = (event) => {setBoite(event.target.value);};
+    const handlePuissanceChange = (event) => {setPuissance(event.target.value);};
+    const handleCarburantChange = (event) => {setCarburant(event.target.value);};
+    const handleDateChange = (date) => {setSelectedDate(date);};
+    const handleStatutChange = (event) => {setStatut(event.target.value);};
 
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
             <VehiculeTileField text={"ID Codenekt"} value={props.vehicule.id} />
-            <VehiculeTileField select text={"Marque"} value={props.vehicule.marque} options={categories}/>
-            <VehiculeTileField select text={"Modèle"} value={props.vehicule.modele} options={categories}/>
-            <VehiculeTileField input text={"Version"} value={props.vehicule.version}  onChange={props.vehicule.versionOnChange}/>
-            <VehiculeTileField select text={"Boite manuelle"} value={props.vehicule.boite} options={categories}/>
-            <VehiculeTileField input text={"Puissance Fiscale"} value={props.vehicule.puissance} onChange={props.vehicule.puissanceOnChange}/>
-            <VehiculeTileField select text={"Carburant"} value={props.vehicule.carburant} options={categories}/>
-            <VehiculeTileField date text={"Mise en circulation"} onChange={handleDateChange} value={selectedDate}/>
-            <VehiculeTileField select text={"Statut"} value={props.vehicule.statut} options={categories}/>
+            <VehiculeTileField select text={"Marque"} value={marque} options={brands} onChange={handleMarqueChange} />
+            <VehiculeTileField select text={"Modèle"} value={modele} options={categories} onChange={handleModeleChange} />
+            <VehiculeTileField input text={"Version"} value={version}  onChange={handleVersionChange} />
+            <VehiculeTileField select text={"Boite"} value={boite} options={Boite} onChange={handleBoiteChange} />
+            <VehiculeTileField input text={"Puissance Fiscale"} value={puissance} onChange={handlePuissanceChange} />
+            <VehiculeTileField select text={"Carburant"} value={carburant} options={Carburant} onChange={handleCarburantChange} />
+            <VehiculeTileField date text={"Mise en circulation"} value={selectedDate} onChange={handleDateChange} />
+            <VehiculeTileField select text={"Statut"} value={statut} options={Statut} onChange={handleStatutChange} />
             <Typography style={{ textAlign: "right", fontSize: Vehicule1FontSize, color: ORANGE, padding: "0.5rem 5rem" }}>
                 * Complétez les champs requis
             </Typography>
