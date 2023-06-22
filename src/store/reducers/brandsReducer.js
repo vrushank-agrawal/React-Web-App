@@ -9,6 +9,11 @@ const brandsReducer = (state = initialState, action) => {
             ...state,
             brands: action.data,
         };
+        case 'GET_MODELS':
+        return {
+            ...state,
+            models: action.data,
+        };
         case 'LOGOUT':
             return initialState;
         default:

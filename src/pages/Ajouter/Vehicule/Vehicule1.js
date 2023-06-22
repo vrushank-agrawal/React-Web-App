@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
@@ -12,7 +13,7 @@ import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
-import { getBrands } from "../../../api/modules/Vehicle";
+import { getBrands, getModels } from "../../../api/modules/Vehicle";
 
 const Vehicule1FontSize = MICRO;
 
@@ -31,20 +32,14 @@ const VehiculeData = {
 // ---------------------------------------------
 
 const SelectInput = (props) => {
-    const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
-
     return (
         <CodeNektSelect
             fontSize={Vehicule1FontSize}
             height={"1rem"}
             margin="0"
-            onChange={handleChange}
+            onChange={props.onChange}
             options={props.options}
-            value={category}
+            value={props.value}
         />
     );
 };
@@ -105,7 +100,7 @@ const VehiculeTileField = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={9} md={9} style={{display: "flex", paddingLeft: "1.5rem", alignItems: "center"}}>
-            {props.select ? <SelectInput options={props.options} />
+            {props.select ? <SelectInput options={props.options} onChange={props.onChange} value={props.value} />
             : props.input ? <TypeInput onChange={props.onChange} value={props.value} />
             : props.date ? <DateInput onChange={props.onChange} value={props.value}/>
             :   <Typography color={GREYTEXT2} style={{ textAlign: "left" , fontSize: Vehicule1FontSize}} >
@@ -148,21 +143,44 @@ const VehiculeTile = (props) => {
         }
     };
 
-    processBrands();
+    useEffect(() => {
+        processBrands();
+      }, []);
 
     const brands = useSelector((state) => state.brandsReducer.brands);
-    // console.log(brands);
 
-    const [marque, setMarque] = React.useState(null);
-    const [modele, setModele] = React.useState(null);
+    const getModelNames = async (brand) => {
+        try {
+            const response = await getModels(brand, user.token);
+            if (response.status === 200) {
+                const models = response.data;
+                const mappedModels = models.map(({ id, name, brand }) => {
+                    return { value: id, label: name };
+                });
+                dispatch({ type: "GET_MODELS", data: mappedModels });
+            } else {
+                console.log("error");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const models = useSelector((state) => state.brandsReducer.models);
+
+    const [marque, setMarque] = React.useState('');
+    const [modele, setModele] = React.useState('');
     const [version, setVersion] = React.useState(null);
-    const [boite, setBoite] = React.useState(null);
+    const [boite, setBoite] = React.useState('');
     const [puissance, setPuissance] = React.useState(null);
-    const [carburant, setCarburant] = React.useState(null);
+    const [carburant, setCarburant] = React.useState('');
     const [selectedDate, setSelectedDate] = React.useState(null);
-    const [statut, setStatut] = React.useState(null);
+    const [statut, setStatut] = React.useState('');
 
-    const handleMarqueChange = (event) => {setMarque(event.target.value);};
+    const handleMarqueChange = (event) => {
+        setMarque(event.target.value);
+        getModelNames(event.target.value);
+    };
     const handleModeleChange = (event) => {setModele(event.target.value);};
     const handleVersionChange = (event) => {setVersion(event.target.value);};
     const handleBoiteChange = (event) => {setBoite(event.target.value);};
@@ -171,11 +189,13 @@ const VehiculeTile = (props) => {
     const handleDateChange = (date) => {setSelectedDate(date);};
     const handleStatutChange = (event) => {setStatut(event.target.value);};
 
+    console.log(marque);
+
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
             <VehiculeTileField text={"ID Codenekt"} value={props.vehicule.id} />
             <VehiculeTileField select text={"Marque"} value={marque} options={brands} onChange={handleMarqueChange} />
-            <VehiculeTileField select text={"Modèle"} value={modele} options={categories} onChange={handleModeleChange} />
+            <VehiculeTileField select text={"Modèle"} value={modele} options={models} onChange={handleModeleChange} />
             <VehiculeTileField input text={"Version"} value={version}  onChange={handleVersionChange} />
             <VehiculeTileField select text={"Boite"} value={boite} options={Boite} onChange={handleBoiteChange} />
             <VehiculeTileField input text={"Puissance Fiscale"} value={puissance} onChange={handlePuissanceChange} />
