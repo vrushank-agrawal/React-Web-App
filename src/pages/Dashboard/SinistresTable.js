@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { List, ListItem, Paper, Typography, Grid, Divider } from "@mui/material";
 
 import { ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
 import CodenektButton from "../../Components/CodeNektButton";
 import { CodeNektEye } from "../../Components/CodeNektIcons";
 import { LinkSinistre } from "../../Components/CodeNektPageLinks";
+import { TablePaperStyle } from "./Styles";
 
 const SinistreListItem = (props) => {
     return (
@@ -37,7 +37,7 @@ const SinistreButton = () => {
 
 const SinistreTable = () => {
     return (
-        <Paper elevation={3} style={{ width: "100%", height: "100%", paddingBottom: "1rem" }}>
+        <Paper elevation={3} style={TablePaperStyle}>
             <Typography variant="h6" style={{ fontWeight: "bold", padding: "1rem" }}> SINISTRES </Typography>
             <Divider sx={{ backgroundColor: ORANGELIGHT }} />
             <Grid container spacing={2} alignItems="stretch" style={{ marginTop: "0.5rem", justify: "center", marginBottom: "1rem" }}>

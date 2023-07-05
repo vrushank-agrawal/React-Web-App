@@ -1,24 +1,6 @@
 import React from "react";
-
-import { Chip, Grid, Typography } from "@mui/material";
-
-// CodeNekt Imports
-import { ORANGELIGHT } from "../../utils/colors";
-
-const TCOChip = (props) => {
-    return (
-        <Chip
-            label={props.label}
-            variant='outlined'
-            sx={{fontWeight: "bold",
-                padding: "0.2rem",
-                margin: "auto",
-                fontSize: props.fontSize,
-                borderColor: ORANGELIGHT,
-            }}
-        />
-    )
-}
+import { Grid, Typography } from "@mui/material";
+import TCOChip from "../utils/TCOChip";
 
 const TCOCostGrid = (props) => {
     return (

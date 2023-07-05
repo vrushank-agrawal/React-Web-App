@@ -1,27 +1,12 @@
 import React from "react";
-import { Paper, Divider, Chip, Grid, Typography, List, ListItem, Stack } from "@mui/material";
-import { BLACKCN, ORANGELIGHT } from "../../utils/colors";
+import { Paper, Divider, Grid, Typography, List, ListItem, Stack } from "@mui/material";
+import { ORANGELIGHT } from "../../utils/colors";
 import { CodeNektProfile } from "../../Components/CodeNektIcons";
 import { MICRO } from "../../utils/fontSize";
+import TCOChip from "../utils/TCOChip";
 
 const TCOTableValueSize = "1.2rem";
 const TCOTableFontsize = MICRO;
-
-const TCOChip = (props) => {
-    return (
-        <Chip
-            label={props.label}
-            variant='outlined'
-            sx={{
-                fontWeight: "bold",
-                padding: "0.2rem",
-                margin: "auto",
-                fontSize: props.fontSize,
-                borderColor: ORANGELIGHT,
-            }}
-        />
-    )
-}
 
 const VehiclesTableCellItem = (props) => {
     return (
@@ -62,7 +47,6 @@ const CollaboratorTile = (props) => {
                 flexDirection: "column"
             }}
         >
-
             {/* --------------- HEADING ----------------- */}
 
             <Typography
@@ -85,7 +69,6 @@ const CollaboratorTile = (props) => {
                 <Grid container spacing={1.5} direction="column" gap={1}
                     sx={{display: "flex", justifyContent: "center", flexDirection: "column"}}
                 >
-
                     {/* ----------------- PROFILE ------------------ */}
 
                     <Grid item xs={12} sm={12} md={12}>

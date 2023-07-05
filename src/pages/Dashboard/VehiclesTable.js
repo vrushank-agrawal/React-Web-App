@@ -2,11 +2,12 @@ import React from 'react';
 import { Paper, Typography, Grid, Divider, Chip } from '@mui/material';
 
 // Local imports
-import { FONTSEMIBIG } from '../../utils/fontSize';
+import { BIG, FONTSEMIBIG } from '../../utils/fontSize';
 import { BLACKCN, BLUECN, ORANGEDARK, ORANGELIGHT, WHITECN, GREENCN } from '../../utils/colors';
 import CodenektButton from '../../Components/CodeNektButton';
 import { CodeNektEye } from '../../Components/CodeNektIcons';
 import { LinkVehicule } from '../../Components/CodeNektPageLinks';
+import { TablePaperStyle } from './Styles';
 
 const VehicleTableValueSize = "1.2rem";
 const VehicleTableFontsize = "14px";
@@ -15,12 +16,12 @@ const VehicleChip = (props) => {
     return (
         <Chip
             label={props.label}
-            variant={(props.defvar) ? props.variant : "filled"}
-            sx={{fontWeight: "bold",
-                padding: "0.2rem",
-                fontSize: props.fontSize,
+            variant={props.variant ? props.variant : "filled"}
+            sx={{
                 backgroundColor: props.backgroundColor,
                 color: props.color,
+                fontFamily: "Poppins-Black",
+                fontSize: props.fontSize,
                 width: "fit-content",
             }}
         />
@@ -31,10 +32,9 @@ const VehicleTypography = (props) => {
     return (
         <Typography variant="h6"
             style={{
-                marginLeft: "1rem",
+                margin: "0 2rem",
                 fontSize: VehicleTableFontsize,
                 fontWeight: "bold",
-                padding: "0.2rem",
             }}
         >
             {props.title}
@@ -44,9 +44,7 @@ const VehicleTypography = (props) => {
 
 const VehiclesButton = () => {
     return (
-        <CodenektButton
-        blue={true}
-        bold={true}
+        <CodenektButton blue bold
         color={WHITECN}
         height={"fit-content"}
             margin={"auto"}
@@ -54,38 +52,32 @@ const VehiclesButton = () => {
             startIcon={<CodeNektEye size={12}/>}
             title={"VOIR TOUS LES VÉHICULES"}
             to={LinkVehicule}
-            width={"fit-content"}
         />
     )
 }
 
 const VehiclesTable = () => {
     return (
-        <Paper elevation={3}
-            style={{ width: "100%", height: "100%", paddingBottom: "1rem",
-            display: "flex", justifyContent: "center", flexDirection: "column"
-        }}>
-            <Typography variant="h6" style={{ fontWeight: "bold", padding: "1rem", alignContent: "left", }}> Véhicules </Typography>
+        <Paper elevation={3} style={TablePaperStyle}>
+            <Typography variant="h6" style={{ fontWeight: "bold", margin: "0.5rem 2rem", alignContent: "left", }}> Véhicules </Typography>
             <Divider sx={{ backgroundColor: ORANGELIGHT }} />
             <Chip
                 label="33"
                 variant="outlined"
                 sx={{
-                    margin: "auto",
-                    marginTop: "1rem",
-                    fontWeight: "bold",
-                    padding: "0.2rem",
-                    fontSize: FONTSEMIBIG,
-                    color: BLACKCN,
-                    width: "fit-content",
                     borderColor: ORANGELIGHT,
+                    fontFamily: "Poppins-Black",
+                    fontSize: BIG,
+                    fontWeight: "bold",
+                    margin: "0.5rem auto",
+                    padding: "0.2rem",
                 }}
             />
-            <Grid container spacing={2} style={{ marginTop: "0.5rem", justify: "center", marginBottom: "1rem" }}>
-                <Grid item xs={12} sm={6} md={8}>
+            <Grid container spacing={1} style={{ justify: "center", margin: "0.5rem 0" }}>
+                <Grid item xs={12} sm={6} md={9}>
                     <VehicleTypography title="EN COMMANDE" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={3}>
                     <VehicleChip
                         label="30"
                         fontSize={VehicleTableValueSize}
@@ -93,10 +85,10 @@ const VehiclesTable = () => {
                         color={WHITECN}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={8}>
+                <Grid item xs={12} sm={6} md={9}>
                     <VehicleTypography title="AFFECTÉS" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={3}>
                     <VehicleChip
                         label="2"
                         fontSize={VehicleTableValueSize}
@@ -104,10 +96,10 @@ const VehiclesTable = () => {
                         color={WHITECN}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={8}>
+                <Grid item xs={12} sm={6} md={9}>
                     <VehicleTypography title="LIBRES" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={3}>
                     <VehicleChip
                         label="1"
                         fontSize={VehicleTableValueSize}
@@ -115,10 +107,10 @@ const VehiclesTable = () => {
                         color={WHITECN}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} md={8}>
+                <Grid item xs={12} sm={6} md={9}>
                     <VehicleTypography title="EN ATTENTE DE VALIDATION" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={3}>
                     <VehicleChip
                         label="1"
                         fontSize={VehicleTableValueSize}

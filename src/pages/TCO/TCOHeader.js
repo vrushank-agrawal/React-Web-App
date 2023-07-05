@@ -1,7 +1,8 @@
 import React from "react";
-import { Chip, Grid, Paper, Typography } from "@mui/material";
-import { BLACKCN, ORANGELIGHT } from "../../utils/colors";
+import { Grid, Paper, Typography } from "@mui/material";
+import { BLACKCN, WHITECN } from "../../utils/colors";
 import { LITTLE } from "../../utils/fontSize";
+import TCOChip from "../utils/TCOChip";
 
 // CodeNekt imports
 
@@ -14,16 +15,10 @@ const TCOHeaderItem = (props) => {
             </Typography>
         </Grid>
         <Grid item xs={12} sm={2} md={2}>
-            <Chip
+            <TCOChip
+                color={WHITECN}
+                fontSize={"1.2rem"}
                 label={props.value}
-                variant="outlined"
-                sx={{
-                    borderColor: ORANGELIGHT,
-                    fontSize: "1.2rem",
-                    fontWeight: "bold",
-                    padding: "0.2rem",
-                    color: "white",
-                }}
             />
         </Grid>
     </>

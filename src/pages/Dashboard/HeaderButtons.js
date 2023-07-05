@@ -1,6 +1,5 @@
 import React from "react";
-import { styled } from '@mui/material/styles';
-import { Grid, Autocomplete, TextField } from "@mui/material";
+import { Grid } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../Components/CodeNektSearch";
@@ -12,6 +11,7 @@ import { LinkAjoutCollab, LinkAjoutSinistre, LinkAjoutVehicule } from "../../Com
 const DashboardSearchButton = (props) => {
     return (
         <CodeNektSearch
+            height={'1rem'}
             label={"Rechercher nom collaborateur par exemple"}
             searchData={props.data}
             width={"100%"}
@@ -21,11 +21,9 @@ const DashboardSearchButton = (props) => {
 
 const DashboardHeaderButton = (props) => {
     return (
-        <CodenektButton
-            blue
-            bold
+        <CodenektButton blue bold
             color={WHITECN}
-            height={"fit-content"}
+            height={'2rem'}
             margin={"auto"}
             padding={"0.1rem 1rem"}
             startIcon={props.startIcon}

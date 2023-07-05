@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Chip, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { BsChevronLeft } from "react-icons/bs";
 
 // CodeNekt imports
