@@ -1,12 +1,8 @@
 import React from "react";
-import { Paper } from "@mui/material";
-
-// CodeNet imports
-import { FONTSEMIBIG } from "../../../utils/fontSize";
-import { FONTBOLD } from "../../../utils/fonts";
 
 import Carte1 from "./Carte1";
 import Carte2 from "./Carte2";
+import MainGrid from "../utils/MainGrid";
 import { LinkVoirCarte } from "../../../Components/CodeNektPageLinks";
 
 const CirclesText = [
@@ -16,32 +12,48 @@ const CirclesText = [
 
 const CartesPages = 2;
 
+const CarteData = {
+    id: "0987",
+    type: "Carte",
+    typeOptions: [{ label: "Carte", value: 1 }, { label: "Badge", value: 2 }],
+    marque: "Toyota",
+    marqueOptions: [{ label: "Toyota", value: 1 }, { label: "Honda", value: 2 }],
+    usage: "Usage",
+    usageOptions: [{ label: "Usage", value: 1 }, { label: "Usage2", value: 2 }],
+    facturation: "Facturation",
+    facturationOptions: [{ label: "Mensuel", value: 1 }, { label: "Annuel", value: 2 }],
+    numero: "123456789",
+};
+
 const AjouterSinistre = () => {
 
     const [step, setStep] = React.useState(1);
-
-    const handleStepChange = (step) => {
-        setStep(step);
-    };
+    const handleStepChange = (step) => {setStep(step);};
+    const onComplete = () => {handleStepChange(step+1);}
+    const onRegister = () => {console.log("Registered");}
+    const onClick = () => {console.log("Clicked");}
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "100%", alignItems: "center" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0", marginRight: "auto" }}>
-                AJOUTER UNE CARTE OU UN BADGE
-            </h1>
-            <Paper elevation={3}
-                style={{
-                    height: "37rem",
-                    marginTop: "1rem",
-                    padding: "1rem",
-                    width: "70rem"
-                }}
-            >
-                {step == 1 && <Carte1 onComplete={handleStepChange} text={CirclesText[step-1]} circles={CartesPages} />}
-                {step == 2 && <Carte2 text={CirclesText[step-1]} circles={CartesPages}
-                                title={"Badge créé"} buttonTitle={"BADGE"} to={LinkVoirCarte} />}
-            </Paper>
-        </div>
+        <MainGrid carte
+            circles={CartesPages}
+            data={CarteData}
+            page={step}
+            text={CirclesText[step-1]}
+            title={"Badge créé"}
+            localContent={
+                step == 1 ?
+                <Carte1
+                    carte={CarteData}
+                    onComplete={onComplete}
+                    onRegister={onRegister}
+                />
+                : <Carte2
+                    buttonTitle={"Badge"}
+                    onClick={onClick}
+                    to={LinkVoirCarte}
+                />
+            }
+        />
     );
 }
 

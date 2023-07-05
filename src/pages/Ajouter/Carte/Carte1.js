@@ -1,29 +1,14 @@
 import React from "react";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
-import { MICRO, MINIBIG } from "../../../utils/fontSize";
+import { MICRO } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
 const Carte1FontSize = MICRO;
-
-const CarteData = {
-    id: "0987",
-    type: "Carte",
-    typeOptions: [{ label: "Carte", value: 1 }, { label: "Badge", value: 2 }],
-    marque: "Toyota",
-    marqueOptions: [{ label: "Toyota", value: 1 }, { label: "Honda", value: 2 }],
-    usage: "Usage",
-    usageOptions: [{ label: "Usage", value: 1 }, { label: "Usage2", value: 2 }],
-    facturation: "Facturation",
-    facturationOptions: [{ label: "Mensuel", value: 1 }, { label: "Annuel", value: 2 }],
-    numero: "123456789",
-};
-
 
 // ---------------------------------------------
 // INPUT TYPES
@@ -168,7 +153,7 @@ const EnregistrerButton = (props) => {
 // Main Component
 // ---------------------------------------------
 
-const LocalContent = (props) => {
+const Carte1 = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 15rem"}}>
             <Grid item xs={12} sm={12} md={12}>
@@ -180,41 +165,5 @@ const LocalContent = (props) => {
         </Grid>
     );
 };
-
-
-const Carte1 = (props) => {
-
-    const onRegister = () => {
-        console.log("Carte1");
-    }
-
-    const onComplete = () => {
-        props.onComplete(2);
-    }
-
-    return (
-        <Grid container direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={1}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} carte={CarteData} />
-            </Grid>
-        </Grid>
-    );
-}
 
 export default Carte1;
