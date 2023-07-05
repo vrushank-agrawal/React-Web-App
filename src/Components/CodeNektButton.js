@@ -27,6 +27,7 @@ function CodenektButton(props) {
             borderRadius: '50px',
             boxShadow: props.boxShadow,
             color:  props.color,
+            fontFamily: "Poppins-Black",
             fontSize: props.size,
             fontWeight: props.bold ? 'bold' : 'normal',
             height: props.height,

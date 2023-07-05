@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Poppins, Arial, sans-serif !important;
+  font-family: 'Poppins-Black', Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* custom adds */
@@ -8,10 +8,15 @@ body {
   background: linear-gradient(to left, #FF0000, #FF6F08);
 }
 
+@font-face {
+  font-family: Poppins-Black;
+  src: url('assets/fonts/Poppins-Black.ttf') format('truetype');
+}
+
 code {
-  font-family: Poppins;
+  font-family: 'Poppins-Black', Arial, sans-serif;
 }
 
 .MuiTypography-root {
-  font-family: 'Poppins', Arial, sans-serif !important;
+  font-family: 'Poppins-Black', Arial, sans-serif !important;
 }

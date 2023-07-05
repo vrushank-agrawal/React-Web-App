@@ -18,6 +18,7 @@ const CodeNektSelect = (props) => {
             sx={{
                 backgroundColor: props.backgroundColor,
                 borderRadius: props.borderRadius ?? "2",
+                fontFamily: "Poppins-Black",
                 fontSize: props.fontSize,
                 height: props.height,
                 margin: props.margin,

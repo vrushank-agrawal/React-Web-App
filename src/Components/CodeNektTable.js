@@ -126,6 +126,7 @@ function CodeNektTable (props) {
     const TableOptions = {
         actionsColumnIndex: -1,
         headerStyle: {
+            fontFamily: "Poppins-Black",
             fontWeight: 'bold',
         },
         maxHeight: 100,
@@ -181,7 +182,10 @@ function CodeNektTable (props) {
                 localization={Localization}
                 // onSelectionChange={props.onSelectionChange}
                 options={TableOptions}
-                style={{ margin: "0 3%" }}
+                style={{
+                    margin: "0 3%",
+                    fontFamily: "Poppins-Black",
+                }}
             />
         </div>
         </ThemeProvider>

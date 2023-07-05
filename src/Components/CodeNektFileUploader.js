@@ -33,7 +33,7 @@ const CodeNektFileUploader = (props) => {
             type="file"
         />
         <label htmlFor="contained-button-file" style={{display: "flex", height: "1rem"}}>
-            <Button variant="standard" component="span" sx={{fontSize: LITTLE}}>
+            <Button variant="standard" component="span" sx={{fontSize: LITTLE, fontFamily: "Poppins-Black",}}>
                 Télécharger
             </Button>
         </label>

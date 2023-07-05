@@ -12,6 +12,7 @@ export const SearchInput = styled(TextField)(({ theme }) => ({
         backgroundColor: GREYBACK,
         borderRadius: 5,
         border: 'none',
+        fontFamily: "Poppins-Black",
         fontSize: LITTLE,
         transition: theme.transitions.create([
             'border-color',
@@ -32,6 +33,7 @@ const CodeNektInput = styled(TextField)(({ theme }) => ({
         borderRadius: 2,
         border: 'none',
         display: 'inline-flex',
+        fontFamily: "Poppins-Black",
         fontSize: MICRO,
         height: '1rem',
         padding: '0 0.5rem',

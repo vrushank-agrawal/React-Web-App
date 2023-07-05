@@ -29,6 +29,7 @@ const CodeNektSearch = (props) => {
                         placeholder={props.label}
                         size="small"
                         sx={{
+                            fontFamily: "Poppins-Black",
                             fontSize: SearchFontSize,
                         }}
                     />
