@@ -3,8 +3,8 @@ import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
 import { MICRO } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Sinistre3FontSize = MICRO;
 
@@ -93,10 +93,7 @@ const SinistreTileField = (props) => {
 const SinistreTile = (props) => {
 
     const [selectedDate, setSelectedDate] = React.useState(null);
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
+    const handleDateChange = (date) => {setSelectedDate(date);};
 
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
@@ -106,46 +103,6 @@ const SinistreTile = (props) => {
                 * Complétez les champs requis
             </Typography>
         </Paper>
-    );
-};
-
-// ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const PrecedentButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Précédent"}
-            width={"40%"}
-        />
-    );
-};
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"30%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"40%"}
-        />
     );
 };
 

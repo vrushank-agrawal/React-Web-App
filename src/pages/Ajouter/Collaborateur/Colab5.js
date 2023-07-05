@@ -2,13 +2,13 @@ import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
 
 // CodeNekt imports
-import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2 } from "../../../utils/colors";
+import { BLACKCN } from "../../../utils/colors";
 import { LITTLE2, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSearch from "../../../Components/CodeNektSearch";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
+import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Colab5FieldFontSize = LITTLE2;
 
@@ -16,22 +16,19 @@ const ButtonFooter = (props) => {
     return (
         <Grid container spacing={1.5} direction={"row"}>
             <Grid item xs={12} sm={4} md={4}>
-                <CodenektButton grey bold
-                    title="PRÉCÉDENT"
+                <PrecedentButton
                     onClick={props.onPrevious}
                     width={"100%"}
                 />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-                <CodenektButton grey bold
-                    title="ENREGISTRER"
+                <EnregistrerButton
                     onClick={() => {}}
                     width={"100%"}
                 />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
-                <CodenektButton orange bold
-                    title="ENREGISTRER ET CONTINUER"
+                <EnregistrerContinuerButton
                     onClick={props.onComplete}
                     width={"100%"}
                 />
@@ -76,17 +73,9 @@ const AvantageTile = (props) => {
     const [Montant, setMontant] = React.useState("");
     const [Frequency, setFrequency] = React.useState("");
 
-    const handleDenominationChange = (event) => {
-        setDenomination(event.target.value);
-    };
-
-    const handleMontantChange = (event) => {
-        setMontant(event.target.value);
-    };
-
-    const handleFrequencyChange = (event) => {
-        setFrequency(event.target.value);
-    };
+    const handleDenominationChange = (event) => {setDenomination(event.target.value);};
+    const handleMontantChange = (event) => {setMontant(event.target.value);};
+    const handleFrequencyChange = (event) => {setFrequency(event.target.value);};
 
     return (
         <Paper elevation={3} style={{width: "100%"}}>
@@ -158,48 +147,5 @@ const Colab5 = (props) => {
         </Grid>
     );
 };
-
-// const Colab5 = (props) => {
-
-//     const CarteData = [ "99991", "99992", "99993", "99994", "99995", ];
-//     const BadgeData = [ "99", "98", "97", "96", ];
-
-//     const onComplete = () => {
-//         props.onComplete(6);
-//     }
-
-//     const onPrevious = () => {
-//         props.onComplete(4);
-//     }
-
-//     return (
-//         <Grid container spacing={0} direction={"column"}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={"Cartes et badges"}
-//                     circles={props.circles}
-//                     page={5}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "2rem", alignSelf: "top"}}>
-//                 <Typography
-//                     color={GREYTEXT2}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{padding: "0 15rem"}}>
-//                 <LocalContent
-//                     CarteData={CarteData}
-//                     BadgeData={BadgeData}
-//                     onComplete={onComplete}
-//                     onPrevious={onPrevious}
-//                 />
-//             </Grid>
-//         </Grid>
-//     );
-// };
 
 export default Colab5;

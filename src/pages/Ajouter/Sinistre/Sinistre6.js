@@ -4,7 +4,7 @@ import { Divider, Grid, Paper, Typography } from "@mui/material";
 // local imports
 import { BLACKCN, ORANGE } from "../../../utils/colors";
 import { LITTLE, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
+import { EnregistrerContinuerButton, PrecedentButton } from "../utils/Buttons";
 
 const Sinistre6FontSize = LITTLE;
 
@@ -160,14 +160,11 @@ const Sinistre6 = (props) => {
             <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
                 <Grid container spacing={1.5} direction={"row"} style={{display: "flex", justifyContent: "left"}}>
                     <Grid item xs={12} sm={4} md={4}>
-                        <CodenektButton grey
-                            title={"Précédent"}
-                            onClick={props.onPrevious}
-                        />
+                        <PrecedentButton onClick={props.onPrevious}/>
                     </Grid>
                     <Grid item xs={12} sm={8} md={8} style={{display: "flex", justifyContent: "right"}}>
-                        <CodenektButton
-                            title={"Enregistrer et valider"}
+                        <EnregistrerContinuerButton
+                            valider={true}
                             onClick={props.onComplete}
                         />
                     </Grid>

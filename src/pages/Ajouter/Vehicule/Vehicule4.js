@@ -3,12 +3,11 @@ import { Grid, Typography, createTheme } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
-import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
-import { LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
-import { TCOVehicles as colabData } from "../../utils/TCO-test-data";
+import { BLACKCN, GREYTEXT2, GREYBACK, } from "../../../utils/colors";
+import { LITTLE2, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+import { GradientButton } from "../utils/Buttons";
 
 const DatePickerTheme = createTheme({
     components: {
@@ -82,62 +81,13 @@ const Vehicule4 = (props) => {
                     onClick={props.onComplete}
                     title="PASSER CETTE ETAPE"
                 />
-                <CodenektButton
-                    bold
-                    gradient
-                    dir={"to right"}
-                    left={ORANGEDARK}
-                    right={ORANGELIGHT}
-                    onClick={props.onComplete}
+                <GradientButton
+                    onComplete={props.onComplete}
                     title="AFFECTER LE COLLABORATEUR"
                 />
             </Grid>
         </Grid>
     );
 };
-
-// const Vehicule4 = (props) => {
-
-//     const VehicleData = colabData.map((item) => ({
-//         label: `${item.immat} ${item.marque} ${item.modele}`,
-//     }));
-
-//     const onComplete = () => {
-//         // add collaborator to the list
-//         props.onComplete(5);
-//     }
-
-//     const onPass = () => {
-//         props.onComplete(5);
-//     }
-
-//     return (
-//         <Grid container spacing={1.5} direction={"column"}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={props.text}
-//                     circles={props.circles}
-//                     page={4}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-//                 <Typography
-//                     color={GREYTEXT2}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <LocalContent
-//                     searchData={VehicleData}
-//                     onComplete={onComplete}
-//                     onPass={onPass}
-//                 />
-//             </Grid>
-//         </Grid>
-//     );
-// };
 
 export default Vehicule4;

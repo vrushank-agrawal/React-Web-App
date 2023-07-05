@@ -1,11 +1,11 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
 
-import { BLACKCN, GREYTEXT2, ORANGE } from "../../../utils/colors";
+import { GREYTEXT2, ORANGE } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektFileUploader from "../../../Components/CodeNektFileUploader";
+import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Sinistre5FontSize = MICRO;
 const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
@@ -92,46 +92,6 @@ const FileTile = (props) => {
                 }
             </Grid>
         </Paper>
-    );
-};
-
-// ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const PrecedentButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Précédent"}
-            width={"40%"}
-        />
-    );
-};
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"30%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"40%"}
-        />
     );
 };
 

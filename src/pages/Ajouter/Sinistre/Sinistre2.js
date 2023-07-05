@@ -3,9 +3,9 @@ import { Grid, TextField, Typography } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
-import { BLACKCN, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
+import { BLACKCN, ORANGE } from "../../../utils/colors";
 import { LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
+import { GradientButton } from "../utils/Buttons";
 
 const Sinistre2 = (props) => {
     return (
@@ -60,13 +60,8 @@ const Sinistre2 = (props) => {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
-                <CodenektButton
-                    bold
-                    gradient
-                    dir={"to right"}
-                    left={ORANGEDARK}
-                    right={ORANGELIGHT}
-                    onClick={props.onComplete}
+                <GradientButton
+                    onComplete={props.onComplete}
                     title="AFFECTER LE VÉHICULE"
                 />
             </Grid>

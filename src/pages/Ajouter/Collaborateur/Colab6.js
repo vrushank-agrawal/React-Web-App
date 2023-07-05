@@ -1,11 +1,10 @@
 import React from "react";
-import { Divider, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 
 // local imports
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN } from "../../../utils/colors";
 import { LITTLE, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
+import { EnregistrerContinuerButton, PrecedentButton } from "../utils/Buttons";
 
 // DocumentsTile
 import DocumentsTile from "../../utils/CollaborateurDocumentsTile";
@@ -110,10 +109,8 @@ const Colab6 = (props) => {
                     }
                 />
                 <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
-                    <CodenektButton grey
-                        color={BLACKCN}
+                    <PrecedentButton
                         onClick={props.onPrevious}
-                        title={"PRÉCÉDENT"}
                         width={"50%"}
                     />
                 </Grid>
@@ -125,20 +122,19 @@ const Colab6 = (props) => {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
                 <Colab6Tile
-                    children={<VehiclesTile
-                        xx={"XX 123 XX"}
-                        marque={"Renault"}
-                        modele={"Clio"}
-                        dateFin={"01/01/2021"}
+                    children={
+                        <VehiclesTile
+                            xx={"XX 123 XX"}
+                            marque={"Renault"}
+                            modele={"Clio"}
+                            dateFin={"01/01/2021"}
                         />
                     }
                 />
                 <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
-                    <CodenektButton orange
-                        color={BLACKCN}
-                        margin={"0 0 0 auto"}
+                    <EnregistrerContinuerButton
                         onClick={props.onComplete}
-                        title={"ENREGISTRER ET VALIDER"}
+                        valider={true}
                         width={"60%"}
                     />
                 </Grid>
@@ -146,47 +142,5 @@ const Colab6 = (props) => {
         </Grid>
     );
 }
-
-// ----------------------------------------------------------
-// Main Colab6 Component
-// ----------------------------------------------------------
-
-// const Colab6 = (props) => {
-
-//     const onComplete = () => {
-//         props.onComplete(7);
-//     }
-
-//     const onPrevious = () => {
-//         props.onComplete(5);
-//     }
-
-//     return (
-//         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={props.text}
-//                     circles={props.circles}
-//                     page={6}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-//                 <Typography
-//                     color={BLACKCN}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
-//                 <LocalContent
-//                     onComplete={onComplete}
-//                     onPrevious={onPrevious}
-//                 />
-//             </Grid>
-//         </Grid>
-//     );
-// }
 
 export default Colab6;

@@ -1,12 +1,12 @@
 import React from "react";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
+import { GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
 import { MICRO } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+import { EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Carte1FontSize = MICRO;
 
@@ -16,10 +16,7 @@ const Carte1FontSize = MICRO;
 
 const SelectInput = (props) => {
     const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
+    const handleChange = (event) => {setCategory(event.target.value);};
 
     return (
         <CodeNektSelect
@@ -112,10 +109,7 @@ const CarteTileField = (props) => {
 const CarteTile = (props) => {
 
     const [selectedDate, setSelectedDate] = React.useState("Date de mise en circulation");
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
+    const handleDateChange = (date) => {setSelectedDate(date);};
 
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
@@ -134,22 +128,6 @@ const CarteTile = (props) => {
 };
 
 // ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton orange
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"20%"}
-        />
-    );
-};
-
-// ---------------------------------------------
 // Main Component
 // ---------------------------------------------
 
@@ -160,7 +138,10 @@ const Carte1 = (props) => {
                 <CarteTile carte={props.carte}/>
             </Grid>
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "right"}}>
-                <EnregistrerButton onClick={props.onComplete} />
+                <EnregistrerContinuerButton
+                    carte={true}
+                    onClick={props.onComplete}
+                />
             </Grid>
         </Grid>
     );

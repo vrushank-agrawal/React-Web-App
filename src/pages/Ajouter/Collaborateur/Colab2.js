@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2 } from "../../../utils/colors";
-import { LITTLE2, MINIBIG } from "../../../utils/fontSize";
+import { BLACKCN } from "../../../utils/colors";
+import { LITTLE2 } from "../../../utils/fontSize";
 
 const Colab2 = (props) => {
     return (

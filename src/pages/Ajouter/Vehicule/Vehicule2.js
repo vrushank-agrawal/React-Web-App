@@ -1,14 +1,13 @@
 import React from "react";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
-import { MICRO, MINIBIG } from "../../../utils/fontSize";
+import { GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
+import { MICRO } from "../../../utils/fontSize";
 import { FrequencyList } from "../utils/DropDownOptions";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+import { EnregistrerButton, EnregistrerContinuerButton, PrecedentButton } from "../utils/Buttons";
 
 const Vehicule2FontSize = MICRO;
 
@@ -171,47 +170,6 @@ const VehiculeTile = (props) => {
 };
 
 // ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const PrecedentButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Précédent"}
-            width={"40%"}
-        />
-    );
-};
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton
-            grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"30%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"40%"}
-        />
-    );
-};
-
-// ---------------------------------------------
 // Main Component
 // ---------------------------------------------
 
@@ -235,45 +193,5 @@ const Vehicule2 = (props) => {
         </Grid>
     );
 };
-
-
-// const Vehicule2 = (props) => {
-
-//     const onRegister = () => {
-//         console.log("Vehicule2");
-//     }
-
-//     const onComplete = () => {
-//         props.onComplete(3);
-//     }
-
-//     const onPrevious = () => {
-//         props.onComplete(1);
-//     }
-
-//     return (
-//         <Grid container direction={"column"}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={props.text}
-//                     circles={props.circles}
-//                     page={2}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
-//                 <Typography
-//                     color={GREYTEXT2}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <LocalContent onComplete={onComplete} onRegister={onRegister} onPrevious={onPrevious} vehicule={VehiculeData}/>
-//             </Grid>
-//         </Grid>
-//     );
-// }
 
 export default Vehicule2;

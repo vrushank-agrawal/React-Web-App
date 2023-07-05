@@ -3,12 +3,12 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 
 import { BLACKCN, GREYTEXT2, ORANGE } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektFileUploader from "../../../Components/CodeNektFileUploader";
 import { Button } from "@mui/material";
 import { CodeNektAdd } from "../../../Components/CodeNektIcons";
+import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Sinistre4FontSize = MICRO;
 const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
@@ -19,10 +19,7 @@ const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10
 
 const SelectInput = (props) => {
     const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
+    const handleChange = (event) => {setCategory(event.target.value);};
 
     return (
         <CodeNektSelect
@@ -131,46 +128,6 @@ const FileTile = (props) => {
                 </Button>
             </Grid>
         </Paper>
-    );
-};
-
-// ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const PrecedentButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Précédent"}
-            width={"40%"}
-        />
-    );
-};
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"30%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"40%"}
-        />
     );
 };
 

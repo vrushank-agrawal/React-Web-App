@@ -2,22 +2,19 @@ import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
 import { Divider, MenuItem, Select } from "@mui/material";
 
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import { categories } from "../../utils/CategorieDefinition";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import { CodeNektEye } from "../../../Components/CodeNektIcons";
+import { EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 const Colab3FontSize = MICRO;
 
 const CategoryInput = (props) => {
     const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
+    const handleChange = (event) => {setCategory(event.target.value);};
 
     return (
         <CodeNektSelect
@@ -73,9 +70,7 @@ const CollaborateurTile = (props) => {
 };
 
 const ViewDocument = (props) => {
-    return (
-        <CodeNektEye size={18} />
-    );
+    return ( <CodeNektEye size={18} /> );
 };
 
 const RappelButton = (props) => {
@@ -134,31 +129,6 @@ const DocumentsTile = (props) => {
     );
 };
 
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton
-            grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"90%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"90%"}
-        />
-    );
-};
-
 const Colab3 = (props) => {
     return (
         <Grid container spacing={3} direction={"row"} style={{padding: "0 5rem"}}>
@@ -173,10 +143,16 @@ const Colab3 = (props) => {
                     <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
                         <Grid container spacing={1.5} direction={"row"}>
                             <Grid item xs={12} sm={5} md={5}>
-                                <EnregistrerButton onClick={props.onRegister} />
+                                <EnregistrerButton
+                                    onClick={props.onRegister}
+                                    width={"100%"}
+                                />
                             </Grid>
                             <Grid item xs={12} sm={7} md={7}>
-                                <EnregistrerContinuerButton onClick={props.onComplete} />
+                                <EnregistrerContinuerButton
+                                    onClick={props.onComplete}
+                                    width={"100%"}
+                                />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -185,41 +161,5 @@ const Colab3 = (props) => {
         </Grid>
     );
 };
-
-
-// const Colab3 = (props) => {
-
-//     const onRegister = () => {
-//         console.log("Colab3");
-//     }
-
-//     const onComplete = () => {
-//         props.onComplete(4);
-//     }
-
-//     return (
-//         <Grid container spacing={1.5} direction={"column"}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={props.text}
-//                     circles={props.circles}
-//                     page={3}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-//                 <Typography
-//                     color={GREYTEXT2}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <LocalContent onComplete={onComplete} onRegister={onRegister} />
-//             </Grid>
-//         </Grid>
-//     );
-// }
 
 export default Colab3;

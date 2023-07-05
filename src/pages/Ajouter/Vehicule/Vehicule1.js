@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
+import { GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
 import { MICRO } from "../../../utils/fontSize";
 import { Boite, Carburant, Statut } from "../utils/DropDownOptions";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
+import { EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
 
 import { getBrands, getModels } from "../../../api/modules/Vehicle";
 
@@ -194,35 +194,6 @@ const VehiculeTile = (props) => {
                 * Complétez les champs requis
             </Typography>
         </Paper>
-    );
-};
-
-// ---------------------------------------------
-// BUTTONS
-// ---------------------------------------------
-
-const EnregistrerButton = (props) => {
-    return (
-        <CodenektButton
-            grey
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer"}
-            width={"20%"}
-        />
-    );
-};
-
-const EnregistrerContinuerButton = (props) => {
-    return (
-        <CodenektButton
-            color={BLACKCN}
-            margin={"0.5rem"}
-            onClick={props.onClick}
-            title={"Enregistrer et continuer"}
-            width={"25%"}
-        />
     );
 };
 

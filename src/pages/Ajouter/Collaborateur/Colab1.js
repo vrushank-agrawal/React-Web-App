@@ -86,8 +86,7 @@ const Colab1 = (props) => {
             <Grid item xs={12} sm={12} md={12}
                 sx={{display: "flex", justifyContent: "center", marginTop: "1rem"}}
             >
-                <CodenektButton
-                    orange
+                <CodenektButton orange
                     onClick={handleSubmit}
                     title="ENVOYER"
                 />

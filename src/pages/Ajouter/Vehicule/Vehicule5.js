@@ -2,10 +2,9 @@ import React from "react";
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 
 // local imports
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, ORANGE } from "../../../utils/colors";
 import { LITTLE, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
+import { EnregistrerContinuerButton, PrecedentButton } from "../utils/Buttons";
 
 const Vehicule5FontSize = LITTLE;
 
@@ -166,14 +165,12 @@ const Vehicule5 = (props) => {
             <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
                 <Grid container spacing={1.5} direction={"row"} style={{display: "flex", justifyContent: "left"}}>
                     <Grid item xs={12} sm={4} md={4}>
-                        <CodenektButton grey
-                            title={"Précédent"}
-                            onClick={props.onPrevious}
+                        <PrecedentButton onClick={props.onPrevious}
                         />
                     </Grid>
                     <Grid item xs={12} sm={8} md={8} style={{display: "flex", justifyContent: "right"}}>
-                        <CodenektButton
-                            title={"Enregistrer et valider"}
+                        <EnregistrerContinuerButton
+                            valider={true}
                             onClick={props.onComplete}
                         />
                     </Grid>
@@ -182,48 +179,5 @@ const Vehicule5 = (props) => {
         </Grid>
     );
 }
-
-// ----------------------------------------------------------
-// Main Colab6 Component
-// ----------------------------------------------------------
-
-// const Vehicule5 = (props) => {
-
-//     const onComplete = () => {
-//         props.onComplete(6);
-//     }
-
-//     const onPrevious = () => {
-//         props.onComplete(4);
-//     }
-
-//     return (
-//         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
-//             <Grid item xs={12} sm={12} md={12}>
-//                 <DisplayHeader
-//                     text={props.text}
-//                     circles={props.circles}
-//                     page={5}
-//                 />
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-//                 <Typography
-//                     color={BLACKCN}
-//                     fontSize={MINIBIG}
-//                     style={{ textAlign: "center" }}
-//                 >
-//                     {props.text.toLocaleUpperCase()}
-//                 </Typography>
-//             </Grid>
-//             <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
-//                 <LocalContent
-//                     data={Vehicule5Data}
-//                     onComplete={onComplete}
-//                     onPrevious={onPrevious}
-//                 />
-//             </Grid>
-//         </Grid>
-//     );
-// }
 
 export default Vehicule5;
