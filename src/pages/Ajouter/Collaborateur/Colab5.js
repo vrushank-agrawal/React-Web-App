@@ -4,7 +4,6 @@ import { Grid, Paper, Typography } from "@mui/material";
 // CodeNekt imports
 import { BLACKCN } from "../../../utils/colors";
 import { LITTLE2, MINIBIG } from "../../../utils/fontSize";
-import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSearch from "../../../Components/CodeNektSearch";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
@@ -18,13 +17,13 @@ const ButtonFooter = (props) => {
             <Grid item xs={12} sm={4} md={4}>
                 <PrecedentButton
                     onClick={props.onPrevious}
-                    width={"100%"}
+                    width={"80%"}
                 />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
                 <EnregistrerButton
                     onClick={() => {}}
-                    width={"100%"}
+                    width={"80%"}
                 />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
@@ -48,12 +47,12 @@ const CarteBadgeTile = (props) => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
                         <Grid container spacing={1.5} direction={"row"} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                        <Grid item xs={12} sm={3} md={3}>
+                        <Grid item xs={12} sm={4} md={4}>
                             <Typography color={BLACKCN} fontSize={Colab5FieldFontSize} style={{textAlign: "left"}}>
                                 {props.title} N°
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} sm={9} md={9}>
+                        <Grid item xs={12} sm={8} md={8}>
                             <CodeNektSearch
                                 searchData={props.searchData}
                                 placeholder={props.title + " N°"}
@@ -78,7 +77,7 @@ const AvantageTile = (props) => {
     const handleFrequencyChange = (event) => {setFrequency(event.target.value);};
 
     return (
-        <Paper elevation={3} style={{width: "100%"}}>
+        <Paper elevation={3}>
             <Grid container spacing={1.5} direction={"column"} style={{padding: "0.5rem 0 0 1rem", marginTop: "0"}}>
                 <Grid item xs={12} sm={12} md={12}>
                     <Typography color={BLACKCN} fontSize={MINIBIG} style={{textAlign: "left", fontWeight: "bold"}}> AVANTAGE </Typography>
@@ -101,20 +100,22 @@ const AvantageTile = (props) => {
                         <Grid item xs={12} sm={3} md={3}>
                             <Typography color={BLACKCN} fontSize={Colab5FieldFontSize} style={{textAlign: "left"}}> Montant HT </Typography>
                         </Grid>
-                        <Grid item xs={12} sm={4.5} md={4.5}>
+                        <Grid item xs={12} sm={4} md={4}>
                             <CodeNektInput
                                 onChange={handleMontantChange}
                                 value={Montant}
                             />
                         </Grid>
-                        <Grid item xs={12} sm={4.2} md={4.2}>
+                        <Grid item xs={12} sm={4.5} md={4.5}>
                             <CodeNektSelect
-                                fontSize={Colab5FieldFontSize}
+                                fontSize={Colab5FieldFontSize/1.2}
+                                height={"1rem"}
                                 onChange={handleFrequencyChange}
                                 options={[
                                     {label: "mensuel", value: "mensuel"},
                                     {label: "annuel", value: "annuel"},
                                 ]}
+                                style={{display: "flex", alignSelf: "baseline"}}
                                 value={Frequency}
                             />
                         </Grid>
@@ -127,7 +128,7 @@ const AvantageTile = (props) => {
 
 const Colab5 = (props) => {
     return (
-        <Grid container spacing={1.5} direction={"column"}>
+        <Grid container spacing={1.5} direction={"column"} style={{margin: "auto", width: "40rem"}}>
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1.5} direction={"row"}>
                     <Grid item xs={12} sm={6} md={6}>

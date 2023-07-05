@@ -95,7 +95,7 @@ const VehiclesTile = (props) => {
 
 const Colab6 = (props) => {
     return (
-        <Grid container spacing={1.5} direction={"row"}>
+        <Grid container spacing={1.5} direction={"row"} style={{margin: "auto", width: "50rem"}}>
             <Grid item xs={12} sm={5} md={5}>
                 <Colab6Tile
                     children={
@@ -111,7 +111,7 @@ const Colab6 = (props) => {
                 <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
                     <PrecedentButton
                         onClick={props.onPrevious}
-                        width={"50%"}
+                        width={"30%"}
                     />
                 </Grid>
             </Grid>
@@ -135,7 +135,7 @@ const Colab6 = (props) => {
                     <EnregistrerContinuerButton
                         onClick={props.onComplete}
                         valider={true}
-                        width={"60%"}
+                        width={"70%"}
                     />
                 </Grid>
             </Grid>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
-import { Divider, MenuItem, Select } from "@mui/material";
+import { Divider } from "@mui/material";
 
 import { BLACKCN, GREYTEXT2, ORANGE, WHITECN } from "../../../utils/colors";
 import { MICRO, MINIBIG } from "../../../utils/fontSize";
@@ -50,7 +50,7 @@ const CollaborateurTileField = (props) => {
 
 const CollaborateurTile = (props) => {
     return (
-        <Paper elevation={1} style={{ padding: "2rem" }}>
+        <Paper elevation={1} style={{ padding: "1.8rem" }}>
             <Grid container spacing={1} direction={"column"}>
                 <Grid item xs={12} sm={12} md={12}>
                     <Typography color={BLACKCN} style={{ textAlign: "left", fontSize: MINIBIG, fontWeight: "bold" }}>
@@ -141,17 +141,17 @@ const Colab3 = (props) => {
                         <DocumentsTile />
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
-                        <Grid container spacing={1.5} direction={"row"}>
+                        <Grid container spacing={1.5} direction={"row"} style={{alignItems:""}}>
                             <Grid item xs={12} sm={5} md={5}>
                                 <EnregistrerButton
                                     onClick={props.onRegister}
                                     width={"100%"}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={7} md={7}>
+                            <Grid item xs={12} sm={7} md={7} >
                                 <EnregistrerContinuerButton
                                     onClick={props.onComplete}
-                                    width={"100%"}
+                                    width={"90%"}
                                 />
                             </Grid>
                         </Grid>

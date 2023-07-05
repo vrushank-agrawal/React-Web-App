@@ -1,13 +1,12 @@
 import React from "react";
-import { Autocomplete, TextField, InputAdornment } from "@mui/material";
+import { Autocomplete, InputAdornment } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import { styled } from '@mui/material/styles';
 import { FormControl } from "@mui/base";
 
 // CodeNekt imports
 import { LITTLE, MICROPLUS } from "../utils/fontSize";
 import { GREYBACK } from "../utils/colors";
-import { SearchInput } from "./CodeNektInput";
+import CodeNektInput from "./CodeNektInput";
 
 const CodeNektSearch = (props) => {
 
@@ -19,7 +18,7 @@ const CodeNektSearch = (props) => {
             options={props.searchData ?? []}
             renderInput={(params) => (
                 <FormControl variant="standard">
-                    <SearchInput
+                    <CodeNektInput
                         {...params}
                         InputProps={{
                             ...params.InputProps,
@@ -39,6 +38,7 @@ const CodeNektSearch = (props) => {
                 backgroundColor: GREYBACK,
                 borderRadius: 50,
                 fontSize: SearchFontSize,
+                heigh: props.height ?? 'inherit',
                 margin: "auto",
                 width: props.width,
             }}

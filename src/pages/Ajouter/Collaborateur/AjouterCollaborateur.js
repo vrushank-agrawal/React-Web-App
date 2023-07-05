@@ -27,7 +27,7 @@ const ColabPages = 6;
 
 const AjouterCollaborateur = () => {
 
-    const [step, setStep] = React.useState(3);
+    const [step, setStep] = React.useState(5);
     const handleStepChange = (step) => {setStep(step);};
     const onRegister = () => {console.log("Register");};
     const onComplete = () => {handleStepChange(step+1);}

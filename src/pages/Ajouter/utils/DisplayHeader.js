@@ -13,6 +13,7 @@ const HeaderContainer = styled(Paper)(({ theme }) => ({
     background: 'transparent',
     boxShadow: 'none',
     display: 'flex',
+    elevation: '0',
     justifyContent: 'center',
     padding: theme.spacing(1),
 }));
