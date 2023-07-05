@@ -43,10 +43,7 @@ const FileData = {
     carteAssurance: {numero: "", name: "", montant: "", montantFreq: "",},
 };
 
-import { TCOVehicles as colabData } from "../../utils/TCO-test-data";
-const VehicleData4 = colabData.map((item) => ({
-    label: `${item.immat} ${item.marque} ${item.modele}`,
-}));
+import { VehicleSearchData as VehicleData4 } from "../../utils/TCO-test-data";
 
 const VehiculeData5 = {
     vehicule: {

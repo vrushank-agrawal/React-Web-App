@@ -1,9 +1,4 @@
 import React from "react";
-import { Paper } from "@mui/material";
-
-// CodeNet imports
-import { FONTSEMIBIG } from "../../../utils/fontSize";
-import { FONTBOLD } from "../../../utils/fonts";
 
 import Colab1 from "./Colab1";
 import Colab2 from "./Colab2";
@@ -12,7 +7,8 @@ import Colab4 from "./Colab4";
 import Colab5 from "./Colab5";
 import Colab6 from "./Colab6";
 import FinalPage from "../utils/FinalPage";
-import { LinkVoir, LinkVoirCollab } from "../../../Components/CodeNektPageLinks";
+import MainGrid from "../utils/MainGrid";
+import { LinkVoirCollab } from "../../../Components/CodeNektPageLinks";
 
 const CirclesText = [
     "Recherche du collaborateur",
@@ -23,38 +19,40 @@ const CirclesText = [
     "Validation de la fiche collaborateur",
 ];
 
+import { VehicleSearchData as ColabData4 } from "../../utils/TCO-test-data";
+const CarteData = [ "99991", "99992", "99993", "99994", "99995", ];
+const BadgeData = [ "99", "98", "97", "96", ];
+
 const ColabPages = 6;
 
 const AjouterCollaborateur = () => {
 
     const [step, setStep] = React.useState(3);
-
-    const handleStepChange = (step) => {
-        setStep(step);
-    };
+    const handleStepChange = (step) => {setStep(step);};
+    const onRegister = () => {console.log("Register");};
+    const onComplete = () => {handleStepChange(step+1);}
+    const onPrevious = () => {handleStepChange(step-1);}
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "100%", alignItems: "center" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0", marginRight: "auto" }}>
-                AJOUTER UN COLLABORATEUR
-            </h1>
-            <Paper elevation={3}
-                style={{
-                    height: "37rem",
-                    marginTop: "1rem",
-                    padding: "1rem",
-                    width: "70rem"
-                }}
-            >
-                {step == 1 && <Colab1 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 2 && <Colab2 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 3 && <Colab3 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 4 && <Colab4 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 5 && <Colab5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 6 && <Colab6 onComplete={handleStepChange} text={CirclesText[step-1]} circles={ColabPages} />}
-                {step == 7 && <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={LinkVoirCollab} />}
-            </Paper>
-        </div>
+    <>{
+        step == ColabPages+1 ?
+        <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={LinkVoirCollab} />
+        :
+        <MainGrid
+            circles={ColabPages}
+            page={step}
+            text={CirclesText[step-1]}
+            localContent={
+                step == 1 ? <Colab1 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 2 ? <Colab2 circles={ColabPages} text={CirclesText[step-1]} />
+                : step == 3 ? <Colab3 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 4 ? <Colab4 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} searchData={ColabData4} />
+                : step == 5 ? <Colab5 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} carteData={CarteData} badgeData={BadgeData} />
+                : step == 6 ? <Colab6 onComplete={onComplete} onPrevious={onPrevious} />
+                : null
+            }
+        />
+    }</>
     );
 }
 

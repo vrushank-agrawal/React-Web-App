@@ -22,3 +22,7 @@ export const AllVehicles = [
     { label: "AA-125-AA", value: "AA-125-AA" },
     { label: "AA-126-AA", value: "AA-126-AA" },
 ];
+
+export const VehicleSearchData = TCOVehicles.map((item) => ({
+    label: `${item.immat} ${item.marque} ${item.modele}`,
+}));

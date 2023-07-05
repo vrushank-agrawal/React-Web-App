@@ -136,16 +136,16 @@ const AvantageTile = (props) => {
     );
 };
 
-const LocalContent = (props) => {
+const Colab5 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"}>
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1.5} direction={"row"}>
                     <Grid item xs={12} sm={6} md={6}>
-                        <CarteBadgeTile title={"Carte"} searchData={props.CarteData} />
+                        <CarteBadgeTile title={"Carte"} searchData={props.carteData} />
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
-                        <CarteBadgeTile title={"Badge"} searchData={props.BadgeData} />
+                        <CarteBadgeTile title={"Badge"} searchData={props.badgeData} />
                     </Grid>
                 </Grid>
             </Grid>
@@ -159,47 +159,47 @@ const LocalContent = (props) => {
     );
 };
 
-const Colab5 = (props) => {
+// const Colab5 = (props) => {
 
-    const CarteData = [ "99991", "99992", "99993", "99994", "99995", ];
-    const BadgeData = [ "99", "98", "97", "96", ];
+//     const CarteData = [ "99991", "99992", "99993", "99994", "99995", ];
+//     const BadgeData = [ "99", "98", "97", "96", ];
 
-    const onComplete = () => {
-        props.onComplete(6);
-    }
+//     const onComplete = () => {
+//         props.onComplete(6);
+//     }
 
-    const onPrevious = () => {
-        props.onComplete(4);
-    }
+//     const onPrevious = () => {
+//         props.onComplete(4);
+//     }
 
-    return (
-        <Grid container spacing={0} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={"Cartes et badges"}
-                    circles={props.circles}
-                    page={5}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "2rem", alignSelf: "top"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{padding: "0 15rem"}}>
-                <LocalContent
-                    CarteData={CarteData}
-                    BadgeData={BadgeData}
-                    onComplete={onComplete}
-                    onPrevious={onPrevious}
-                />
-            </Grid>
-        </Grid>
-    );
-};
+//     return (
+//         <Grid container spacing={0} direction={"column"}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={"Cartes et badges"}
+//                     circles={props.circles}
+//                     page={5}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "2rem", alignSelf: "top"}}>
+//                 <Typography
+//                     color={GREYTEXT2}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{padding: "0 15rem"}}>
+//                 <LocalContent
+//                     CarteData={CarteData}
+//                     BadgeData={BadgeData}
+//                     onComplete={onComplete}
+//                     onPrevious={onPrevious}
+//                 />
+//             </Grid>
+//         </Grid>
+//     );
+// };
 
 export default Colab5;

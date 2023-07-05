@@ -159,7 +159,7 @@ const EnregistrerContinuerButton = (props) => {
     );
 };
 
-const LocalContent = (props) => {
+const Colab3 = (props) => {
     return (
         <Grid container spacing={3} direction={"row"} style={{padding: "0 5rem"}}>
             <Grid item xs={12} sm={7} md={7}>
@@ -187,39 +187,39 @@ const LocalContent = (props) => {
 };
 
 
-const Colab3 = (props) => {
+// const Colab3 = (props) => {
 
-    const onRegister = () => {
-        console.log("Colab3");
-    }
+//     const onRegister = () => {
+//         console.log("Colab3");
+//     }
 
-    const onComplete = () => {
-        props.onComplete(4);
-    }
+//     const onComplete = () => {
+//         props.onComplete(4);
+//     }
 
-    return (
-        <Grid container spacing={1.5} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={3}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} />
-            </Grid>
-        </Grid>
-    );
-}
+//     return (
+//         <Grid container spacing={1.5} direction={"column"}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={3}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
+//                 <Typography
+//                     color={GREYTEXT2}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <LocalContent onComplete={onComplete} onRegister={onRegister} />
+//             </Grid>
+//         </Grid>
+//     );
+// }
 
 export default Colab3;

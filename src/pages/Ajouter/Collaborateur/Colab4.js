@@ -26,10 +26,7 @@ const DatePickerTheme = createTheme({
 
 const ChooseDate = (props) => {
     const [selectedDate, setSelectedDate] = React.useState(null);
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
+    const handleDateChange = (date) => {setSelectedDate(date);};
 
     return (
         <Grid container spacing={1.5} direction={"row"} style={{display:"flex", alignItems:"center"}}>
@@ -49,7 +46,7 @@ const ChooseDate = (props) => {
     );
 };
 
-const LocalContent = (props) => {
+const Colab4 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"}>
 
@@ -104,42 +101,42 @@ const LocalContent = (props) => {
     );
 };
 
-const Colab4 = (props) => {
+// const Colab4 = (props) => {
 
-    const VehicleData = colabData.map((item) => ({
-        label: `${item.immat} ${item.marque} ${item.modele}`,
-    }));
+//     const VehicleData = colabData.map((item) => ({
+//         label: `${item.immat} ${item.marque} ${item.modele}`,
+//     }));
 
-    const onComplete = () => {
-        props.onComplete(5);
-    }
+//     const onComplete = () => {
+//         props.onComplete(5);
+//     }
 
-    return (
-        <Grid container spacing={1.5} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={4}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent
-                    searchData={VehicleData}
-                    onComplete={onComplete}
-                />
-            </Grid>
-        </Grid>
-    );
-};
+//     return (
+//         <Grid container spacing={1.5} direction={"column"}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={4}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
+//                 <Typography
+//                     color={GREYTEXT2}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <LocalContent
+//                     searchData={VehicleData}
+//                     onComplete={onComplete}
+//                 />
+//             </Grid>
+//         </Grid>
+//     );
+// };
 
 export default Colab4;

@@ -94,7 +94,7 @@ const VehiclesTile = (props) => {
 // LocalContent
 // ----------------------------------------------------------
 
-const LocalContent = (props) => {
+const Colab6 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"row"}>
             <Grid item xs={12} sm={5} md={5}>
@@ -134,12 +134,6 @@ const LocalContent = (props) => {
                     }
                 />
                 <Grid item xs={12} sm={12} md={12} style={{marginTop: "1rem"}}>
-                    <CodenektButton grey
-                        color={BLACKCN}
-                        onClick={()=>{console.log("enregistrer")}}
-                        title={"ENREGISTRER"}
-                        width={"35%"}
-                    />
                     <CodenektButton orange
                         color={BLACKCN}
                         margin={"0 0 0 auto"}
@@ -157,42 +151,42 @@ const LocalContent = (props) => {
 // Main Colab6 Component
 // ----------------------------------------------------------
 
-const Colab6 = (props) => {
+// const Colab6 = (props) => {
 
-    const onComplete = () => {
-        props.onComplete(7);
-    }
+//     const onComplete = () => {
+//         props.onComplete(7);
+//     }
 
-    const onPrevious = () => {
-        props.onComplete(5);
-    }
+//     const onPrevious = () => {
+//         props.onComplete(5);
+//     }
 
-    return (
-        <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={6}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={BLACKCN}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
-                <LocalContent
-                    onComplete={onComplete}
-                    onPrevious={onPrevious}
-                />
-            </Grid>
-        </Grid>
-    );
-}
+//     return (
+//         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={6}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
+//                 <Typography
+//                     color={BLACKCN}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
+//                 <LocalContent
+//                     onComplete={onComplete}
+//                     onPrevious={onPrevious}
+//                 />
+//             </Grid>
+//         </Grid>
+//     );
+// }
 
 export default Colab6;
