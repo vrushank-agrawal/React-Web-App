@@ -79,7 +79,7 @@ const VehiculePages = 5;
 
 const AjouterVehicule = () => {
 
-    const [step, setStep] = React.useState(4);
+    const [step, setStep] = React.useState(1);
     const handleStepChange = (step) => {setStep(step);};
     const onRegister = () => {console.log("Register");};
     const onComplete = () => {handleStepChange(step+1);}

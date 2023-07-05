@@ -36,15 +36,15 @@ const CarteData = {
 
 const LocalContent = (props) => {
     return (
-    <Paper elevation={3} padding="1rem" style={{width: "inherit", marginTop: "1rem"}}>
-        <Grid container spacing={1} direction={"column"} style={{padding: "1rem"}}>
+    <Paper elevation={3} style={{width: "inherit", margin: "0.5rem"}}>
+        <Grid container spacing={1} direction={"column"} style={{marginBottom: "1rem"}}>
 
             {/* --------------------------- Tile Header -------------------------- */}
 
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1} direction={"row"} style={{display: "flex", alignContent: "center"}}>
                     <Grid item xs={12} sm={10} md={10}>
-                        <Typography variant="h6" style={{fontWeight: "bold", margin: "0" }}>
+                        <Typography variant="h6" style={{fontWeight: "bold", marginLeft: "1rem" }}>
                             INFORMATIONS
                         </Typography>
                     </Grid>
@@ -54,36 +54,24 @@ const LocalContent = (props) => {
                 </Grid>
             </Grid>
 
-            <Divider sx={{ backgroundColor: ORANGELIGHT, width: "100%", marginBottom: "1rem"}} />
+            <Divider sx={{ backgroundColor: ORANGELIGHT, width: "100%"}} />
 
             {/* --------------------------- Tile Content -------------------------- */}
 
-            <Grid item xs={12} sm={12} md={12}>
+            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
                 <Grid container spacing={1} direction={"row"} style={{display: "flex"}}>
 
                     <Grid item xs={12} sm={4} md={4} style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-                        <CodeNektProfile size={150} />
+                        <CodeNektProfile size={120} />
                     </Grid>
 
                     <Grid item xs={12} sm={8} md={8} style={{paddingLeft: "2rem"}}>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            N°{props.carte.numero}
-                        </Typography>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            {props.carte.type}
-                        </Typography>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            {props.carte.marque}
-                        </Typography>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            {props.carte.usage}
-                        </Typography>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            {props.carte.dateContrat}
-                        </Typography>
-                        <Typography variant="h6" style={{fontSize: FontSize, margin: "0" }}>
-                            {props.carte.facturation}
-                        </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> N°{props.carte.numero} </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> {props.carte.type} </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> {props.carte.marque} </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> {props.carte.usage} </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> {props.carte.dateContrat} </Typography>
+                        <Typography variant="h6" style={{fontSize: FontSize}}> {props.carte.facturation} </Typography>
                     </Grid>
 
                 </Grid>
@@ -99,17 +87,15 @@ const LocalContent = (props) => {
 // ------------------------------------------------------------
 
 const CarteHeader = (props) => {
-
     return (
-        <Grid container spacing={1} direction={"row"} style={{ marginTop: "2rem", alignItems: "center" }}>
-            <Grid item xs={12} sm={4} md={4}>
-                <Typography style={{fontWeight: FONTBOLD, fontSize: MEGABIG, marginRight: "auto" }}>
+        <Grid container spacing={1} direction={"row"} style={{ display: "flex", margin: "1rem 0.1rem"}}>
+            <Grid item xs={12} sm={2} md={2}>
+                <Typography style={{fontWeight: FONTBOLD, fontSize: MEGABIG, justifyContent: 'flex-start'}}>
                     {props.title.toLocaleUpperCase()}
                 </Typography>
             </Grid>
-            <Grid item xs={12} sm={8} md={8} style={{display: "flex", justifyContent: "right", marginLeft: "auto"}}>
-                <CodeNektButton
-                    bgcolor={"none"}
+            <Grid item xs={12} sm={4} md={4} style={{display: "flex", justifyContent: "right"}}>
+                <CodeNektButton transparent
                     border={"1px solid"}
                     borderColor={WHITECN}
                     color={WHITECN}
@@ -121,23 +107,59 @@ const CarteHeader = (props) => {
                     width={"100%"}
                 />
             </Grid>
+            <Grid item xs={0} sm={6} md={6} />
         </Grid>
+    );
+}
+
+const CarteRow = (props) => {
+    const isVisible = props.total >= props.current;
+    return (
+    <Grid item xs={12} sm={12} md={12}>
+        <Grid container spacing={1} >
+        {isVisible ? (
+          <Grid item xs={12} sm={6} md={6}>
+            <LocalContent carte={props.data} />
+          </Grid>
+        ) : (
+          <Grid item xs={12} sm={6} md={6}>
+                <Paper elevation={0} style={{ height: '14rem', background: 'transparent'}}> </Paper>
+          </Grid>
+        )}
+            <Grid item xs={12} sm={6} md={6}>
+                {/* Facturation */}
+            </Grid>
+        </Grid>
+    </Grid>
     );
 }
 
 // ----------------------------------------------------------
 
 const VoirCarte = (props) => {
+    const cartes = 1;
+
     return (
         <div style={{
             alignItems: "center",
-            display: 'flex',
             flexDirection: 'column',
             textAlign: 'left',
-            width: "30rem",
+            width: "70rem",
         }}>
-            <CarteHeader title={CarteData.type} />
-            <LocalContent carte={CarteData} />
+        <Grid container spacing={1} >
+            <CarteHeader title={"Carte"} />
+            <Grid container spacing={1} direction={"column"} style={{display: "block"}}>
+                <Grid item xs={12} sm={4} md={4}>
+                    <CarteRow data={CarteData} total={cartes} current={1}/>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4}>
+                    <CarteRow data={CarteData} total={cartes} current={2}/>
+                </Grid>
+                <Grid item xs={12} sm={4} md={4}>
+                    <CarteRow data={CarteData} total={cartes} current={3}/>
+                </Grid>
+            </Grid>
+        </Grid>
         </div>
     );
 }

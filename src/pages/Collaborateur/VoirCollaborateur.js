@@ -146,8 +146,7 @@ const CollaborateurHeader = (props) => {
                 />
             </Grid>
             <Grid item xs={12} sm={3.5} md={3.5} style={{display: "flex", justifyContent: "right", marginLeft: "auto"}}>
-                <CodeNektButton
-                    bgcolor={"none"}
+                <CodeNektButton transparent
                     border={"1px solid"}
                     borderColor={WHITECN}
                     color={WHITECN}

@@ -4,7 +4,6 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import {ORANGEDARK, ORANGELIGHT, WHITECN, BLACKCN, BLUECN, GREYBACK} from '../utils/colors.js';
-import {FONTREGULAR} from '../utils/fonts.js';
 
 function CodenektButton(props) {
     const bgcolor = props.blue   ? BLUECN :
@@ -12,6 +11,7 @@ function CodenektButton(props) {
                     props.white  ? WHITECN :
                     props.grey   ? GREYBACK :
                     props.orange ? ORANGELIGHT :
+                    props.transparent ? "transparent" :
                                    ORANGEDARK
     return (
     <>

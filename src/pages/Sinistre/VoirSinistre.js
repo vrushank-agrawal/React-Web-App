@@ -116,8 +116,7 @@ const SinistreHeader = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6} style={{display: "flex", justifyContent: "right", marginLeft: "auto"}}>
-                <CodeNektButton
-                    bgcolor={"none"}
+                <CodeNektButton transparent
                     border={"1px solid"}
                     borderColor={WHITECN}
                     color={WHITECN}
