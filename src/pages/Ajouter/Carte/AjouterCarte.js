@@ -35,6 +35,7 @@ const AjouterSinistre = () => {
 
     return (
         <MainGrid
+            ajouter={"UNE CARTE OU UN BADGE"}
             carte={true}
             circles={CartesPages}
             data={CarteData}

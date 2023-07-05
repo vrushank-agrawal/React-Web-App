@@ -13,7 +13,7 @@ const FinalPage = (props) => {
     return (
 <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "100%", alignItems: "center" }}>
     <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0", marginRight: "auto" }}>
-        AJOUTER UN VÉHICULE
+        AJOUTER {props.ajouter}
     </h1>
     <Paper elevation={3}
         style={{

@@ -22,7 +22,7 @@ const MainGrid = (props) => {
                 margin: "0",
                 marginRight: "auto"
         }}>
-            AJOUTER UN VÉHICULE
+            AJOUTER {props.ajouter}
         </h1>
         <Paper elevation={3}
             style={{

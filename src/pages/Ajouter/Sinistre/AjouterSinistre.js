@@ -1,9 +1,4 @@
 import React from "react";
-import { Paper } from "@mui/material";
-
-// CodeNet imports
-import { FONTSEMIBIG } from "../../../utils/fontSize";
-import { FONTBOLD } from "../../../utils/fonts";
 
 import Sinistre1 from "./Sinistre1";
 import Sinistre2 from "./Sinistre2";
@@ -12,6 +7,7 @@ import Sinistre4 from "./Sinistre4";
 import Sinistre5 from "./Sinistre5";
 import Sinistre6 from "./Sinistre6";
 import FinalPage from "../utils/FinalPage";
+import MainGrid from "../utils/MainGrid";
 import { LinkVoirSinistre } from "../../../Components/CodeNektPageLinks";
 
 const CirclesText = [
@@ -23,38 +19,58 @@ const CirclesText = [
     "Validation"
 ];
 
+import { VehicleSearchData as SinistreData2 } from "../../utils/TCO-test-data";
+const SinistreData6 = {
+    sinistre: {
+        nom: "Sinistre 6",
+        date: "01/01/2021",
+        vehicule: "AB-123-CD",
+        collaborateur: "DUPONT Jean",
+    },
+    detail: "Détail du véhicule very very very long ",
+    docs: {
+        constat: "N. 12345",
+        procesVerbal: "N. 12345",
+    },
+    photos: [
+        "PIC0101",
+        "PIC0102",
+        "PIC0103",
+        "PIC0104",
+    ],
+};
+
 const SinistrePages = 6;
 
 const AjouterSinistre = () => {
 
-    const [step, setStep] = React.useState(1);
-
-    const handleStepChange = (step) => {
-        setStep(step);
-    };
+    const [step, setStep] = React.useState(3);
+    const handleStepChange = (step) => {setStep(step);};
+    const onRegister = () => {console.log("Register");};
+    const onComplete = () => {handleStepChange(step+1);}
+    const onPrevious = () => {handleStepChange(step-1);}
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', width: "100%", alignItems: "center" }}>
-            <h1 size={FONTSEMIBIG} style={{fontWeight: FONTBOLD, margin: "0", marginRight: "auto" }}>
-                AJOUTER UN VÉHICULE
-            </h1>
-            <Paper elevation={3}
-                style={{
-                    height: "37rem",
-                    marginTop: "1rem",
-                    padding: "1rem",
-                    width: "70rem"
-                }}
-            >
-                {step == 1 && <Sinistre1 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 2 && <Sinistre2 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 3 && <Sinistre3 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 4 && <Sinistre4 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 5 && <Sinistre5 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 6 && <Sinistre6 onComplete={handleStepChange} text={CirclesText[step-1]} circles={SinistrePages} />}
-                {step == 7 && <FinalPage title={"Sinistre créé"} buttonTitle={"SINISTRE"} to={LinkVoirSinistre} />}
-            </Paper>
-        </div>
+    <>{
+        step == SinistrePages+1 ?
+        <FinalPage ajouter={"UN SINISTRE"} title={"Sinistre créé"} buttonTitle={"SINISTRE"} to={LinkVoirSinistre} />
+        :
+        <MainGrid
+            ajouter={"UN SINISTRE"}
+            circles={SinistrePages}
+            page={step}
+            text={CirclesText[step-1]}
+            localContent={
+                step == 1 ? <Sinistre1 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 2 ? <Sinistre2 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} searchData={SinistreData2} />
+                : step == 3 ? <Sinistre3 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 4 ? <Sinistre4 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 5 ? <Sinistre5 onComplete={onComplete} onPrevious={onPrevious} onRegister={onRegister} />
+                : step == 6 ? <Sinistre6 onComplete={onComplete} onPrevious={onPrevious} data={SinistreData6} />
+                : null
+            }
+        />
+    }</>
     );
 }
 

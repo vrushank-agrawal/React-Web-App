@@ -1,9 +1,8 @@
 import React from "react";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
-import { MICRO, MINIBIG } from "../../../utils/fontSize";
+import { MICRO } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
@@ -154,7 +153,7 @@ const EnregistrerContinuerButton = (props) => {
 // Main Component
 // ---------------------------------------------
 
-const LocalContent = (props) => {
+const Sinistre3 = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12}>
@@ -174,45 +173,5 @@ const LocalContent = (props) => {
         </Grid>
     );
 };
-
-
-const Sinistre3 = (props) => {
-
-    const onRegister = () => {
-        console.log("Sinistre3");
-    }
-
-    const onComplete = () => {
-        props.onComplete(4);
-    }
-
-    const onPrevious = () => {
-        props.onComplete(2);
-    }
-
-    return (
-        <Grid container direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={3}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} onPrevious={onPrevious} />
-            </Grid>
-        </Grid>
-    );
-}
 
 export default Sinistre3;

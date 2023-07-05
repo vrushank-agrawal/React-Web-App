@@ -2,30 +2,9 @@ import React from "react";
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 
 // local imports
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, ORANGE } from "../../../utils/colors";
 import { LITTLE, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
-
-const Sinistre6Data = {
-    sinistre: {
-        nom: "Sinistre 6",
-        date: "01/01/2021",
-        vehicule: "AB-123-CD",
-        collaborateur: "DUPONT Jean",
-    },
-    detail: "Détail du véhicule very very very long ",
-    docs: {
-        constat: "N. 12345",
-        procesVerbal: "N. 12345",
-    },
-    photos: [
-        "PIC0101",
-        "PIC0102",
-        "PIC0103",
-        "PIC0104",
-    ],
-};
 
 const Sinistre6FontSize = LITTLE;
 
@@ -156,7 +135,7 @@ const PhotosTile = (props) => {
 // LocalContent
 // ----------------------------------------------------------
 
-const LocalContent = (props) => {
+const Sinistre6 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
             <Grid item xs={12} sm={12} md={12}>
@@ -193,49 +172,6 @@ const LocalContent = (props) => {
                         />
                     </Grid>
                 </Grid>
-            </Grid>
-        </Grid>
-    );
-}
-
-// ----------------------------------------------------------
-// Main Colab6 Component
-// ----------------------------------------------------------
-
-const Sinistre6 = (props) => {
-
-    const onComplete = () => {
-        props.onComplete(7);
-    }
-
-    const onPrevious = () => {
-        props.onComplete(5);
-    }
-
-    return (
-        <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={6}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={BLACKCN}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
-                <LocalContent
-                    data={Sinistre6Data}
-                    onComplete={onComplete}
-                    onPrevious={onPrevious}
-                />
             </Grid>
         </Grid>
     );

@@ -1,13 +1,12 @@
 import React from "react";
 import { styled } from '@mui/material/styles';
-import { Grid, TextField, Typography } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 
 // CodeNekt imports
-import { LITTLE, MINIBIG } from "../../../utils/fontSize";
-import { GREYBACK, GREYTEXT2 } from "../../../utils/colors";
+import { LITTLE } from "../../../utils/fontSize";
+import { GREYBACK } from "../../../utils/colors";
 
 // Local ajouter imports
-import DisplayHeader from "../utils/DisplayHeader";
 import CodenektButton from "../../../Components/CodeNektButton";
 
 const IDInput = styled(TextField)(({ theme }) => ({
@@ -31,7 +30,7 @@ const IDInput = styled(TextField)(({ theme }) => ({
     },
 }));
 
-const LocalContent = (props) => {
+const Sinistre1 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"} >
             <Grid item xs={12} sm={12} md={12}
@@ -47,39 +46,6 @@ const LocalContent = (props) => {
                 <CodenektButton orange
                     onClick={props.onComplete}
                     title="créer le sinistre"
-                />
-            </Grid>
-        </Grid>
-    );
-};
-
-const Sinistre1 = (props) => {
-
-    const onComplete = () => {
-        props.onComplete(2);
-    };
-
-    return (
-        <Grid container spacing={1.5} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={1}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent
-                    onComplete={onComplete}
                 />
             </Grid>
         </Grid>

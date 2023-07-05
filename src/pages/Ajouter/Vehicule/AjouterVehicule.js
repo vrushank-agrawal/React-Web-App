@@ -1,9 +1,4 @@
 import React from "react";
-import { Paper } from "@mui/material";
-
-// CodeNet imports
-import { FONTSEMIBIG } from "../../../utils/fontSize";
-import { FONTBOLD } from "../../../utils/fonts";
 
 import Vehicule1 from "./Vehicule1";
 import Vehicule2 from "./Vehicule2";
@@ -11,8 +6,8 @@ import Vehicule3 from "./Vehicule3";
 import Vehicule4 from "./Vehicule4";
 import Vehicule5 from "./Vehicule5";
 import FinalPage from "../utils/FinalPage";
-import { LinkVoirVehicule } from "../../../Components/CodeNektPageLinks";
 import MainGrid from "../utils/MainGrid"
+import { LinkVoirVehicule } from "../../../Components/CodeNektPageLinks";
 
 const CirclesText = [
     "Création de la fiche véhicule",
@@ -93,9 +88,10 @@ const AjouterVehicule = () => {
     return (
     <>{
         step == VehiculePages+1 ?
-        <FinalPage title={"Fiche véhicule validée"} buttonTitle={"VÉHICULE"} to={LinkVoirVehicule} />
+        <FinalPage ajouter={"UN VÉHICULE"} title={"Fiche véhicule validée"} buttonTitle={"VÉHICULE"} to={LinkVoirVehicule} />
         :
         <MainGrid
+            ajouter={"UN VÉHICULE"}
             circles={VehiculePages}
             page={step}
             text={CirclesText[step-1]}

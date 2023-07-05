@@ -36,9 +36,10 @@ const AjouterCollaborateur = () => {
     return (
     <>{
         step == ColabPages+1 ?
-        <FinalPage title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={LinkVoirCollab} />
+        <FinalPage ajouter={"UN COLLABORATEUR"} title={"Fiche véhicule validée"} buttonTitle={"Collaborateur"} to={LinkVoirCollab} />
         :
         <MainGrid
+            ajouter={"UN COLLABORATEUR"}
             circles={ColabPages}
             page={step}
             text={CirclesText[step-1]}

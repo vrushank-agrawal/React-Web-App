@@ -3,14 +3,11 @@ import { Grid, TextField, Typography } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
-import DisplayHeader from "../utils/DisplayHeader";
-import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
+import { BLACKCN, ORANGE, ORANGEDARK, ORANGELIGHT } from "../../../utils/colors";
 import { LITTLE, LITTLE2, MINIBIG } from "../../../utils/fontSize";
-import { TCOVehicles as SinistreData } from "../../utils/TCO-test-data";
 import CodenektButton from "../../../Components/CodeNektButton";
-import AjouterPagesInput from "../../../Components/CodeNektInput";
 
-const LocalContent = (props) => {
+const Sinistre2 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"}>
 
@@ -71,44 +68,6 @@ const LocalContent = (props) => {
                     right={ORANGELIGHT}
                     onClick={props.onComplete}
                     title="AFFECTER LE VÉHICULE"
-                />
-            </Grid>
-        </Grid>
-    );
-};
-
-const Sinistre2 = (props) => {
-
-    const VehicleData = SinistreData.map((item) => ({
-        label: `${item.immat} ${item.marque} ${item.modele}`,
-    }));
-
-    const onComplete = () => {
-        props.onComplete(3);
-    }
-
-    return (
-        <Grid container spacing={1.5} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={2}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent
-                    searchData={VehicleData}
-                    onComplete={onComplete}
                 />
             </Grid>
         </Grid>
