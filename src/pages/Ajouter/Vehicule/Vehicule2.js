@@ -12,30 +12,6 @@ import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 
 const Vehicule2FontSize = MICRO;
 
-const VehiculeData = {
-    pneusHIVER: [
-        {
-            label: "1",
-            value: 1,
-        },
-        {
-            label: "2",
-            value: 2,
-        },
-    ],
-    pneusETE: [
-        {
-            label: "1",
-            value: 1,
-        },
-        {
-            label: "2",
-            value: 2,
-        },
-    ],
-};
-
-
 // ---------------------------------------------
 // INPUT TYPES
 // ---------------------------------------------
@@ -239,11 +215,11 @@ const EnregistrerContinuerButton = (props) => {
 // Main Component
 // ---------------------------------------------
 
-const LocalContent = (props) => {
+const Vehicule2 = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>
-                <VehiculeTile vehicule={props.vehicule}/>
+                <VehiculeTile vehicule={props.data}/>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container direction={"row"}>
@@ -261,43 +237,43 @@ const LocalContent = (props) => {
 };
 
 
-const Vehicule2 = (props) => {
+// const Vehicule2 = (props) => {
 
-    const onRegister = () => {
-        console.log("Vehicule2");
-    }
+//     const onRegister = () => {
+//         console.log("Vehicule2");
+//     }
 
-    const onComplete = () => {
-        props.onComplete(3);
-    }
+//     const onComplete = () => {
+//         props.onComplete(3);
+//     }
 
-    const onPrevious = () => {
-        props.onComplete(1);
-    }
+//     const onPrevious = () => {
+//         props.onComplete(1);
+//     }
 
-    return (
-        <Grid container direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={2}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} onPrevious={onPrevious} vehicule={VehiculeData}/>
-            </Grid>
-        </Grid>
-    );
-}
+//     return (
+//         <Grid container direction={"column"}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={2}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
+//                 <Typography
+//                     color={GREYTEXT2}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <LocalContent onComplete={onComplete} onRegister={onRegister} onPrevious={onPrevious} vehicule={VehiculeData}/>
+//             </Grid>
+//         </Grid>
+//     );
+// }
 
 export default Vehicule2;

@@ -3,10 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
 
-import DisplayHeader from "../utils/DisplayHeader";
 import { BLACKCN, GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
-import { MICRO, MINIBIG } from "../../../utils/fontSize";
-import { categories } from "../../utils/CategorieDefinition";
+import { MICRO } from "../../../utils/fontSize";
 import { Boite, Carburant, Statut } from "../utils/DropDownOptions";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
@@ -16,16 +14,6 @@ import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 import { getBrands, getModels } from "../../../api/modules/Vehicle";
 
 const Vehicule1FontSize = MICRO;
-
-const VehiculeData = {
-    id: "12345",
-    marque: "Renault",
-    modele: "Clio",
-    version: "AB-123-CD",
-    boite: "Manuelle",
-    carburant: "Essence",
-    statut: "En service",
-};
 
 // ---------------------------------------------
 // INPUT TYPES
@@ -242,7 +230,7 @@ const EnregistrerContinuerButton = (props) => {
 // Main Component
 // ---------------------------------------------
 
-const LocalContent = (props) => {
+const Vehicule1 = (props) => {
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>
@@ -255,41 +243,5 @@ const LocalContent = (props) => {
         </Grid>
     );
 };
-
-
-const Vehicule1 = (props) => {
-
-    const onRegister = () => {
-        console.log("Vehicule1");
-    }
-
-    const onComplete = () => {
-        props.onComplete(2);
-    }
-
-    return (
-        <Grid container direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={1}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "0.5rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent onComplete={onComplete} onRegister={onRegister} vehicule={VehiculeData} />
-            </Grid>
-        </Grid>
-    );
-}
 
 export default Vehicule1;

@@ -7,41 +7,6 @@ import { BLACKCN, ORANGE } from "../../../utils/colors";
 import { LITTLE, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 
-const Vehicule5Data = {
-    vehicule: {
-        id: "123456",
-        marque: "Renault",
-        modele: "Clio",
-        version: "Clio 5",
-        boiteManuelle: "Boite manuelle",
-        puissanceFiscale: "5 CV",
-        carburant: "Essence",
-        dateMiseEnCirculation: "01/01/2021",
-        statut: "En stock",
-    },
-    contrat: {
-        numero: "123456",
-        duree: "12 mois",
-        dateEntree: "01/01/2021",
-        dateSortie: "01/01/2022",
-        kmContrat: "10000 km",
-        pneus: "Pneus été",
-        loyerHT: "1000 € HT",
-        loyerFreq: "Mensuel",
-    },
-    documents: {
-        contrat: "N. 12345",
-        carteGrise: "N. 12345",
-        assurance: "N. 12345",
-    },
-    collaborateur: {
-        nom: "DUPONT",
-        prenom: "Jean",
-        siteHanes: "Paris",
-        dateFinAffectation: "01/01/2022",
-    },
-};
-
 const Vehicule5FontSize = LITTLE;
 
 const Vehicule5Tile = (props) => {
@@ -176,7 +141,7 @@ const CollaborateurTile = (props) => {
 // LocalContent
 // ----------------------------------------------------------
 
-const LocalContent = (props) => {
+const Vehicule5 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
             <Grid item xs={12} sm={12} md={12}>
@@ -222,43 +187,43 @@ const LocalContent = (props) => {
 // Main Colab6 Component
 // ----------------------------------------------------------
 
-const Vehicule5 = (props) => {
+// const Vehicule5 = (props) => {
 
-    const onComplete = () => {
-        props.onComplete(6);
-    }
+//     const onComplete = () => {
+//         props.onComplete(6);
+//     }
 
-    const onPrevious = () => {
-        props.onComplete(4);
-    }
+//     const onPrevious = () => {
+//         props.onComplete(4);
+//     }
 
-    return (
-        <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={5}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={BLACKCN}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
-                <LocalContent
-                    data={Vehicule5Data}
-                    onComplete={onComplete}
-                    onPrevious={onPrevious}
-                />
-            </Grid>
-        </Grid>
-    );
-}
+//     return (
+//         <Grid container spacing={1.5} direction={"column"} style={{display:"flex"}}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={5}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
+//                 <Typography
+//                     color={BLACKCN}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{alignSelf: "center", width: "80%"}}>
+//                 <LocalContent
+//                     data={Vehicule5Data}
+//                     onComplete={onComplete}
+//                     onPrevious={onPrevious}
+//                 />
+//             </Grid>
+//         </Grid>
+//     );
+// }
 
 export default Vehicule5;

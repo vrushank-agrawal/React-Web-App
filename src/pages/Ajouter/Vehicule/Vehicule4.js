@@ -49,7 +49,7 @@ const ChooseDate = (props) => {
     );
 };
 
-const LocalContent = (props) => {
+const Vehicule4 = (props) => {
     return (
         <Grid container spacing={1.5} direction={"column"}>
 
@@ -79,7 +79,7 @@ const LocalContent = (props) => {
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "center", flexDirection: "row", alignItems: "center"}}>
                 <CodenektButton bold grey
                     color={BLACKCN}
-                    onClick={props.onPass}
+                    onClick={props.onComplete}
                     title="PASSER CETTE ETAPE"
                 />
                 <CodenektButton
@@ -96,48 +96,48 @@ const LocalContent = (props) => {
     );
 };
 
-const Vehicule4 = (props) => {
+// const Vehicule4 = (props) => {
 
-    const VehicleData = colabData.map((item) => ({
-        label: `${item.immat} ${item.marque} ${item.modele}`,
-    }));
+//     const VehicleData = colabData.map((item) => ({
+//         label: `${item.immat} ${item.marque} ${item.modele}`,
+//     }));
 
-    const onComplete = () => {
-        // add collaborator to the list
-        props.onComplete(5);
-    }
+//     const onComplete = () => {
+//         // add collaborator to the list
+//         props.onComplete(5);
+//     }
 
-    const onPass = () => {
-        props.onComplete(5);
-    }
+//     const onPass = () => {
+//         props.onComplete(5);
+//     }
 
-    return (
-        <Grid container spacing={1.5} direction={"column"}>
-            <Grid item xs={12} sm={12} md={12}>
-                <DisplayHeader
-                    text={props.text}
-                    circles={props.circles}
-                    page={4}
-                />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
-                <Typography
-                    color={GREYTEXT2}
-                    fontSize={MINIBIG}
-                    style={{ textAlign: "center" }}
-                >
-                    {props.text.toLocaleUpperCase()}
-                </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-                <LocalContent
-                    searchData={VehicleData}
-                    onComplete={onComplete}
-                    onPass={onPass}
-                />
-            </Grid>
-        </Grid>
-    );
-};
+//     return (
+//         <Grid container spacing={1.5} direction={"column"}>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <DisplayHeader
+//                     text={props.text}
+//                     circles={props.circles}
+//                     page={4}
+//                 />
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12} style={{marginBottom: "1rem"}}>
+//                 <Typography
+//                     color={GREYTEXT2}
+//                     fontSize={MINIBIG}
+//                     style={{ textAlign: "center" }}
+//                 >
+//                     {props.text.toLocaleUpperCase()}
+//                 </Typography>
+//             </Grid>
+//             <Grid item xs={12} sm={12} md={12}>
+//                 <LocalContent
+//                     searchData={VehicleData}
+//                     onComplete={onComplete}
+//                     onPass={onPass}
+//                 />
+//             </Grid>
+//         </Grid>
+//     );
+// };
 
 export default Vehicule4;

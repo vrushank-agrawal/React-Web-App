@@ -34,7 +34,8 @@ const AjouterSinistre = () => {
     const onClick = () => {console.log("Clicked");}
 
     return (
-        <MainGrid carte
+        <MainGrid
+            carte={true}
             circles={CartesPages}
             data={CarteData}
             page={step}

@@ -53,21 +53,23 @@ const MainGrid = (props) => {
                             : {textAlign: "center"}
                         }
                         >
-                    { props.carte &&
+                    { props.carte == true ?
                         props.page == props.circles ?
-                        props.title :
-                        props.text.toLocaleUpperCase()
+                        props.title : props.text.toLocaleUpperCase()
+                        : props.text.toLocaleUpperCase()
                     }
                     </Typography>
-                    { props.carte &&
+                    {   props.carte == true ?
                         props.page == props.circles ?
                         props.localContent : null
+                        : null
                     }
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                    { props.carte &&
+                    { props.carte == true ?
                         props.page < props.circles ?
                         props.localContent : null
+                        : props.localContent
                     }
                 </Grid>
             </Grid>
