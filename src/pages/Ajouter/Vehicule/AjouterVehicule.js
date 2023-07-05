@@ -12,7 +12,7 @@ import { LinkVoirVehicule } from "../../../Components/CodeNektPageLinks";
 const CirclesText = [
     "Création de la fiche véhicule",
     "Contrat du véhicule",
-    "Ajout de documents",
+    "Ajout des documents",
     "Affection du collaborateur",
     "Validation de la fiche véhicule",
 ];
@@ -79,7 +79,7 @@ const VehiculePages = 5;
 
 const AjouterVehicule = () => {
 
-    const [step, setStep] = React.useState(1);
+    const [step, setStep] = React.useState(4);
     const handleStepChange = (step) => {setStep(step);};
     const onRegister = () => {console.log("Register");};
     const onComplete = () => {handleStepChange(step+1);}

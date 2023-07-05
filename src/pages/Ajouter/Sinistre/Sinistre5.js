@@ -6,9 +6,9 @@ import { MICRO, MINIBIG } from "../../../utils/fontSize";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektFileUploader from "../../../Components/CodeNektFileUploader";
 import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
+import { FormatAcceptes } from "../../../Components/CodeNektFileUploader";
 
 const Sinistre5FontSize = MICRO;
-const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
 
 const TypeInput = (props) => {
     return (

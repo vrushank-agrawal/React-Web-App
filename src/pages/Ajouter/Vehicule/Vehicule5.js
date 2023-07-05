@@ -170,8 +170,9 @@ const Vehicule5 = (props) => {
                     </Grid>
                     <Grid item xs={12} sm={8} md={8} style={{display: "flex", justifyContent: "right"}}>
                         <EnregistrerContinuerButton
-                            valider={true}
                             onClick={props.onComplete}
+                            valider={true}
+                            width={"30%"}
                         />
                     </Grid>
                 </Grid>

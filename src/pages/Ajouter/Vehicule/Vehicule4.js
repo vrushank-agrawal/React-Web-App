@@ -1,45 +1,27 @@
 import React from "react";
-import { Grid, Typography, createTheme } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 // CodeNekt imports
 import CodeNektSearch from "../../../Components/CodeNektSearch";
-import { BLACKCN, GREYTEXT2, GREYBACK, } from "../../../utils/colors";
-import { LITTLE2, MINIBIG } from "../../../utils/fontSize";
+import { BLACKCN, GREYTEXT2, } from "../../../utils/colors";
+import { LITTLE, MINIBIG } from "../../../utils/fontSize";
 import CodenektButton from "../../../Components/CodeNektButton";
 import CodeNektDatePicker from "../../../Components/CodeNektDatePicker";
 import { GradientButton } from "../utils/Buttons";
 
-const DatePickerTheme = createTheme({
-    components: {
-        MuiInputBase: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: GREYBACK,
-                    fontSize: LITTLE2,
-                    height: "2rem",
-                },
-            },
-        },
-    },
-});
-
 const ChooseDate = (props) => {
     const [selectedDate, setSelectedDate] = React.useState(null);
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
+    const handleDateChange = (date) => {setSelectedDate(date);};
 
     return (
         <Grid container spacing={1.5} direction={"row"} style={{display:"flex", alignItems:"center"}}>
             <Grid item xs={12} sm={6} md={6}>
-                <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: LITTLE2 }}>
+                <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: LITTLE }}>
                     DATE DE FIN D'AFFECTATION
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
                 <CodeNektDatePicker
-                    theme={DatePickerTheme}
                     onChange={handleDateChange}
                     value={selectedDate}
                 />
@@ -55,7 +37,7 @@ const Vehicule4 = (props) => {
             {/* ------------------ Search Vehicle ------------------- */}
 
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
-                <Typography color={BLACKCN} fontSize={MINIBIG} style={{margin: "auto"}}>
+                <Typography color={BLACKCN} fontSize={MINIBIG} style={{margin: "2rem auto 0 auto"}}>
                     Rechercher du collaborateur
                 </Typography>
             </Grid>

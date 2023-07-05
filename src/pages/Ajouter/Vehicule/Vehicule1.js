@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
+import { Grid, Paper, Typography } from "@material-ui/core";
 
-import { GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
+import { GREYTEXT2, ORANGE } from "../../../utils/colors";
 import { MICRO } from "../../../utils/fontSize";
 import { Boite, Carburant, Statut } from "../utils/DropDownOptions";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
@@ -36,40 +36,8 @@ const TypeInput = (props) => {
     return (
         <CodeNektInput
             fontSize={Vehicule1FontSize}
-            // height={"1rem"}
             margin="0"
             onChange={props.onChange}
-            value={props.value}
-        />
-    );
-};
-
-const DatePickerTheme = createTheme({
-    components: {
-        MuiInputBase: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: GREYBACK,
-                    fontSize: Vehicule1FontSize,
-                    height: "1rem",
-                },
-            },
-        },
-        MuiSvgIcon: {
-            styleOverrides: {
-                root: {
-                    height: "1rem",
-                },
-            },
-        },
-    },
-});
-
-const DateInput = (props) => {
-    return (
-        <CodeNektDatePicker
-            onChange={props.onChange}
-            theme={DatePickerTheme}
             value={props.value}
         />
     );
@@ -90,7 +58,7 @@ const VehiculeTileField = (props) => {
             <Grid item xs={12} sm={9} md={9} style={{display: "flex", paddingLeft: "1.5rem", alignItems: "center"}}>
             {props.select ? <SelectInput options={props.options} onChange={props.onChange} value={props.value} />
             : props.input ? <TypeInput onChange={props.onChange} value={props.value} />
-            : props.date ? <DateInput onChange={props.onChange} value={props.value}/>
+            : props.date ? <CodeNektDatePicker onChange={props.onChange} value={props.value}/>
             :   <Typography color={GREYTEXT2} style={{ textAlign: "left" , fontSize: Vehicule1FontSize}} >
                     {props.value ?? "12345"}
                 </Typography>
@@ -131,10 +99,7 @@ const VehiculeTile = (props) => {
         }
     };
 
-    useEffect(() => {
-        processBrands();
-      }, []);
-
+    useEffect(() => {processBrands();}, []);
     const brands = useSelector((state) => state.brandsReducer.brands);
 
     const getModelNames = async (brand) => {
@@ -208,8 +173,8 @@ const Vehicule1 = (props) => {
                 <VehiculeTile vehicule={props.vehicule}/>
             </Grid>
             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "right"}}>
-                <EnregistrerButton onClick={props.onRegister} />
-                <EnregistrerContinuerButton onClick={props.onComplete} />
+                <EnregistrerButton onClick={props.onRegister} width={"25%"}/>
+                <EnregistrerContinuerButton onClick={props.onComplete} width={"30%"}/>
             </Grid>
         </Grid>
     );

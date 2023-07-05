@@ -3,7 +3,7 @@ import { LITTLE } from "../utils/fontSize";
 import { Button } from "@mui/material";
 
 const SizeTooLarge = "Taille du fichier doit être inférieure à 10 Mo";
-const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png";
+export const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
 
 export const validateFile = (file) => {
     const allowedTypes = ["image/jpeg", "image/jpg", "image/png"];

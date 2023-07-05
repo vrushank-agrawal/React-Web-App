@@ -46,32 +46,10 @@ const TypeInput = (props) => {
     );
 };
 
-const DatePickerTheme = createTheme({
-    components: {
-        MuiInputBase: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: GREYBACK,
-                    fontSize: Vehicule2FontSize,
-                    height: "1rem",
-                },
-            },
-        },
-        MuiSvgIcon: {
-            styleOverrides: {
-                root: {
-                    height: "1rem",
-                },
-            },
-        },
-    },
-});
-
 const DateInput = (props) => {
     return (
         <CodeNektDatePicker
             onChange={props.onChange}
-            theme={DatePickerTheme}
             value={props.value}
         />
     );

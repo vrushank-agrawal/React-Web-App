@@ -4,7 +4,6 @@ import { Grid, Paper, Divider, Typography } from "@mui/material";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 // CodeNekt imports
-import { ORANGELIGHT } from "../../../utils/colors";
 import { LITTLE } from "../../../utils/fontSize";
 import Circle from "./HeaderCircle";
 
@@ -18,22 +17,14 @@ const HeaderContainer = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(1),
 }));
 
-const CircleDivider = styled(Divider)({
-    backgroundColor: ORANGELIGHT,
-    border: "none",
-    flexGrow: 1,
-    // height: "1%",
-    margin: "0",
-});
-
 const DisplayHeader = (props) => {
     const NbCircles = props.circles;
     const GridLength = 12 / NbCircles;
     return (
         <HeaderContainer>
-            <Grid container spacing={1.5} direction={"column"}>
+            <Grid container spacing={1.5}>
                 <Grid item xs={12} sm={12} md={12}>
-                    <Grid container spacing={1.5} direction={"row"}>
+                    <Grid container spacing={1.5}>
                     {[...Array(NbCircles)].map((_, index) => (
                         <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}>
@@ -43,14 +34,13 @@ const DisplayHeader = (props) => {
                                     page={props.page}
                                     text={props.text}
                                 />
-                                {/* {index !== NbCircles - 1 && <CircleDivider />} */}
                             </Grid>
                         </React.Fragment>
                     ))}
                     </Grid>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                    <Grid container spacing={1.5} direction={"row"} >
+                    <Grid container spacing={1.5}>
                     {[...Array(NbCircles)].map((_, index) => (
                         <React.Fragment key={index+1}>
                             <Grid item xs={12} sm={GridLength} md={GridLength}

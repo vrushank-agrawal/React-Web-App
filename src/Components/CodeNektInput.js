@@ -24,7 +24,7 @@ const CodeNektInput = styled(TextField)(({ theme }) => ({
             'background-color',
             'box-shadow',
         ]),
-        width: 'auto',
+        width: 'inherit',
     },
     '& .MuiOutlinedInput-root fieldset': {
         border: 'none',

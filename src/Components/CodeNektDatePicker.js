@@ -1,16 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ThemeProvider} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { GREYBACK } from '../utils/colors';
 
 // Date picker imports
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { MICRO } from '../utils/fontSize';
+
+const DatePickerTheme = createTheme({
+    components: {
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: GREYBACK,
+                    fontSize: MICRO,
+                    height: "1rem",
+                },
+            },
+        },
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    height: "1rem",
+                },
+            },
+        },
+    },
+});
 
 const CodeNektDatePicker = (props) => {
     return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <ThemeProvider theme={props.theme}>
+        <ThemeProvider theme={DatePickerTheme}>
             <DatePicker
                 onChange={props.handleDateChange}
                 renderInput={(params) => <TextField {...params} />}

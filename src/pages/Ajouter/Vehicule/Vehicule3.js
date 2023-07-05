@@ -8,10 +8,9 @@ import CodeNektSelect from "../../../Components/CodeNektSelect";
 import CodeNektInput from "../../../Components/CodeNektInput";
 import CodeNektFileUploader, {validateFile} from "../../../Components/CodeNektFileUploader";
 import { EnregistrerButton, EnregistrerContinuerButton, PrecedentButton } from "../utils/Buttons";
+import { FormatAcceptes } from "../../../Components/CodeNektFileUploader";
 
 const Vehicule3FontSize = MICRO;
-const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
-
 
 // ---------------------------------------------
 // INPUT TYPES
@@ -19,10 +18,7 @@ const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10
 
 const SelectInput = (props) => {
     const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
+    const handleChange = (e) => {setCategory(e.target.value);};
 
     return (
         <CodeNektSelect
@@ -38,10 +34,8 @@ const SelectInput = (props) => {
 
 const TypeInput = (props) => {
     return (
-        <CodeNektInput
-            disabled
+        <CodeNektInput disabled
             fontSize={Vehicule3FontSize}
-            // height={"1rem"}
             margin="0"
             onChange={props.onChange}
             value={props.value}
@@ -55,7 +49,7 @@ const TypeInput = (props) => {
 
 const FileUploadField = (props) => {
     return (
-    <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+    <Grid container direction={"row"} style={{display: "flex", alignItems: "center"}}>
         <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
             <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                 {props.text}
@@ -73,7 +67,7 @@ const FileUploadField = (props) => {
 
 const NumeroField = (props) => {
     return (
-        <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+        <Grid container direction={"row"} style={{display: "flex", alignItems: "center"}}>
             <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                     {props.text}
@@ -88,7 +82,7 @@ const NumeroField = (props) => {
 
 const CoutSelectField = (props) => {
     return (
-        <Grid container direction={"row"} style={{margin: "0.5rem 0", display: "flex", alignItems: "center"}}>
+        <Grid container direction={"row"} style={{display: "flex", alignItems: "center"}}>
             <Grid item xs={12} sm={2} md={2} style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                 <Typography color={GREYTEXT2} style={{ textAlign: "left", fontSize: Vehicule3FontSize }}>
                     {props.text}

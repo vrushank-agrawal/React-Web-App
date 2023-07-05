@@ -9,9 +9,9 @@ import CodeNektFileUploader from "../../../Components/CodeNektFileUploader";
 import { Button } from "@mui/material";
 import { CodeNektAdd } from "../../../Components/CodeNektIcons";
 import { PrecedentButton, EnregistrerButton, EnregistrerContinuerButton } from "../utils/Buttons";
+import { FormatAcceptes } from "../../../Components/CodeNektFileUploader";
 
 const Sinistre4FontSize = MICRO;
-const FormatAcceptes = "Formats acceptés: Jpeg, Jpg et Png. Taille: moins de 10 Mo";
 
 // ---------------------------------------------
 // INPUT TYPES
