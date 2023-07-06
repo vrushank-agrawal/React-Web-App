@@ -19,7 +19,7 @@ import { ImCross } from "react-icons/im";
 import { GiBeveledStar } from "react-icons/gi";
 import { TbHexagons } from "react-icons/tb";
 import { MdAdd } from "react-icons/md";
-import { GrFormEdit } from "react-icons/gr";
+import { FiEdit2 } from "react-icons/fi";
 import { ImEye } from "react-icons/im";
 import { ImEyeBlocked } from "react-icons/im";
 import { BsCheckCircle } from "react-icons/bs";
@@ -40,7 +40,7 @@ import { AiOutlineQuestion } from 'react-icons/ai';
 import { IoSettings } from 'react-icons/io5';
 import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
 import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons/md';
-import { WHITECN } from '../utils/colors';
+import { BLACKCN, WHITECN } from '../utils/colors';
 
 const DEFAULT_SIZE = 15;
 
@@ -76,7 +76,7 @@ export const CodeNektAdd = (props) => {
 
 export const CodeNektEdit = (props) => {
     return (
-        <GrFormEdit size={props.size ?? DEFAULT_SIZE} />
+        <FiEdit2 size={props.size ?? DEFAULT_SIZE}/>
     )
 }
 

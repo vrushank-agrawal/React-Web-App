@@ -6,29 +6,11 @@ import { LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
 import { CodeNektProfile, CodeNektEye, CodeNektAdd, CodeNektEdit } from "../../Components/CodeNektIcons";
 import CodeNektButton from "../../Components/CodeNektButton";
 import { LinkSinistre } from "../../Components/CodeNektPageLinks";
+import IconWithBackground from "../utils/IconWithBackground";
 
 const FontSize = LITTLE2;
 const IconRadius = "1rem";
 const IconSize = 12;
-
-const IconWithBackground = (props) => {
-    return (
-        <Box>
-            <Box sx={{
-                alignItems: "center",
-                backgroundColor: BLUECN,
-                borderRadius: "50%",
-                display: "flex",
-                height: IconRadius,
-                justifyContent: "center",
-                margin: "0.5rem 0",
-                width: IconRadius,
-            }}>
-                {props.icon}
-            </Box>
-        </Box>
-    );
-};
 
 // ----------------------------------------------------------
 // Collaborateur
@@ -51,7 +33,7 @@ const CollaboratorTile = (props) => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={1} md={1} style={{marginLeft: "auto"}}>
-                        <IconWithBackground icon={<CodeNektEdit size={IconSize} />} />
+                        <IconWithBackground icon={<CodeNektEdit size={IconSize/1.4} iconRadius={IconRadius} />} />
                     </Grid>
                 </Grid>
 
@@ -129,7 +111,7 @@ const DocumentsTile = (props) => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={1} md={1}>
-                        <IconWithBackground icon={<CodeNektAdd size={IconSize} />} />
+                        <IconWithBackground icon={<CodeNektAdd size={IconSize} iconRadius={IconRadius}/>} />
                     </Grid>
                 </Grid>
             </Grid>
@@ -185,7 +167,7 @@ const SinistreTile = (props) => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={1} md={1}>
-                        <IconWithBackground icon={<CodeNektAdd size={IconSize} />} />
+                        <IconWithBackground icon={<CodeNektAdd size={IconSize} iconRadius={IconRadius}/>} />
                     </Grid>
                 </Grid>
             </Grid>

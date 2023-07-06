@@ -65,7 +65,7 @@ const VehiculeTile = (props) => {
             <CodeNektButton blue
                 color={WHITECN}
                 fontSize={FontSize}
-                startIcon={<CodeNektEdit size={15} />}
+                startIcon={<CodeNektEdit size={12} color={WHITECN}/>}
                 title={"CHANGER LE VEHICULE"}
                 width={ButtonWidth}
             />

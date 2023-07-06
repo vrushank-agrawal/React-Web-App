@@ -14,7 +14,7 @@ import { LinkCartes } from "../../Components/CodeNektPageLinks";
 import IconWithBackground from "../utils/IconWithBackground";
 
 const FontSize = LITTLE2;
-const IconSize = 12;
+const IconSize = 9;
 
 const CarteData = {
     id: "0987",
