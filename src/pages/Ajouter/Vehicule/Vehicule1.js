@@ -77,7 +77,6 @@ const VehiculeTileField = (props) => {
 };
 
 const VehiculeTile = (props) => {
-
     const user = useSelector(state => state.userReducer);
     const dispatch = useDispatch();
 
@@ -91,11 +90,11 @@ const VehiculeTile = (props) => {
                 });
                 dispatch({ type: "GET_BRANDS", data: mappedBrands });
             } else {
-                setError(true);
+                // setError(true);
             }
         } catch (error) {
             console.log(error);
-            setError(true);
+            // setError(true);
         }
     };
 
@@ -142,8 +141,6 @@ const VehiculeTile = (props) => {
     const handleDateChange = (date) => {setSelectedDate(date);};
     const handleStatutChange = (event) => {setStatut(event.target.value);};
 
-    console.log(marque);
-
     return (
         <Paper elevation={3} style={{ margin: "0", padding: "1rem" }}>
             <VehiculeTileField text={"ID Codenekt"} value={props.vehicule.id} />
@@ -167,6 +164,13 @@ const VehiculeTile = (props) => {
 // ---------------------------------------------
 
 const Vehicule1 = (props) => {
+    useEffect(() => {
+        if (!sessionStorage.getItem('reloaded') || sessionStorage.getItem('reloaded') == 'false'){
+            sessionStorage.setItem('reloaded', 'true');
+            window.location.reload();
+        }
+    }, []);
+
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>

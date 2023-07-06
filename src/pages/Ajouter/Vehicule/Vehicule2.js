@@ -1,7 +1,7 @@
-import React from "react";
-import { createTheme, Grid, Paper, Typography } from "@material-ui/core";
+import React, {useEffect} from "react";
+import { Grid, Paper, Typography } from "@material-ui/core";
 
-import { GREYTEXT2, GREYBACK, ORANGE } from "../../../utils/colors";
+import { GREYTEXT2, ORANGE } from "../../../utils/colors";
 import { MICRO } from "../../../utils/fontSize";
 import { FrequencyList } from "../utils/DropDownOptions";
 import CodeNektSelect from "../../../Components/CodeNektSelect";
@@ -17,10 +17,7 @@ const Vehicule2FontSize = MICRO;
 
 const SelectInput = (props) => {
     const [category, setCategory] = React.useState("");
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
+    const handleChange = (event) => {setCategory(event.target.value);};
 
     return (
         <CodeNektSelect
@@ -38,17 +35,7 @@ const TypeInput = (props) => {
     return (
         <CodeNektInput
             fontSize={Vehicule2FontSize}
-            // height={"1rem"}
             margin="0"
-            onChange={props.onChange}
-            value={props.value}
-        />
-    );
-};
-
-const DateInput = (props) => {
-    return (
-        <CodeNektDatePicker
             onChange={props.onChange}
             value={props.value}
         />
@@ -91,7 +78,7 @@ const VehiculeTileField = (props) => {
             </Grid>
             <Grid item xs={12} sm={9} md={9} style={{paddingLeft: "1.5rem"}}>
             { props.date ?
-                <DateInput onChange={props.onChange} value={props.value}/>
+                <CodeNektDatePicker onChange={props.onChange} value={props.value}/>
             : props.select ?
                 <DoubleSelect options1={props.options1} options2={props.options2} onChange1={props.onChange1} onChange2={props.onChange2} value1={props.value1} value2={props.value2}/>
             : props.loyer ?
@@ -152,6 +139,12 @@ const VehiculeTile = (props) => {
 // ---------------------------------------------
 
 const Vehicule2 = (props) => {
+    useEffect(() => {
+        if (sessionStorage.getItem('reloaded')) {
+            sessionStorage.setItem('reloaded', 'false');
+        }
+    }, []);
+
     return (
         <Grid container direction={"column"} style={{padding: "0 10rem"}}>
             <Grid item xs={12} sm={12} md={12} style={{width: "150%", paddingBottom: "1rem"}}>

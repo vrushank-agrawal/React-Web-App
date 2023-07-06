@@ -1,27 +1,24 @@
 import React from "react";
-import { styled } from '@mui/material/styles';
-import { Grid, Paper, Divider, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 // CodeNekt imports
 import { LITTLE } from "../../../utils/fontSize";
 import Circle from "./HeaderCircle";
 
-const HeaderContainer = styled(Paper)(({ theme }) => ({
-    alignItems: 'center',
-    background: 'transparent',
-    boxShadow: 'none',
-    display: 'flex',
-    elevation: '0',
-    justifyContent: 'center',
-    padding: theme.spacing(1),
-}));
-
 const DisplayHeader = (props) => {
     const NbCircles = props.circles;
     const GridLength = 12 / NbCircles;
     return (
-        <HeaderContainer>
+        <Paper elevation={0} style={{
+            alignItems: 'center',
+            background: 'transparent',
+            boxShadow: 'none',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '1rem',
+        }}>
             <Grid container spacing={1.5}>
                 <Grid item xs={12} sm={12} md={12}>
                     <Grid container spacing={1.5}>
@@ -61,7 +58,7 @@ const DisplayHeader = (props) => {
                     </Grid>
                 </Grid>
             </Grid>
-        </HeaderContainer>
+        </Paper>
     );
 };
 
