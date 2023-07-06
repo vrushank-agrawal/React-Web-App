@@ -11,34 +11,15 @@ import { LinkSinistre } from "../../Components/CodeNektPageLinks";
 import { CollaborateurTile, DocumentsTile, InformationTile } from "./LowerGrid";
 import { RetourButton, VoirButton } from "../utils/VoirPageUtils";
 
-const FontSize = LITTLE2;
+import { CollaboratorData, PhotosData, InformationData } from "../utils/VoirTestData";
 
-const CollaboratorData = {
-    categorie: "Collaborateur",
-    prenom: "John",
-    nom: "Doe",
-    email: "test@test.com",
-    siteHanes: "Hanes",
-    permisNumero: "123456",
-    tempsAffectation: "12 mois",
-}
+const FontSize = LITTLE2;
 
 const sinistreData = {
     vehicule: "XX-XXX-XX",
     date: "01/01/2021",
     commentaire: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam tincidunt. Sed vitae eros quis nisl aliquam tincidunt.",
     statut: "En cours",
-}
-
-const photosData = [
-    { id: "1", name: "Photo 1", },
-    { id: "2", name: "Photo 2", },
-]
-
-const informationData = {
-    dateIntervention: "01/01/2021",
-    dateSinistre: "01/01/2021",
-    intervantion: "Lorem ipsum dolor sit amet",
 }
 
 const documentsData = [
@@ -63,7 +44,7 @@ const LocalContent = (props) => {
                         <SinistreTile sinistre={sinistreData} fontSize={FontSize} />
                     </Grid>
                     <Grid item xs={12} sm={3} md={3}>
-                        <PhotosTile photos={photosData} fontSize={FontSize} />
+                        <PhotosTile photos={PhotosData} fontSize={FontSize} />
                     </Grid>
                 </Grid>
             </Grid>
@@ -81,7 +62,7 @@ const LocalContent = (props) => {
                     <Grid item xs={12} sm={6} md={6}>
                         <Grid container spacing={2} direction={"column"} style={{display: "flex", flexDirection: "column"}}>
                             <Grid item xs={12} sm={12} md={12}>
-                                 <InformationTile information={informationData} fontSize={FontSize} />
+                                 <InformationTile information={InformationData} fontSize={FontSize} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "right"}}>
                                 <VoirButton

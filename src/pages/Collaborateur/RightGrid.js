@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Grid, Paper, Typography, Divider } from "@mui/material";
 
 // CodeNekt imports
-import { BLACKCN, GREYBACK, GREYCN, GREYTEXT, WHITECN } from "../../utils/colors";
-import { LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
+import { BLACKCN, GREYTEXT, WHITECN } from "../../utils/colors";
+import { LITTLE2, MINIBIG } from "../../utils/fontSize";
 import { CodeNektDelete, CodeNektEye, CodeNektEdit } from "../../Components/CodeNektIcons";
 import { VoirButton } from "../utils/VoirPageUtils";
 
@@ -16,7 +16,7 @@ const ButtonWidth = "85%";
 
 const VehiculeTile = (props) => {
     return (
-    <Paper elevation={3} padding="2rem" style={{
+    <Paper elevation={3} padding="1rem 0" style={{
         backgroundColor: BLACKCN,
         elevation: 3,
         justifyContent: "center",
@@ -24,7 +24,7 @@ const VehiculeTile = (props) => {
         <Grid container spacing={1} direction={"column"} style={{direction: "flex", padding: "1rem" }}>
             <Grid item xs={12} sm={12} md={12} style={{marginLeft: "0.5rem"}}>
                 <Typography variant="h6" style={{ fontSize: MINIBIG, fontWeight: "bold", color: WHITECN }}>
-                    VEHICULE AFFECTE
+                    VÉHICULE AFFECTÉ
                 </Typography>
             </Grid>
             <Divider sx={{ backgroundColor: WHITECN, width: "100%"}} />

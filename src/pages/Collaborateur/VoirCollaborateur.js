@@ -7,42 +7,15 @@ import { LITTLE, LITTLE2 } from "../../utils/fontSize";
 import { FONTBOLD } from "../../utils/fonts";
 
 import { CodeNektDelete, CodeNektPersonFill } from "../../Components/CodeNektIcons";
-import { BlueButton, CollaboratorTile, DocumentsTile, SinistreTile, VoirButton } from "../utils/VoirPageUtils";
+import { CollaboratorTile, DocumentsTile, SinistreTile, VoirButton } from "../utils/VoirPageUtils";
 import { HistoryTile, VehiculeTile } from "./RightGrid";
 import { MEGABIG } from "../../utils/fontSize";
 import { LinkCollaborateur } from "../../Components/CodeNektPageLinks";
 import { RetourButton } from "../utils/VoirPageUtils";
 
+import { CollaboratorData, SinistreData, VehiculeData, HistoryData } from "../utils/VoirTestData";
+
 const FontSize = LITTLE2;
-
-const CollaboratorData = {
-    id: "123456789",
-    nom: "Doe",
-    prenom: "John",
-    email: "John@Doe.com",
-    categorie: "Collaborateur",
-    denomination: "Avantage",
-    montant: "100",
-    freq: "mensuel",
-}
-
-const SinistreData = [
-    {Date: "01/01/2021", Nom: "Doe", Statut: "En cours"},
-    {Date: "01/01/2021", Nom: "Doe", Statut: "En cours"},
-]
-
-const VehiculeData = {
-    number: "XX-XXX-XX",
-    Duree: "12 mois",
-    DateAffection: "01/01/2021",
-    DateFin: "01/01/2022",
-}
-
-const HistoryData = [
-    {date: "01/01/2021", number: "XX-XXX-XX"},
-    {date: "01/01/2021", number: "XX-XXX-XX"},
-    {date: "01/01/2021", number: "XX-XXX-XX"},
-]
 
 // ------------------------------------------------------
 // Local Content

@@ -86,7 +86,7 @@ export const CollaboratorTile = (props) => {
                     {props.collaborateur.email}
                 </Typography>
                 <Typography variant="h6" style={{fontSize: FontSize, marginTop: "4rem", marginBottom: "2rem" }}>
-                    Avantage : {props.collaborateur.denomination} | {props.collaborateur.montant} € {props.collaborateur.freq}
+                    Avantage : {props.collaborateur.denomination} &nbsp;&nbsp; | &nbsp;&nbsp; {props.collaborateur.montant} € {props.collaborateur.freq}
                 </Typography>
             </Grid>
 
@@ -139,12 +139,12 @@ export const DocumentsTile = (props) => {
 
     return (
     <Paper elevation={3} padding="1rem" >
-        <Grid container spacing={1} direction={"column"} style={{ padding: "0.5rem 1.5rem 1rem 1.5rem", }}>
+        <Grid container spacing={1} direction={"column"} style={{ padding: "0.5rem 0", }}>
 
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1} direction={"row"} style={{display: "flex", alignContent: "center"}}>
                     <Grid item xs={12} sm={10} md={10}>
-                        <Typography variant="h6" style={{fontWeight: "bold", textAlign: "left", color: BLACKCN }}>
+                        <Typography variant="h6" style={{fontWeight: "bold", textAlign: "left", color: BLACKCN, paddingLeft: "1.5rem" }}>
                             DOCUMENTS
                         </Typography>
                     </Grid>
@@ -156,7 +156,7 @@ export const DocumentsTile = (props) => {
 
             <Divider style={{ backgroundColor: ORANGE, }} />
 
-            <Grid item xs={12} sm={12} md={12}>
+            <Grid item xs={12} sm={12} md={12} style={{padding: "0 1.5rem"}}>
             {docs.map((document, index) => (
             <>
                 <DocumentsTileField fontSize={props.fontSize} text={document.text} value={document.value} key={index}/>
@@ -179,7 +179,7 @@ const SinistreTileField = (props) => {
         <Grid container spacing={1} direction={"row"} style={{textAlign: "left"}}>
             <Grid item xs={12} sm={11} md={11}>
                 <Typography variant="h6" style={{margin: "0.4rem 0", fontSize: FontSize, textAlign: "left", color: BLACKCN }}>
-                    {props.sinistre.Date} | {props.sinistre.Nom} | {props.sinistre.Statut}
+                    {props.sinistre.Date} &nbsp;&nbsp; | &nbsp;&nbsp; {props.sinistre.Nom} &nbsp;&nbsp; | &nbsp;&nbsp; {props.sinistre.Statut}
                 </Typography>
             {props.index !== props.sinistresLength - 1 &&
             <Divider sx={{ backgroundColor: ORANGE, width: "108%"}} />
@@ -195,12 +195,12 @@ const SinistreTileField = (props) => {
 
 export const SinistreTile = (props) => {
     return (
-    <Paper elevation={3} padding="1rem" >
-        <Grid container spacing={1} direction={"column"} style={{padding: "0.5rem 1rem"}}>
+    <Paper elevation={3}>
+        <Grid container spacing={1} direction={"column"} style={{padding: "0.5rem 0"}}>
             <Grid item xs={12} sm={12} md={12}>
                 <Grid container spacing={1} direction={"row"} style={{textAlign: "left"}}>
-                    <Grid item xs={12} sm={11} md={11} style={{display: "flex", alignItems: "center", paddingLeft: "1rem"}}>
-                        <Typography variant="h6" style={{fontWeight: "bold", textAlign: "left", color: BLACKCN }}>
+                    <Grid item xs={12} sm={11} md={11} style={{display: "flex", alignItems: "center", paddingLeft: "2rem"}}>
+                        <Typography variant="h6" style={{fontWeight: "bold", textAlign: "left", color: BLACKCN}}>
                             SINISTRES
                         </Typography>
                     </Grid>
@@ -210,7 +210,7 @@ export const SinistreTile = (props) => {
                 </Grid>
             </Grid>
             <Divider sx={{ backgroundColor: ORANGE, width: "100%"}} />
-            <Grid item xs={12} sm={12} md={12} style={{marginBottom: "4rem", paddingLeft: "1rem"}}>
+            <Grid item xs={12} sm={12} md={12} style={{padding: "0.5rem 2rem"}}>
                 {props.sinistres.map((sinistre, index) => (
                     <SinistreTileField
                         index={index}
@@ -219,13 +219,15 @@ export const SinistreTile = (props) => {
                     />
                 ))}
             </Grid>
-            <CodeNektButton white
-                alignSelf={"left"}
-                bgcolor={WHITECN}
-                boxShadow={"none"}
-                title="Voir toutes les sinistres"
-                to={LinkSinistre}
-            />
+            <Grid item xs={12} sm={12} md={12} style={{padding: "0 0.8rem"}}>
+                <CodeNektButton white
+                    alignSelf={"left"}
+                    bgcolor={WHITECN}
+                    boxShadow={"none"}
+                    title="Voir toutes les sinistres"
+                    to={LinkSinistre}
+                />
+            </Grid>
         </Grid>
     </Paper>
     );
