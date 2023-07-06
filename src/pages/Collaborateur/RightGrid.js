@@ -5,7 +5,7 @@ import { Box, Grid, Paper, Typography, Divider } from "@mui/material";
 import { BLACKCN, GREYBACK, GREYCN, GREYTEXT, WHITECN } from "../../utils/colors";
 import { LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
 import { CodeNektDelete, CodeNektEye, CodeNektEdit } from "../../Components/CodeNektIcons";
-import CodeNektButton from "../../Components/CodeNektButton";
+import { VoirButton } from "../utils/VoirPageUtils";
 
 const FontSize = LITTLE2;
 const ButtonWidth = "85%";
@@ -55,22 +55,19 @@ const VehiculeTile = (props) => {
                     {props.vehicule.DateFin}
                 </Typography>
             </Grid>
-            <CodeNektButton blue
-                color={WHITECN}
+            <VoirButton
                 fontSize={FontSize}
                 startIcon={<CodeNektEye size={15} />}
                 title={"VOIR LE VEHICULE"}
                 width={ButtonWidth}
             />
-            <CodeNektButton blue
-                color={WHITECN}
+            <VoirButton
                 fontSize={FontSize}
                 startIcon={<CodeNektEdit size={12} color={WHITECN}/>}
                 title={"CHANGER LE VEHICULE"}
                 width={ButtonWidth}
             />
-            <CodeNektButton blue
-                color={WHITECN}
+            <VoirButton
                 fontSize={FontSize}
                 startIcon={<CodeNektDelete size={15} />}
                 title={"RETIRER LE VEHICULE"}

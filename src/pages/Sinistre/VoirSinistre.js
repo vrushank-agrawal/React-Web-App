@@ -1,18 +1,15 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import { BsChevronLeft } from "react-icons/bs";
 
 // CodeNekt imports
-import { BLACKCN, ORANGE, ORANGELIGHT, WHITECN } from "../../utils/colors";
-import { BIG, LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
+import { LITTLE2 } from "../../utils/fontSize";
 import { FONTBOLD } from "../../utils/fonts";
 
-import CodeNektButton from "../../Components/CodeNektButton";
-import { CodeNektAdd, CodeNektDelete, CodeNektEdit, CodeNektEye, CodeNektPersonFill, CodeNektProfile } from "../../Components/CodeNektIcons";
 import { SinistreTile, PhotosTile } from "./UpperGrid";
 import { MEGABIG } from "../../utils/fontSize";
 import { LinkSinistre } from "../../Components/CodeNektPageLinks";
 import { CollaborateurTile, DocumentsTile, InformationTile } from "./LowerGrid";
+import { RetourButton, VoirButton } from "../utils/VoirPageUtils";
 
 const FontSize = LITTLE2;
 
@@ -87,10 +84,8 @@ const LocalContent = (props) => {
                                  <InformationTile information={informationData} fontSize={FontSize} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "right"}}>
-                                <CodeNektButton blue bold
-                                    color={WHITECN}
+                                <VoirButton
                                     fontSize={FontSize}
-                                    padding={"0.8rem"}
                                     title={"cloturer le sinistre"}
                                     width={"30%"}
                                 />
@@ -116,16 +111,9 @@ const SinistreHeader = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={6} style={{display: "flex", justifyContent: "right", marginLeft: "auto"}}>
-                <CodeNektButton transparent
-                    border={"1px solid"}
-                    borderColor={WHITECN}
-                    color={WHITECN}
-                    marginLeft={"auto"}
-                    padding={"0.8rem"}
-                    startIcon={<BsChevronLeft size={15} />}
+                <RetourButton
                     title={"Retour a la liste des sinistres"}
                     to={LinkSinistre}
-                    width={"fit-content"}
                 />
             </Grid>
         </Grid>

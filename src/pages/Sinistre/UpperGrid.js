@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Chip, Divider, Grid, Paper, Typography } from "@mui/material";
 
-import { BLACKCN, GREYBACK, GREYCN, ORANGE, ORANGELIGHT } from "../../utils/colors";
+import { BLACKCN, GREYBACK, ORANGE, ORANGELIGHT } from "../../utils/colors";
 import { LinkVoirVehicule } from "../../Components/CodeNektPageLinks";
-import { BIG, LITTLE2 } from "../../utils/fontSize";
-import CodenektButton from "../../Components/CodeNektButton";
 import IconWithBackground from "../utils/IconWithBackground";
 import { CodeNektEdit, CodeNektAdd, CodeNektEye } from "../../Components/CodeNektIcons";
+import { VoirButton } from "../utils/VoirPageUtils";
 
 const IconSize = 12;
 
@@ -34,7 +33,7 @@ const SinistreTile = (props) => {
                     <Typography variant="h6" style={{fontWeight: "bold", margin: "0" }}>
                         {props.sinistre.vehicule}
                     </Typography>
-                    <CodenektButton blue
+                    <VoirButton
                         fontSize={props.fontSize}
                         title={"Voir le véhicule"}
                         to={LinkVoirVehicule}

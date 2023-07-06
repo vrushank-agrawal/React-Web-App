@@ -24,7 +24,7 @@ const IconWithBackground = (props) => {
 
 IconWithBackground.propTypes = {
     icon: PropTypes.element.isRequired,
-    iconRadius: PropTypes.string.isRequired,
+    iconRadius: PropTypes.string,
 };
 
 IconWithBackground.defaultProps = {

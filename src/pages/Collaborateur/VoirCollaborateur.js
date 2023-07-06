@@ -1,18 +1,17 @@
 import React from "react";
-import { Box, Chip, Divider, Grid, Paper, Typography } from "@mui/material";
-import { BsChevronLeft } from "react-icons/bs";
+import { Chip, Grid, Typography } from "@mui/material";
 
 // CodeNekt imports
-import { BLACKCN, ORANGE, ORANGELIGHT, WHITECN } from "../../utils/colors";
-import { BIG, LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
+import { BLACKCN, WHITECN } from "../../utils/colors";
+import { LITTLE, LITTLE2 } from "../../utils/fontSize";
 import { FONTBOLD } from "../../utils/fonts";
 
-import CodeNektButton from "../../Components/CodeNektButton";
-import { CodeNektAdd, CodeNektDelete, CodeNektEdit, CodeNektEye, CodeNektPersonFill, CodeNektProfile } from "../../Components/CodeNektIcons";
-import { CollaboratorTile, DocumentsTile, SinistreTile } from "./LeftGrid";
+import { CodeNektDelete, CodeNektPersonFill } from "../../Components/CodeNektIcons";
+import { BlueButton, CollaboratorTile, DocumentsTile, SinistreTile, VoirButton } from "../utils/VoirPageUtils";
 import { HistoryTile, VehiculeTile } from "./RightGrid";
 import { MEGABIG } from "../../utils/fontSize";
 import { LinkCollaborateur } from "../../Components/CodeNektPageLinks";
+import { RetourButton } from "../utils/VoirPageUtils";
 
 const FontSize = LITTLE2;
 
@@ -28,16 +27,8 @@ const CollaboratorData = {
 }
 
 const SinistreData = [
-    {
-        Date: "01/01/2021",
-        Nom: "Doe",
-        Statut: "En cours",
-    },
-    {
-        Date: "01/01/2021",
-        Nom: "Doe",
-        Statut: "En cours",
-    },
+    {Date: "01/01/2021", Nom: "Doe", Statut: "En cours"},
+    {Date: "01/01/2021", Nom: "Doe", Statut: "En cours"},
 ]
 
 const VehiculeData = {
@@ -48,18 +39,9 @@ const VehiculeData = {
 }
 
 const HistoryData = [
-    {
-        date: "01/01/2021",
-        number: "XX-XXX-XX",
-    },
-    {
-        date: "01/01/2021",
-        number: "XX-XXX-XX",
-    },
-    {
-        date: "01/01/2021",
-        number: "XX-XXX-XX",
-    },
+    {date: "01/01/2021", number: "XX-XXX-XX"},
+    {date: "01/01/2021", number: "XX-XXX-XX"},
+    {date: "01/01/2021", number: "XX-XXX-XX"},
 ]
 
 // ------------------------------------------------------
@@ -103,10 +85,8 @@ const LocalContent = (props) => {
                         />
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} style={{display: "flex", justifyContent: "center"}}>
-                        <CodeNektButton blue
-                            color={WHITECN}
+                        <VoirButton
                             fontSize={FontSize}
-                            padding={"0.8rem"}
                             startIcon={<CodeNektDelete size={15} />}
                             title={"DESACTIVER LE COLLABORATEUR"}
                             width={"100%"}
@@ -123,7 +103,6 @@ const LocalContent = (props) => {
 // ------------------------------------------------------------
 
 const CollaborateurHeader = (props) => {
-
     return (
         <Grid container spacing={1} direction={"row"} style={{ marginTop: "2rem", alignItems: "center" }}>
             <Grid item xs={12} sm={3.5} md={3.5}>
@@ -146,16 +125,9 @@ const CollaborateurHeader = (props) => {
                 />
             </Grid>
             <Grid item xs={12} sm={3.5} md={3.5} style={{display: "flex", justifyContent: "right", marginLeft: "auto"}}>
-                <CodeNektButton transparent
-                    border={"1px solid"}
-                    borderColor={WHITECN}
-                    color={WHITECN}
-                    marginLeft={"auto"}
-                    padding={"0.8rem"}
-                    startIcon={<BsChevronLeft size={15} />}
+                <RetourButton
                     title={"Retour a la liste des collaborateurs"}
                     to={LinkCollaborateur}
-                    width={"fit-content"}
                 />
             </Grid>
         </Grid>

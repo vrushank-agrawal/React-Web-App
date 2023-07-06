@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Paper, Typography, Divider } from "@mui/material";
 
 import { BLACKCN, BLUECN, ORANGE, ORANGEDARK, ORANGELIGHT, WHITECN } from "../../utils/colors";
-import { DocumentsTile as DocTile } from "../Collaborateur/LeftGrid";
+import { DocumentsTile as DocTile } from "../utils/VoirPageUtils";
 import { CodeNektEdit } from "../../Components/CodeNektIcons";
 import IconWithBackground from "../utils/IconWithBackground";
 import CodenektButton from "../../Components/CodeNektButton";

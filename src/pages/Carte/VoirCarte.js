@@ -1,17 +1,16 @@
 import React from "react";
 import { Divider, Grid, Paper, Typography } from "@mui/material";
-import { BsChevronLeft } from "react-icons/bs";
 
 // CodeNekt imports
 import { ORANGELIGHT, WHITECN } from "../../utils/colors";
 import { LITTLE2 } from "../../utils/fontSize";
 import { FONTBOLD } from "../../utils/fonts";
 
-import CodeNektButton from "../../Components/CodeNektButton";
 import { CodeNektEdit, CodeNektProfile } from "../../Components/CodeNektIcons";
 import { MEGABIG } from "../../utils/fontSize";
 import { LinkCartes } from "../../Components/CodeNektPageLinks";
 import IconWithBackground from "../utils/IconWithBackground";
+import { RetourButton } from "../utils/VoirPageUtils";
 
 const FontSize = LITTLE2;
 const IconSize = 9;
@@ -95,16 +94,9 @@ const CarteHeader = (props) => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={4} md={4} style={{display: "flex", justifyContent: "right"}}>
-                <CodeNektButton transparent
-                    border={"1px solid"}
-                    borderColor={WHITECN}
-                    color={WHITECN}
-                    marginLeft={"auto"}
-                    padding={"0.8rem"}
-                    startIcon={<BsChevronLeft size={15} />}
+                <RetourButton
                     title={"Retour a la liste des cartes et badges"}
                     to={LinkCartes}
-                    width={"100%"}
                 />
             </Grid>
             <Grid item xs={0} sm={6} md={6} />

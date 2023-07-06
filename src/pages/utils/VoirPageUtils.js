@@ -1,22 +1,56 @@
 import React from "react";
-import { Grid, Paper, Typography, Divider, Box, Icon } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Grid, Paper, Typography, Divider, IconButton } from "@mui/material";
 
+import CodeNektButton from "../../Components/CodeNektButton";
 import { BLACKCN, ORANGELIGHT, ORANGE, WHITECN, BLUECN } from "../../utils/colors";
 import { LITTLE, LITTLE2, MINIBIG } from "../../utils/fontSize";
-import { CodeNektProfile, CodeNektEye, CodeNektAdd, CodeNektEdit } from "../../Components/CodeNektIcons";
-import CodeNektButton from "../../Components/CodeNektButton";
-import { LinkSinistre } from "../../Components/CodeNektPageLinks";
-import IconWithBackground from "../utils/IconWithBackground";
+import { CodeNektLeft, CodeNektProfile, CodeNektEye, CodeNektAdd, CodeNektEdit, CodeNektDocument } from "../../Components/CodeNektIcons";
+import { LinkSinistre, LinkVoirSinistre } from "../../Components/CodeNektPageLinks";
+import IconWithBackground from "./IconWithBackground";
 
 const FontSize = LITTLE2;
 const IconRadius = "1rem";
 const IconSize = 12;
 
 // ----------------------------------------------------------
+// Buttons
+// ----------------------------------------------------------
+
+export const RetourButton = (props) => {
+    return(
+    <CodeNektButton transparent
+        border={"1px solid"}
+        borderColor={WHITECN}
+        color={WHITECN}
+        marginLeft={"auto"}
+        padding={"0.8rem"}
+        startIcon={<CodeNektLeft size={15} />}
+        title={props.title}
+        to={props.to}
+        width={"fit-content"}
+    />
+    );
+}
+
+export const VoirButton = (props) => {
+    return(
+    <CodeNektButton blue
+        color={WHITECN}
+        fontSize={props.fontSize}
+        padding={"0.8rem"}
+        startIcon={props.startIcon}
+        title={props.title}
+        width={props.width}
+    />
+    );
+}
+
+// ----------------------------------------------------------
 // Collaborateur
 // ----------------------------------------------------------
 
-const CollaboratorTile = (props) => {
+export const CollaboratorTile = (props) => {
     return (
     <Paper elevation={3} padding="1rem" >
         <Grid container spacing={1} direction={"row"} style={{padding: "1rem"}}>
@@ -70,7 +104,11 @@ const DocumentsTileField = (props) => {
         <Grid item xs={12} sm={12} md={12} style={{margin: "0.3rem 0 0 0"}}>
             <Grid container spacing={1} direction={"row"} style={{ padding: "0.3rem 0" }}>
 
-                <Grid item xs={12} sm={10} md={10}>
+                <Grid item xs={12} sm={1.5} md={1.5}>
+                    <CodeNektDocument fontSize={props.fontSize} />
+                </Grid>
+
+                <Grid item xs={12} sm={8.5} md={8.5}>
                     <Typography color={BLACKCN} style={{ textAlign: "left", fontSize: props.fontSize }}>
                         {props.text.toLocaleUpperCase()}
                     </Typography>
@@ -95,7 +133,7 @@ const docsData = [
     { text: "badge", value: "123456"},
 ];
 
-const DocumentsTile = (props) => {
+export const DocumentsTile = (props) => {
 
     const docs = props.documents ?? docsData;
 
@@ -148,14 +186,14 @@ const SinistreTileField = (props) => {
             }
             </Grid>
             <Grid item xs={12} sm={1} md={1} style={{display: "flex", alignItems: "center"}}>
-                <CodeNektEye size={20} />
+                <Link to={LinkVoirSinistre}> <IconButton> <CodeNektEye size={20} /> </IconButton> </Link>
             </Grid>
         </Grid>
     );
 };
 
 
-const SinistreTile = (props) => {
+export const SinistreTile = (props) => {
     return (
     <Paper elevation={3} padding="1rem" >
         <Grid container spacing={1} direction={"column"} style={{padding: "0.5rem 1rem"}}>
@@ -192,5 +230,3 @@ const SinistreTile = (props) => {
     </Paper>
     );
 };
-
-export { CollaboratorTile , DocumentsTile, SinistreTile };
