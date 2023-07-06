@@ -18,7 +18,7 @@ const FontSize = LITTLE2;
 const sinistreData = {
     vehicule: "XX-XXX-XX",
     date: "01/01/2021",
-    commentaire: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam tincidunt. Sed vitae eros quis nisl aliquam tincidunt.",
+    commentaire: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam tincidunt. Sed vitae eros quis nisl aliquam tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam tincidunt. Sed vitae eros quis nisl aliquam tincidunt.",
     statut: "En cours",
 }
 

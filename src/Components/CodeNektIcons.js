@@ -40,9 +40,23 @@ import { AiOutlineQuestion } from 'react-icons/ai';
 import { IoSettings } from 'react-icons/io5';
 import {FaSignInAlt, FaSignOutAlt} from 'react-icons/fa';
 import {MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft} from 'react-icons/md';
-import { BLACKCN, WHITECN } from '../utils/colors';
+import { BiSun } from 'react-icons/bi';
+import { FaRegSnowflake } from 'react-icons/fa';
 
+import { BLACKCN, WHITECN } from '../utils/colors';
 const DEFAULT_SIZE = 15;
+
+export const CodeNektHiver = (props) => {
+    return (
+        <FaRegSnowflake size={props.size ?? DEFAULT_SIZE} />
+    )
+}
+
+export const CodeNektEte = (props) => {
+    return (
+        <BiSun size={props.size ?? DEFAULT_SIZE} />
+    )
+}
 
 export const CodeNektSearchIcon = (props) => {
     return (
@@ -76,7 +90,7 @@ export const CodeNektAdd = (props) => {
 
 export const CodeNektEdit = (props) => {
     return (
-        <FiEdit2 size={props.size ?? DEFAULT_SIZE}/>
+        <FiEdit2 size={props.size ?? DEFAULT_SIZE/1.6}/>
     )
 }
 

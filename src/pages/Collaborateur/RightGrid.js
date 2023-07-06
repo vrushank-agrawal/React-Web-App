@@ -6,6 +6,7 @@ import { BLACKCN, GREYTEXT, WHITECN } from "../../utils/colors";
 import { LITTLE2, MINIBIG } from "../../utils/fontSize";
 import { CodeNektDelete, CodeNektEye, CodeNektEdit } from "../../Components/CodeNektIcons";
 import { VoirButton } from "../utils/VoirPageUtils";
+import { LinkVoirVehicule } from "../../Components/CodeNektPageLinks";
 
 const FontSize = LITTLE2;
 const ButtonWidth = "85%";
@@ -59,6 +60,7 @@ const VehiculeTile = (props) => {
                 fontSize={FontSize}
                 startIcon={<CodeNektEye size={15} />}
                 title={"VOIR LE VEHICULE"}
+                to={LinkVoirVehicule}
                 width={ButtonWidth}
             />
             <VoirButton

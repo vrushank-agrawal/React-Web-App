@@ -3,7 +3,7 @@ export const CollaboratorData = {
     nom: "Doe",
     prenom: "John",
     email: "John@Doe.com",
-    categorie: "Collaborateur",
+    categorie: "Executive",
     denomination: "Avantage",
     montant: "100",
     freq: "mensuel",
@@ -22,9 +22,9 @@ export const VehiculeData = {
 }
 
 export const HistoryData = [
-    {date: "01/01/2021", number: "XX-XXX-XX"},
-    {date: "01/01/2021", number: "XX-XXX-XX"},
-    {date: "01/01/2021", number: "XX-XXX-XX"},
+    {date: "01/01/2021", number: "XX-XXX-XX", type: "Affectation", nom: "Doe"},
+    {date: "01/01/2021", number: "XX-XXX-XX", type: "Affectation", nom: "Doe"},
+    {date: "01/01/2021", number: "XX-XXX-XX", type: "Affectation", nom: "Doe"},
 ]
 
 export const PhotosData = [

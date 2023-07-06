@@ -19,7 +19,7 @@ import Signout from "./Login/Signout";
 // ----------------- Voir Pages -----------------
 import VoirCollaborateur from "./Collaborateur/VoirCollaborateur";
 import VoirSinistre from "./Sinistre/VoirSinistre";
-
+import VoirVehicule from "./Vehicule/VoirVehicule";
 import VoirCarte from "./Carte/VoirCarte";
 
 // ----------------- Ajouter -----------------
@@ -69,6 +69,7 @@ const NavigationView = () => {
 
                 <Route exact path={LinkVehicule} element={<Vehicles />} />
                 <Route exact path={LinkAjoutVehicule} element={<AjouterVehicule />} />
+                <Route exact path={LinkVoirVehicule} element={<VoirVehicule />} />
 
                 <Route exact path={LinkSinistre} element={<Claims />} />
                 <Route exact path={LinkAjoutSinistre} element={<AjouterSinistre />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, IconButton } from '@mui/material';
 
 // Local imports
@@ -11,7 +12,7 @@ import { BLACKCN, WHITECN } from '../../utils/colors';
 // import MUI icons
 import { CodeNektAdd, CodeNektDelete, CodeNektEye } from '../../Components/CodeNektIcons';
 import CodenektButton from '../../Components/CodeNektButton';
-import { LinkAjoutVehicule } from '../../Components/CodeNektPageLinks';
+import { LinkAjoutVehicule, LinkVoirVehicule } from '../../Components/CodeNektPageLinks';
 
 const column = {
     names: [
@@ -27,7 +28,7 @@ const column = {
             render: (rowData) => {
                 return(
                 <>
-                    <IconButton> <CodeNektEye size={15} /> </IconButton>
+                    <Link to={LinkVoirVehicule}> <IconButton> <CodeNektEye size={15} /> </IconButton> </Link>
                     <IconButton> <CodeNektDelete size={15} /> </IconButton>
                 </>
                 )}

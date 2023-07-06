@@ -7,14 +7,17 @@ import TCOChip from "../utils/TCOChip";
 // CodeNekt imports
 
 const TCOHeaderItem = (props) => {
+    const FirstCol = props.firstCol ?? 1;
+    const SecondCol = props.secondCol ?? 2;
+
     return (
     <>
-        <Grid item xs={12} sm={1} md={1}>
+        <Grid item xs={12} sm={FirstCol} md={FirstCol}>
             <Typography variant="h6" sx={{ color: "white", fontSize: LITTLE }}>
                 {props.description}
             </Typography>
         </Grid>
-        <Grid item xs={12} sm={2} md={2}>
+        <Grid item xs={12} sm={SecondCol} md={SecondCol}>
             <TCOChip
                 color={WHITECN}
                 fontSize={"1.2rem"}
@@ -27,12 +30,12 @@ const TCOHeaderItem = (props) => {
 
 const TCOHeader = (props) => {
     return (
-        <Paper sx={{ p: 2, borderRadius: 2, backgroundColor: BLACKCN, }}
+        <Paper sx={{ borderRadius: 2, backgroundColor: BLACKCN, }}
                 elevation={3}
         >
-            <Grid container spacing={3} sx={{alignItems: "center", }}>
-                <TCOHeaderItem description="COUT MOYEN MENSUEL" value={props.moyen} />
-                <TCOHeaderItem description="COUT TOTAL MENSUEL" value={props.total} />
+            <Grid container spacing={1} sx={{alignItems: "center", p: "0 2rem 0.5rem 2rem"}}>
+                <TCOHeaderItem description="COUT MOYEN MENSUEL" value={props.moyen} firstCol={props.firstCol} secondCol={props.secondCol}/>
+                <TCOHeaderItem description="COUT TOTAL MENSUEL" value={props.total} firstCol={props.firstCol} secondCol={props.secondCol}/>
             </Grid>
         </Paper>
     );
