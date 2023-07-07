@@ -33,6 +33,7 @@ function CodenektButton(props) {
             height: props.height,
             margin: props.margin,
             padding: props.padding,
+            textDecoration: props.underline ? 'underline' : 'none',
             width: props.width,
         }}
         startIcon={props.startIcon}

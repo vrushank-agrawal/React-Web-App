@@ -8,16 +8,20 @@ import CodenektButton from "../../Components/CodeNektButton";
 import { CodeNektEye, CodeNektEyeBlocked } from "../../Components/CodeNektIcons";
 import { login } from "../../api/modules/User";
 import { checkEmail, checkPassword } from "../../utils/checkForms";
+import { BLACKCN, ORANGEDARK, WHITECN } from "../../utils/colors";
+import { Typography } from "@material-ui/core";
 
-const ITEMWIDTH = "80%";
+const formStyle = {
+    alignContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+};
 
 const LoginInput = (props) => {
 
     const [viewPassword, setViewPassword] = React.useState(false);
-
-    const handleClickShowPassword = () => {
-        setViewPassword(!viewPassword);
-    };
+    const handleClickShowPassword = () => { setViewPassword(!viewPassword); };
 
     return (
         <TextField
@@ -39,7 +43,7 @@ const LoginInput = (props) => {
                 borderRadius: 20,
                 fontSize: "1rem",
                 margin: "0.5rem 0",
-                width: ITEMWIDTH,
+                width: props.width,
                 '& .MuiOutlinedInput-root fieldset': {
                     border: 'none',
                 },
@@ -50,29 +54,55 @@ const LoginInput = (props) => {
 
 const ConnectButton = (props) => {
     return (
-        <CodenektButton white
+        <CodenektButton white bold
+            color = {ORANGEDARK}
             onClick = {props.onClick}
-            title = "Se connecter"
-            width = {ITEMWIDTH}
+            title = {props.title}
+            width = {props.width}
         />
+    );
+}
+
+const MotDePasseButton = (props) => {
+    return (
+        <CodenektButton underline
+            color = {BLACKCN}
+            onClick = {props.onClick}
+            title = "Mot de passe oublié"
+            width = {props.width}
+        />
+    )
+}
+
+const MotDePasseReinit = (props) => {
+
+    const ItemWidth = "40%";
+
+    const [email, setEmail] = React.useState('');
+    const handleEmailChange = (event) => { setEmail(event.target.value); };
+
+    return (
+        <div style={formStyle}>
+            <Typography style={{color: WHITECN, margin: "2rem 0"}}>
+                Indiquez l'adresse Email associée à votre compte pour générer un nouveau mot de passe
+            </Typography>
+            <LoginInput label="Email" onChange={handleEmailChange} value={email} width={ItemWidth} />
+            <ConnectButton onClick={props.onClick} title={"Générer un nouveau mot de passe"} width={ItemWidth} />
+        </div>
     );
 }
 
 const LoginForm = (props) => {
 
+    const ItemWidth = "80%";
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [error, setError] = React.useState(false);
     const user = useSelector((state) => state.userReducer.user);
     const dispatch = useDispatch();
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
+    const handleEmailChange = (event) => { setEmail(event.target.value);};
+    const handlePasswordChange = (event) => { setPassword(event.target.value); };
 
     const Checklogin = async (user) => {
         const response = await login(user)
@@ -100,21 +130,21 @@ const LoginForm = (props) => {
     }
 
     return (
-        <div style={{
-            alignContent: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-        }}>
-            <LoginInput label="Email" onChange={handleEmailChange} value={email} />
-            <LoginInput label="Mot de passe" pass={true} onChange={handlePasswordChange} value={password} />
-            <ConnectButton onClick={InputValidate} />
+        <div style={formStyle}>
+            <LoginInput label="Email" onChange={handleEmailChange} value={email} width={ItemWidth} />
+            <LoginInput label="Mot de passe" pass={true} onChange={handlePasswordChange} value={password} width={ItemWidth} />
             {error && <p style={{color: "white"}}>Email ou mot de passe incorrect</p>}
+            <ConnectButton onClick={InputValidate} title={"Se connecter"} width={ItemWidth} />
+            <MotDePasseButton onClick={props.onClick} width={ItemWidth} />
         </div>
     );
 }
 
 const Login = (props) => {
+
+    const [motdepasse, setMotDePasse] = React.useState(false);
+    const handleMotDePasse = () => { setMotDePasse(!motdepasse); }
+
     return (
         <div style={{
             alignContent:"center",
@@ -128,7 +158,11 @@ const Login = (props) => {
         }}>
             <div className='CodeNekt__logo'>
                 <img src={Logo} alt='' style={{width: "20rem"}} />
-                <LoginForm />
+                {motdepasse ?
+                    <MotDePasseReinit onClick={handleMotDePasse} />
+                :
+                    <LoginForm onClick={handleMotDePasse} />
+                }
             </div>
         </div>
     );
